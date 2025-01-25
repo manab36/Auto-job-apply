@@ -295,6 +295,7 @@ class LinkedinJobApply(Linkedin):
             logger.error(f"Processing job: {e}")
 
     def easy_apply_jobs_apply(self):
+        return
         """
         Handles the Easy Apply form submission process for LinkedIn jobs.
         Fills in required fields, clicks through the form, and attempts to submit the application.
