@@ -62,12 +62,12 @@ def predict_ans(question_dict):
     elif input_type in 'text':
         if not pre_submitted_data.empty:
             if len(pre_ans)> 0:
-                logger.warning(f"select index: {pre_ans.iloc[0]["pre_ans"]}")
+                logger.warning(f"select index: {pre_ans.iloc[0]['pre_ans']}")
                 return pre_ans.iloc[0]["pre_ans"]
         return predict_text_type_ans(question, available_options)
 
     elif input_type== 'email':
-        return EMAIL_ID
+        return "EMAIL_ID"
     
 
 def predict_text_type_ans(question, available_options):

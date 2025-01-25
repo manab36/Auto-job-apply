@@ -1,0 +1,22 @@
+1. in your pc:
+    sudo apt install -y x11-apps
+
+2. 
+    docker build -t auto-job-apply-app .
+
+3. Allow Docker to Use the Host Display
+    xhost +local:docker
+
+4. test the docker
+    docker run --rm     -e DISPLAY=$DISPLAY     -v /tmp/.X11-unix:/tmp/.X11-unix     --shm-size=2g     auto-job-apply-app
+
+5. save the image
+    docker save -o auto-job-apply-app.tar auto-job-apply-app
+
+
+echo $DISPLAY
+export DISPLAY=:0
+xhost +local:docker
+
+
+
