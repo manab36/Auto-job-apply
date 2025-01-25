@@ -30,6 +30,7 @@ def set_chrome_settings(headless_browser= True):
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_argument("--start-maximized")
     chrome_options.add_argument("--incognito")
+    chrome_options.add_argument("--start-maximized")  # Optional: start Chrome maximized
 
     # chrome_options.add_argument("--log-level=3")  # Suppress ChromeDriver logs
     # chrome_options.add_argument("--silent")       # Silent mode for ChromeDriver
@@ -39,7 +40,7 @@ def set_chrome_settings(headless_browser= True):
         chrome_options.add_argument("--no-sandbox")  # Bypass OS security model (optional)
     chrome_service = Service(
         ChromeDriverManager().install()
-        ,log_output=os.devnull  # Suppress logs from WebDriverManager
+        # ,log_output=os.devnull  # Suppress logs from WebDriverManager
         )
     return webdriver.Chrome(service= chrome_service, options= chrome_options)
 
