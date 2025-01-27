@@ -1,0 +1,24 @@
+Personal Information
+Manab Boro
+Guwahati,Assam,India | 91+ 9101925089 | mboro497@gmail.com | https://www.linkedin.com/in/manab-boro-875051217
+
+
+SUMMARY
+Experienced Software Engineer with a strong passion for delivering efficient software solutions. Possesses a combination of technical expertise and problem-solving abilities, with a demonstrated ability to quickly learn and apply new technologies. Proficient in coding, adaptable to any project or challenge, and eager to further develop skills in software development and teamwork within a Software Engineer role.
+
+
+EDUCATIONS
+ScaIer Neovarsity 
+	MSC Computer Science: AI and ML
+	Remote | Apr 2023 – present
+	3.7/4 CGPA
+Tezpur University
+	MCA
+	Tezpur, India | 2019 – 2022
+	7.57/10 CGPA
+	
+KEY ACHIEVEMENTS
+Query Optimization: Achieved a 25% reduction in query execution time through optimization.
+Model Accuracy Boost: Improved model accuracy by 20% using NVIDIA TAO Toolkit.
+Bug Reduction: Reduced bug incidences by 30% through enhanced feature development.
+Efficiency Implementation: Increased workflow efficiency by 25% with optimized Python scripts.

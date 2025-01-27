@@ -1,0 +1,176 @@
+question,question_type,pre_ans,input_type,available_options
+Email address,Contact Information,mboro497@gmail.com,select,"[""Select an option"", ""mboro497@gmail.com""]"
+Phone country code,Contact Information,India (+91),select,"[""Select an option"", ""India (+91)"", ""Afghanistan (+93)"", ""Aland Islands (+358)"", ""Albania (+355)"", ""Algeria (+213)"", ""American Samoa (+1)"", ""Andorra (+376)"", ""Angola (+244)"", ""Anguilla (+1)"", ""Antarctica (+0)"", ""Antigua and Barbuda (+1)"", ""Argentina (+54)"", ""Armenia (+374)"", ""Aruba (+297)"", ""Australia (+61)"", ""Austria (+43)"", ""Azerbaijan (+994)"", ""Bahamas (+1)"", ""Bahrain (+973)"", ""Bangladesh (+880)"", ""Barbados (+1)"", ""Belarus (+375)"", ""Belgium (+32)"", ""Belize (+501)"", ""Benin (+229)"", ""Bermuda (+1)"", ""Bhutan (+975)"", ""Bolivia (+591)"", ""Bosnia and Herzegovina (+387)"", ""Botswana (+267)"", ""Bouvet Island (+0)"", ""Brazil (+55)"", ""British Indian Ocean Territory (+246)"", ""Brunei Darussalam (+673)"", ""Bulgaria (+359)"", ""Burkina Faso (+226)"", ""Burundi (+257)"", ""Cambodia (+855)"", ""Cameroon (+237)"", ""Canada (+1)"", ""Cape Verde (+238)"", ""Caribbean Nations (+0)"", ""Cayman Islands (+1)"", ""Central African Republic (+236)"", ""Chad (+235)"", ""Chile (+56)"", ""China (+86)"", ""Christmas Island (+61)"", ""Cocos (Keeling) Islands (+61)"", ""Colombia (+57)"", ""Comoros (+269)"", ""Congo (+242)"", ""Cook Islands (+682)"", ""Costa Rica (+506)"", ""Cote D\u2019Ivoire (Ivory Coast) (+225)"", ""Croatia (+385)"", ""Cuba (+53)"", ""Cyprus (+357)"", ""Czech Republic (+420)"", ""Democratic Republic of the Congo (+243)"", ""Denmark (+45)"", ""Djibouti (+253)"", ""Dominica (+1)"", ""Dominican Republic (+1)"", ""Ecuador (+593)"", ""Egypt (+20)"", ""El Salvador (+503)"", ""Equatorial Guinea (+240)"", ""Eritrea (+291)"", ""Estonia (+372)"", ""Ethiopia (+251)"", ""Falkland Islands (Malvinas) (+500)"", ""Faroe Islands (+298)"", ""Federated States of Micronesia (+691)"", ""Fiji (+679)"", ""Finland (+358)"", ""France (+33)"", ""French Guiana (+594)"", ""French Polynesia (+689)"", ""French Southern Territories (+0)"", ""Gabon (+241)"", ""Gambia (+220)"", ""Georgia (+995)"", ""Germany (+49)"", ""Ghana (+233)"", ""Gibraltar (+350)"", ""Greece (+30)"", ""Greenland (+299)"", ""Grenada (+1)"", ""Guadeloupe (+590)"", ""Guam (+1)"", ""Guatemala (+502)"", ""Guernsey (+44)"", ""Guinea (+224)"", ""Guinea-Bissau (+245)"", ""Guyana (+592)"", ""Haiti (+509)"", ""Heard Island and McDonald Islands (+0)"", ""Honduras (+504)"", ""Hong Kong (+852)"", ""Hungary (+36)"", ""Iceland (+354)"", ""Indonesia (+62)"", ""Iran (+98)"", ""Iraq (+964)"", ""Ireland (+353)"", ""Isle of Man (+44)"", ""Israel (+972)"", ""Italy (+39)"", ""Jamaica (+1)"", ""Japan (+81)"", ""Jersey (+44)"", ""Jordan (+962)"", ""Kazakhstan (+7)"", ""Kenya (+254)"", ""Kiribati (+686)"", ""Korea (+82)"", ""Korea (North) (+850)"", ""Kosovo (+383)"", ""Kuwait (+965)"", ""Kyrgyzstan (+996)"", ""Laos (+856)"", ""Latvia (+371)"", ""Lebanon (+961)"", ""Lesotho (+266)"", ""Liberia (+231)"", ""Libya (+218)"", ""Liechtenstein (+423)"", ""Lithuania (+370)"", ""Luxembourg (+352)"", ""Macao (+853)"", ""Macedonia (+389)"", ""Madagascar (+261)"", ""Malawi (+265)"", ""Malaysia (+60)"", ""Maldives (+960)"", ""Mali (+223)"", ""Malta (+356)"", ""Marshall Islands (+692)"", ""Martinique (+596)"", ""Mauritania (+222)"", ""Mauritius (+230)"", ""Mayotte (+262)"", ""Mexico (+52)"", ""Moldova (+373)"", ""Monaco (+377)"", ""Mongolia (+976)"", ""Montenegro (+382)"", ""Montserrat (+1)"", ""Morocco (+212)"", ""Mozambique (+258)"", ""Myanmar (+95)"", ""Namibia (+264)"", ""Nauru (+674)"", ""Nepal (+977)"", ""Netherlands (+31)"", ""Netherlands Antilles (+0)"", ""New Caledonia (+687)"", ""New Zealand (+64)"", ""Nicaragua (+505)"", ""Niger (+227)"", ""Nigeria (+234)"", ""Niue (+683)"", ""Norfolk Island (+672)"", ""Northern Mariana Islands (+1)"", ""Norway (+47)"", ""Pakistan (+92)"", ""Palau (+680)"", ""Palestinian Territory (+970)"", ""Panama (+507)"", ""Papua New Guinea (+675)"", ""Paraguay (+595)"", ""Peru (+51)"", ""Philippines (+63)"", ""Pitcairn (+0)"", ""Poland (+48)"", ""Portugal (+351)"", ""Puerto Rico (+1)"", ""Qatar (+974)"", ""Reunion (+262)"", ""Romania (+40)"", ""Russian Federation (+7)"", ""Rwanda (+250)"", ""S. Georgia and S. Sandwich Islands (+0)"", ""Saint Helena (+290)"", ""Saint Kitts and Nevis (+1)"", ""Saint Lucia (+1)"", ""Saint Pierre and Miquelon (+508)"", ""Saint Vincent and the Grenadines (+1)"", ""Samoa (+685)"", ""San Marino (+378)"", ""Sao Tome and Principe (+239)"", ""Saudi Arabia (+966)"", ""Senegal (+221)"", ""Serbia (+381)"", ""Serbia and Montenegro (+0)"", ""Seychelles (+248)"", ""Sierra Leone (+232)"", ""Singapore (+65)"", ""Slovak Republic (+421)"", ""Slovenia (+386)"", ""Solomon Islands (+677)"", ""Somalia (+252)"", ""South Africa (+27)"", ""South Sudan (+211)"", ""Spain (+34)"", ""Sri Lanka (+94)"", ""Sudan (+249)"", ""Sultanate of Oman (+968)"", ""Suriname (+597)"", ""Svalbard and Jan Mayen (+47)"", ""Swaziland (+268)"", ""Sweden (+46)"", ""Switzerland (+41)"", ""Syria (+963)"", ""Taiwan (+886)"", ""Tajikistan (+992)"", ""Tanzania (+255)"", ""Thailand (+66)"", ""Timor-Leste (+670)"", ""Togo (+228)"", ""Tokelau (+690)"", ""Tonga (+676)"", ""Trinidad and Tobago (+1)"", ""Tunisia (+216)"", ""Turkey (+90)"", ""Turkmenistan (+993)"", ""Turks and Caicos Islands (+1)"", ""Tuvalu (+688)"", ""Uganda (+256)"", ""Ukraine (+380)"", ""United Arab Emirates (+971)"", ""United Kingdom (+44)"", ""United States (+1)"", ""Uruguay (+598)"", ""Uzbekistan (+998)"", ""Vanuatu (+678)"", ""Vatican City State (Holy See) (+39)"", ""Venezuela (+58)"", ""Vietnam (+84)"", ""Virgin Islands (British) (+1)"", ""Virgin Islands (U.S.) (+1)"", ""Wallis and Futuna (+681)"", ""Western Sahara (+212)"", ""Yemen (+967)"", ""Zambia (+260)"", ""Zimbabwe (+263)""]"
+Mobile phone number,Contact Information,9101925089,text,[]
+How many years of work experience do you have with Microsoft Excel?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Python (Programming Language)?,Tech Specific Experience,2,text,[]
+Are you comfortable working in an onsite setting?,General Question,Yes,radio,"[""Yes"", ""No""]"
+How many years of work experience do you have with Amazon Web Services (AWS)?,Tech Specific Experience,2,text,[]
+Are you comfortable commuting to this job's location?,General Question,Yes,radio,"[""Yes"", ""No""]"
+Do you have any experience in GCP and AWS?,Tech Specific Experience,Select an option,select,"[""Select an option"", ""Yes"", ""No""]"
+Can you join within 30 Days?,Notice Period,Select an option,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience in SQL?,Tech Specific Experience,Select an option,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Core Java?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with React.js?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Microservices?,Tech Specific Experience,0,text,[]
+"Are you willing to undergo a background check, in accordance with local law/regulations?",General Question,Yes,radio,"[""Yes"", ""No""]"
+Kindly mention your ctc,Current CTC,517000,text,[]
+Please specify the number of days required before your joining,General Question,45,text,[]
+How many years of work experience do you have with TypeScript?,Tech Specific Experience,0,text,[]
+First name,Name,Manab,text,[]
+Last name,Name,Boro,text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+Have you completed the following level of education: Bachelor's Degree?,General Question,Yes,radio,"[""Yes"", ""No""]"
+How soon you can join (in days)?,General Question,45,text,[]
+This is only an internship opportunity for 3 months. Would you be interested? ,General Question,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you open to 5 days work from office in Bengaluru?,General Question,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Specify your relevant years of experience,Tech Specific Experience,Yes,select,"[""Select an option"", ""None"", ""1-3 years"", ""3-6 years"", ""6-9 years"", ""9+ years""]"
+"How would you rate yourself on DS & Algorithms - arrays, string, queues, and stacks on a scale of 1-5? (5 being the highest)",Tech Specific Experience,3,select,"[""Select an option"", ""1 (Beginner)"", ""2 (Novice)"", ""3 (Average)"", ""4 (Above average)"", ""5 (Expert)""]"
+Can you solve LeetCode (medium/hard) coding problems?,Tech Specific Experience,Yes,radio,"[""1"", ""0""]"
+How do you rate yourself in problem solving on a scale of 1-5? (5 being the highest),Tech Specific Experience,3,select,"[""Select an option"", ""1 (Beginner)"", ""2 (Novice)"", ""3 (Average)"", ""4 (Above average)"", ""5 (Expert)""]"
+Do you have experience in System Design - LLD and HLD?,Tech Specific Experience,Yes,radio,"[""1"", ""0""]"
+Do you have experience building distributed systems / large scale applications?,Tech Specific Experience,No,radio,"[""1"", ""0""]"
+Please indicate your last CTC,Current CTC,517000,text,[]
+Please indicate your last RSU,General Question,0,text,[]
+Please indicate your nationality,General Question,Indian,text,[]
+Please indicate your citizenship,General Question,Indian,text,[]
+Do you hold a valid work permit for the country where the job is located?,General Question,Yes,radio,"[""1"", ""0""]"
+Have you been previously employed with Freshworks?,General Question,No,radio,"[""1"", ""0""]"
+Gender,General Question,Male,select,"[""Select an option"", ""Male"", ""Female"", ""Nonbinary"", ""I choose not to disclose""]"
+Do you require sponsorship to legally work in the job location?,General Question,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you ever worked for Cyderes or any of its subsidiaries or acquired organizations?,General Question,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have relatives who work for Cyderes?,General Question,No,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your desired Annual Salary?,Expected CTC,850000,text,[]
+LinkedIn,General Question,https://www.linkedin.com/in/manab-boro-875051217/,text,[]
+Current company,General Question,Triedatum,text,[]
+How many years of work experience do you have with Microsoft Products?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Microsoft Power Apps?,Tech Specific Experience,2,text,[]
+How many years of Information Technology experience do you currently have?,Tech Specific Experience,2,text,[]
+Location (city),Contact Information,Guwahati,text,[]
+Summary,General Question,,unknown,[]
+Cover letter,General Question,,unknown,[]
+How many years of work experience do you have with AWS Lambda?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with AWS Glue?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with MySQL?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Informatica?,Tech Specific Experience,No,text,[]
+How many years of work experience do you have with Databases?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Oracle Forms?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Oracle Reports?,Tech Specific Experience,0,text,[]
+Location (city),Contact Information,Guwahati,text,[]
+Street address line 1,Contact Information,"Guwahati, Assam, India",text,[]
+City,Contact Information,"Guwahati, Assam, India",text,[]
+State,Contact Information,Assam,text,[]
+ZIP / Postal Code,Contact Information,781354,text,[]
+How many years of work experience do you have with Java?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with SQL?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Azure SQL?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Azure Data Factory?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Azure Databricks?,Tech Specific Experience,0,text,[]
+Current CTC,Current CTC,517000,text,[]
+Expected CTC,Expected CTC,850000,text,[]
+What is your official Notice Period,General Question,30,text,[]
+Is Notice Period negotiable?,General Question,Yes,text,[]
+What is your total work experience?,Tech Specific Experience,2,text,[]
+Do you have experience in Snowflake?,Tech Specific Experience,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Performance Tuning?,Tech Specific Experience,No,text,[]
+How many years of work experience do you have with Query Writing?,Tech Specific Experience,2,text,[]
+How many years of experience do you have as a Data Engineer?,Tech Specific Experience,2,text,[]
+"Do you have experience in working with Monitoring and Alerting tool ? If yes, please specify.",Tech Specific Experience,,unknown,[]
+What kind of Database you have previously worked with?,Tech Specific Experience,,unknown,[]
+Please specify the Cloud providers you have previously worked with.,Tech Specific Experience,,unknown,[]
+What is your current CTC?,Expected CTC,517000,text,[]
+What is your expected CTC? Is it negotiable?,Expected CTC,850000,text,[]
+How soon can you join us if selected? (Notice Period),General Question,,text,[]
+Are you comfortable with working on site at Ahmedabad?,Tech Specific Experience,45,text,[]
+How many years of work experience do you have with PySpark?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Hadoop?,Tech Specific Experience,1,text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+City,Contact Information,"Guwahati, Assam, India",text,[]
+City,Contact Information,"Guwahati, Assam, India",text,[]
+How many years of work experience do you have with Microsoft SQL Server?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with .NET Core?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Angular 11 version or plus version?,Tech Specific Experience,0,text,[]
+Are you comfortable with budget upto 10-12 lpa only?,Expected CTC,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+City,Contact Information,Pune,text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+How many years of work experience do you have with Apache Spark?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Google Cloud Platform (GCP)?,Tech Specific Experience,0,text,[]
+Location (city),Contact Information,"Guwahati, Assam, India",text,[]
+How many years of work experience do you have with Automotive?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Android Development?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with AAOS and AOSP?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Splunk?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with 24x7 Production Support?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Site Reliability Engineering?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Functional Testing?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Corporate Actions?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with QA Automation?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Selenium?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Drupal?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Content Management Systems (CMS)?,Tech Specific Experience,0,text,[]
+Are you comfortable working in a remote setting?,General Question,Yes,radio,"[""Yes"", ""No""]"
+Total Experience,Tech Specific Experience,2,text,[]
+Notice Period,General Question,30,text,[]
+Please enter your Annual Current CTC in INR:,Current CTC,"5,00,000 to 8,00,000 INR",select,"[""Select an option"", ""0 to 200000 INR"", ""2,00,000 to 5,00,000 INR"", ""5,00,000 to 8,00,000 INR"", ""8,00,000 to 11,00,000 INR"", ""11,00,000 to 15,00,000 INR"", ""15,00,000 to 20,00,000 INR"", ""Greater than 20,00,000 INR""]"
+Please enter your Annual Expected CTC in INR:,Expected CTC,"8,00,000 to 11,00,000 INR",select,"[""Select an option"", ""0 to 200000 INR"", ""2,00,000 to 5,00,000 INR"", ""5,00,000 to 8,00,000 INR"", ""8,00,000 to 11,00,000 INR"", ""11,00,000 to 15,00,000 INR"", ""15,00,000 to 20,00,000 INR"", ""20,00,000 to 25,00,000 INR"", ""25,00,000 to 30,00,000 INR""]"
+Are you willing to relocate?,General Question,1,radio,"[""1"", ""0""]"
+Please select your highest education qualification:,General Question,PG,select,"[""Select an option"", ""UG"", ""PG"", ""Diploma"", ""Others""]"
+Please select your notice period with your current Employer:,General Question,0 to 30 days,select,"[""Select an option"", ""0 to 30 days"", ""30 to 60 days"", ""60 to 90 days""]"
+Have you worked with Nielsen in the past ?,General Question,0,radio,"[""1"", ""0""]"
+Are you legally authorized to work in the country for which you are applying?,General Question,1,radio,"[""1"", ""0""]"
+Confirmed,General Question,Yes,checkbox,[]
+How many years of work experience do you have with Relational Databases?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Talend?,Tech Specific Experience,0,text,[]
+What is your ECTC,Expected CTC,0,text,[]
+How soon can you join if selected?,Expected CTC,45,text,[]
+How many years of work experience do you have with TensorFlow?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with PyTorch?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Large Language Models (LLM)?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with JavaScript?,Tech Specific Experience,0,text,[]
+What is your Current Annual Salary?,Current CTC,517000,unknown,[]
+What is your Expected Annual Salary ?,Expected CTC,850000,unknown,[]
+What is your notice period?,Tech Specific Experience,30,unknown,[]
+How many years of work experience do you have with Node.js?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Software as a Service (SaaS)?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Flutter?,Tech Specific Experience,0,text,[]
+Do you have experience with AI?,Tech Specific Experience,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on LangGraph?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on LangChain?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on React?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on UI/UX?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on Docker?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Did you worked on Kubernetes?,Tech Specific Experience,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your level of proficiency in English?,General Question,Professional,select,"[""Select an option"", ""None"", ""Conversational"", ""Professional"", ""Native or bilingual""]"
+How many years of work experience do you have with Laravel?,Tech Specific Experience,0,text,[]
+How many years of work experience do you have with Django?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Django REST Framework?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Machine Tools?,Tech Specific Experience,No,text,[]
+How many years of work experience do you have with File Transformation?,Tech Specific Experience,No,text,[]
+How many years of work experience do you have with XML?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Apache Spark?,Tech Specific Experience,1,text,[]
+How many years of work experience do you have with Relational databases(Microsoft SQL Server/ PostgreSQL/ Oracle Database/ MySQL)?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with Apache Airflow(DAG Flow)?,Tech Specific Experience,2,text,[]
+How many years of work experience do you have with RegEX?,Tech Specific Experience,1,text,[]
+"The job location is Ahmedabad, Gujarat (WFO). If you are not from Ahmedabad, are you ready to relocate to Ahmedabad?",Tech Specific Experience,yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of Software Development experience do you currently have?,Tech Specific Experience,1,text,[]
+What is your expected CTC?,Expected CTC,850000,text,[]
+Any experience working with LangChain (or) AI?,Tech Specific Experience,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked in a startup?,Tech Specific Experience,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you based in Bangalore,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+This is a work from office opportunity- are you aligned with that?,General Question,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Generative AI?,Tech Specific Experience,0,text,[]
+Have you completed the following level of education: Master's Degree?,General Question,Yes,radio,"[""Yes"", ""No""]"
+"Do you have experience deploying large language models (LLMs) using frameworks like PyTorch, TensorFlow, or Hugging Face?",Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon can you join if selected? Give the no of days.,General Question,45,text,[]
+Your current Annual CTC in Rs. (LPA),Current CTC,5.17,text,[]
+Expected Annual CTC in Rs. (LPA),Expected CTC,8.5,text,[]
+Do you have experience integrating LLM-based APIs into applications?,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+CTC,Current CTC,517000,text,[]
+ECTC,Expected CTC,850000,text,[]
+LWD,General Question,NA,text,[]
+Any Speech Processing Experience? Like Speech Recognition/ Speaker Verification/ Speaker Diarization/ Speaker Recognition/ Text to Speech/ Speech LLM/ Speech Enhancement. ,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Hands-on Experience in using speech processing toolkits? Like Kaldi / NeMo / SpeechBrain / Espnet2 / Any other relevant toolkits,Tech Specific Experience,No,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Machine Learning?,Tech Specific Experience,0,text,[]
