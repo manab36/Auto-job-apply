@@ -1,0 +1,54 @@
+WORK EXPERINCE
+Triedatum Inc
+	Software Engineer | Remote, Jan 2022- Present
+	Optimized Snowflake queries, reducing query execution time by 25% and supporting critical business intelligence initiatives.
+	Engineered and automated business report generation pipelines using dbt, Apache Airflow, and Python, streamlining processes by 40% and delivering insights with improved efficiency.
+	Managed seamless integration of report uploads to Amazon S3 and SFTP servers, ensuring 100% on-time delivery and uninterrupted data access for stakeholders.
+	Executed manual testing protocols, identifying and addressing 95% of data integrity issues, ensuring zero critical errors in production.
+	Demonstrated strong cross-functional collaboration, delivering results under tight deadlines and earning an Excellence in Performance Award for outstanding contributions.
+
+Paralaxiom Technologies
+	Associate Software Engineer | Bengalore, June 2022- Nov 2022
+	Leveraged NVIDIA TAO Toolkit to train deep learning models, achieving a 20% improvement in model accuracy and enhancing predictive capabilities in real-world applications.
+	Implemented mAP evaluation metrics within NVIDIA DeepStream, improving model performance evaluation accuracy by 15% and driving effective refinements.
+	Debugged and enhanced features in NVIDIA DeepStream, reducing bug incidences by 30% and improving system robustness and reliability.
+	Optimized Python scripts for dataset preprocessing and task automation, boosting workflow efficiency by 25% and accelerating model training cycles.
+	Collaborated with cross-functional teams to deploy scalable solutions, demonstrating a commitment to operational excellence.
+	Recognized for exceptional problem-solving and technical contributions, consistently exceeding project expectations.
+
+	Software Engineer Intern | Remote, June 2022- Nov 2022
+	Assisted in training deep learning models using NVIDIA TAO Toolkit, contributing to a 20% improvement in model accuracy and gaining practical experience in predictive applications.
+	Supported mAP implementation in NVIDIA DeepStream, enhancing model performance evaluation by 15% and facilitating effective optimization.
+	Debugged and tested features in NVIDIA DeepStream, reducing system bugs by 30% and improving production environment reliability.
+	Developed Python scripts for dataset preprocessing and automation, boosting workflow efficiency by 25% and accelerating data preparation for training pipelines.
+	Collaborated with team members to deliver scalable AI solutions, demonstrating adaptability and delivering quality support on time-sensitive tasks.
+
+
+PROJECTS
+Implemented VF2 Algorithm for Sub-graph Isomorphism Problem
+Tezpur University | 2022
+	Developed and implemented the VF2 algorithm in C, solving the Sub-graph Isomorphism Problem, addressing complex graph-matching challenges with efficient solutions.
+	Designed and built a Python-based visualization tool, transforming performance matrices into interactive dashboards, reducing analysis time by 40% and enabling faster insights into algorithmic behavior.
+	Gained hands-on experience in algorithm design and programming, fostering strong problem-solving skills and contributing to improved collaboration and project outcomes.
+
+Auto EDA
+Project Link: https://manab36.github.io/AutoEDA
+	Developed an automated Exploratory Data Analysis (EDA) tool using pandas and parallel processing, enabling efficient analysis and visualization of large datasets with improved performance.
+	Automated key EDA tasks, including data cleaning, summary statistics generation, visualization, and feature analysis, providing a comprehensive, user-friendly overview of datasets.
+	Optimized data processing workflows using parallel computing techniques, significantly reducing computation time and ensuring the tool’s effectiveness for large-scale datasets.
+		
+
+SKILLS
+Python | Java | Snowflake | Django REST Framework | GitHub | Apache Airflow | Snowflake | dbt | PostgreSQL | MySQL | Numpy | Pandas | OpenCV | Matplotlib | Seaborn
+
+
+CERTIFICATIONS
+Core Java, RCPL 
+	Jun 2017
+Data Science, Cutshort 
+	Aug 2024
+	https://cutshort.io/certificate/101679
+SQL (Advanced), HackerRank 
+	Aug 2024
+	https://www.hackerrank.com/certificates/0ab4d054280c
+

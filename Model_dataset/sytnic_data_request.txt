@@ -1,0 +1,25 @@
+For each of this types
+['general question', 'tech specific experience']
+make a synthetic data of 10 rows of each
+
+1. ans based on my cv
+2. Total work of experince 2.4 years
+3. Total Data Engineer experience 2 years
+4. Ans should be as short as possible
+make a csv: question, type of question, ans 
+
+Note: 
+	1. Questions that were asked in typical [
+    'Data Engineer',
+    'Python Developer',
+    'Python Engineer',
+    'Software Engineer',
+    'Software Developer',
+    'Data Scientist',
+], etc related roles are asked in job filling form and 
+	2. each questions should be unique
+	3. each ans should be correct
+
+
+example:
+How many years of work experience do you have with SQL?,Tech Specific Experience,2
