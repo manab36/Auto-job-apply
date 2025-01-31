@@ -51,6 +51,7 @@ class LinkedinJobApply(Linkedin):
         """
         super().__del__()
 
+
     def run(self):
         """
         Orchestrates the end-to-end job application process on LinkedIn.
@@ -294,6 +295,7 @@ class LinkedinJobApply(Linkedin):
         except Exception as e:
             logger.error(f"Processing job: {e}")
 
+
     def easy_apply_jobs_apply(self):
         return
         """
@@ -403,7 +405,6 @@ class LinkedinJobApply(Linkedin):
         finally:
             logger.info(f"Closed job form. submitted- {is_submited}")
     
-
     def _job_form_get_and_insert_qa(self, element):
         """
         Helper of "easy_apply_jobs_apply"
@@ -418,6 +419,7 @@ class LinkedinJobApply(Linkedin):
         input_type = 'unknown'
         pre_ans = None
         predicted_ans = None
+        predicted_question_type= None
         available_options = []
 
         # Extract the question label
@@ -439,10 +441,6 @@ class LinkedinJobApply(Linkedin):
             pre_ans = select.first_selected_option.text.strip()
             available_options = [option.text.strip() for option in select.options]
 
-        elif input_type in ['text', 'email', 'tel']:
-            # Handle text-based inputs
-            pre_ans = input_element.get_attribute('value').strip()
-
         elif input_type == 'radio':
             try:
                 question = element.find_element(By.XPATH, './/span[@data-test-form-builder-radio-button-form-component__title]').text.split("\n")[0]
@@ -456,6 +454,9 @@ class LinkedinJobApply(Linkedin):
                     pre_ans = radio.get_attribute('value')
                 # Collect all available options
                 available_options.append(radio.get_attribute('value'))
+        else:
+            # Handle text-based inputs
+            pre_ans = input_element.get_attribute('value').strip()
 
         # Build the question dictionary
         question_dict = {
@@ -463,6 +464,7 @@ class LinkedinJobApply(Linkedin):
             "pre_ans": pre_ans if pre_ans else '',
             "predicted_ans": predicted_ans,
             "input_type": input_type,
+            "predicted_question_type": predicted_question_type,
             "available_options": available_options
         }
 

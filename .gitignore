@@ -163,7 +163,7 @@ cython_debug/
 
 
 # Custom
-temp/
+.temp/
 Browser_cahche/
 DataBase/
 Logger/

@@ -7,11 +7,11 @@ source auto_apply_evn/bin/activate
 """
 
 
-# Linkedin()
+# # Linkedin()
 # LinkedinJobApply_obj= LinkedinJobApply()
 # LinkedinJobApply_obj.run()
 
-LinkedinJobApply_obj= LinkedinPostScrape()
-LinkedinJobApply_obj.run()
+# LinkedinJobApply_obj= LinkedinPostScrape()
+# LinkedinJobApply_obj.run()
 
 

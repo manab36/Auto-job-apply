@@ -1,5 +1,7 @@
 import os
 import logging
+import torch
+from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification
 
 
 # Change what type of job needs to be searched
@@ -12,9 +14,31 @@ JOB_TITLES = [
     'Data Scientist',
 ]
 JOB_LOCATIONS = 'India'
-LINKEDIN_MAX_PAGES_TO_LOAD_PER_JOB_TITLES= 5
+LINKEDIN_MAX_PAGES_TO_LOAD_PER_JOB_TITLES= 50
 LINKEDIN_POST_TO_PROCESS= 1000
 
+
+# prediction Model
+QUESTION_TYPES= [   
+    "current_ctc",
+    "expected_ctc",
+    "personal_information",
+    "education",
+    "working_experince",
+    "skills",
+    "availability",
+    "others",
+ ]
+
+#Models
+# MOCEL_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+q_type_model= 'model/fine_tuned_question_classifier_model-lite'
+QUESTION_CLASSIFER_MODEL= DistilBertForSequenceClassification.from_pretrained(q_type_model)
+# QUESTION_CLASSIFER_MODEL.to(MOCEL_DEVICE)  # Move model to GPU if available
+QUESTION_CLASSIFER_MODEL.eval()
+
+QUESTION_CLASSIFER_TOKENIZER= DistilBertTokenizerFast.from_pretrained(q_type_model)
+ID2LABEL = QUESTION_CLASSIFER_MODEL.config.id2label
 
 
 # Path variables
