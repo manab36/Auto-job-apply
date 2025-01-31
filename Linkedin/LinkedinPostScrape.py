@@ -50,7 +50,7 @@ class LinkedinPostScrape(Linkedin):
                 self._apply_more_option(specific_div)
                 
                 # Get the link of the post
-                post_link= self._get_post_link(specific_div)
+                post_link= self._get_post_link(specific_div) if LINKEDIN_GET_POST_LINK else ""
                 
                 post_div_card = specific_div.get_attribute('outerHTML')
                 post_details_json= self._get_post_details_json(post_div_card)

@@ -98,7 +98,7 @@ class LinkedinJobApply(Linkedin):
                         job_details= self._get_job_details_to_json(job)
                         if job_details["is_easy_apply"]== 'Y' and reach_daily_easy_apply_limit:
                             is_submited= self.easy_apply_jobs_apply()
-                        job_details["job_details"]= is_submited
+                        job_details["is_submited"]= 'Y' if is_submited else 'N'
                         df= pd.DataFrame([job_details])
                         dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, df)
                 # <---- end here
@@ -153,7 +153,7 @@ class LinkedinJobApply(Linkedin):
 
                 time.sleep(2)
 
-            if False:    #apply application timeline ie 24 hours ago only
+            if LINKEDIN_APPLY_24_HOURS_FILTER:    #apply application timeline ie 24 hours ago only
                 date_posted_filter = WebDriverWait(self.browser_driver, 10).until(
                     EC.presence_of_element_located((By.ID, "searchFilter_timePostedRange"))
                 )
@@ -172,7 +172,7 @@ class LinkedinJobApply(Linkedin):
 
                 time.sleep(3)
             
-            if True:    #  apply easy apply option
+            if LINKEDIN_APPLY_EASY_OPTION:    #  apply easy apply option
                 easy_apply_filter = WebDriverWait(self.browser_driver, 10).until(
                     EC.presence_of_element_located((By.ID, "searchFilter_applyWithLinkedin"))
                 )
@@ -297,7 +297,6 @@ class LinkedinJobApply(Linkedin):
 
 
     def easy_apply_jobs_apply(self):
-        return
         """
         Handles the Easy Apply form submission process for LinkedIn jobs.
         Fills in required fields, clicks through the form, and attempts to submit the application.
@@ -313,6 +312,10 @@ class LinkedinJobApply(Linkedin):
         is_submited= False
         element_type= ''
         
+        if self._easy_apply_limit_reach():
+            time.sleep(1)
+            return
+        
         list_of_qa= []
         try: 
             easy_apply_button = WebDriverWait(self.driver, 10).until(
@@ -320,10 +323,7 @@ class LinkedinJobApply(Linkedin):
             )
             easy_apply_button.click()
             time.sleep(2)
-            if self._easy_apply_limit_reach():
-                time.sleep(1)
-                return
-
+            
             while True: # while there is a next botton click next:
                 temp_list_of_qa= []
                 # Locate the form
@@ -377,9 +377,11 @@ class LinkedinJobApply(Linkedin):
             self._job_form_unfollow_comapny()
             time.sleep(1)
             
-            # After filling in the form, check if the "Submit application" button is available and click it
-            is_submited= self._job_form_submit_option()   ################################
-            time.sleep(2)
+            if LINKEDIN_GET_SUBMIT_JOB_APPLICATION:
+                # After filling in the form, check if the "Submit application" button is available and click it
+                is_submited= self._job_form_submit_option()   ################################
+                time.sleep(2)
+            
             #close the form
             self._job_form_close_div_cross()
             time.sleep(2)
@@ -414,6 +416,7 @@ class LinkedinJobApply(Linkedin):
         Returns:
             dict: A dictionary containing question, input type, pre-filled answers, and available options.
         """
+        element_type= ''
         # Initialize variables
         question = ''
         input_type = 'unknown'
@@ -422,74 +425,98 @@ class LinkedinJobApply(Linkedin):
         predicted_question_type= None
         available_options = []
 
-        # Extract the question label
-        question = element.find_element(By.TAG_NAME, 'label').text.strip().split("\n")[0]
-                        
-        # Check input type
-        input_element = None
-        if element.find_elements(By.TAG_NAME, 'select'):
-            input_element = element.find_element(By.TAG_NAME, 'select')
-            input_type = 'select'
-        elif element.find_elements(By.TAG_NAME, 'input'):
-            input_element = element.find_element(By.TAG_NAME, 'input')
-            input_type = input_element.get_attribute('type')
+        try:
+            if True:
+                # Extract the question label
+                element_type= 'question text'
+                question = element.find_element(By.TAG_NAME, 'label').text.strip().split("\n")[0]
 
-        # Check for pre-selected or pre-filled values and available options
-        if input_type == 'select':
-            # Handle dropdown (select element)
-            select = Select(input_element)
-            pre_ans = select.first_selected_option.text.strip()
-            available_options = [option.text.strip() for option in select.options]
 
-        elif input_type == 'radio':
-            try:
-                question = element.find_element(By.XPATH, './/span[@data-test-form-builder-radio-button-form-component__title]').text.split("\n")[0]
-            except Exception as e:
-                question = "Unknown question"
-            # Handle radio buttons
-            radio_buttons = element.find_elements(By.XPATH, ".//input[@type='radio']")
-            for radio in radio_buttons:
-                # Check if radio is pre-selected
-                if radio.is_selected():
-                    pre_ans = radio.get_attribute('value')
-                # Collect all available options
-                available_options.append(radio.get_attribute('value'))
-        else:
-            # Handle text-based inputs
-            pre_ans = input_element.get_attribute('value').strip()
+            if True:    
+                # Check input type
+                input_element = None
+                element_type= 'answer type'
+                if element.find_elements(By.TAG_NAME, 'select'):
+                    input_element = element.find_element(By.TAG_NAME, 'select')
+                    input_type = 'select'
+                elif element.find_elements(By.TAG_NAME, 'input'):
+                    input_element = element.find_element(By.TAG_NAME, 'input')
+                    input_type = input_element.get_attribute('type')
 
-        # Build the question dictionary
-        question_dict = {
-            "question": question,
-            "pre_ans": pre_ans if pre_ans else '',
-            "predicted_ans": predicted_ans,
-            "input_type": input_type,
-            "predicted_question_type": predicted_question_type,
-            "available_options": available_options
-        }
+            if True:
+                # Check for pre-selected or pre-filled values and available options
+                if input_type == 'select':
+                    # Handle dropdown (select element)
+                    select = Select(input_element)
+                    pre_ans = select.first_selected_option.text.strip()
+                    available_options = [option.text.strip() for option in select.options]
+                elif input_type == 'radio':
+                    try:
+                        question = element.find_element(By.XPATH, './/span[@data-test-form-builder-radio-button-form-component__title]').text.split("\n")[0]
+                    except Exception as e:
+                        question = "Unknown question"
+                    # Handle radio buttons
+                    element_type= 'radio options'
+                    radio_buttons = element.find_elements(By.XPATH, ".//input[@type='radio']")
+                    for radio in radio_buttons:
+                        # Check if radio is pre-selected
+                        if radio.is_selected():
+                            pre_ans = radio.get_attribute('value')
+                        # Collect all available options
+                        available_options.append(radio.get_attribute('value'))
+                else:
+                    # Handle text-based inputs
+                    pre_ans = input_element.get_attribute('value').strip()
 
-        # Set predicted answer if no pre-entered value
-        if input_type == 'radio' and available_options:
-            predicted_ans = predict_ans(question_dict)
-            for radio in radio_buttons:
-                if radio.get_attribute('value') == predicted_ans:
-                    label_for_radio = element.find_element(By.XPATH, f".//label[@for='{radio.get_attribute('id')}']")
-                    label_for_radio.click()
-                    break
-        if not pre_ans or pre_ans.lower()== 'select an option':
-            if input_type == 'select' and available_options:
-                predicted_ans= predict_ans(question_dict)
-                select.select_by_index(predicted_ans)
-                predicted_ans= available_options[predicted_ans]
-                
-            elif input_type in ['text', 'email', 'others']:
-                predicted_ans = predict_ans(question_dict)
-                input_element.send_keys(predicted_ans)
-                
+            # Build the question dictionary
+            question_dict = {
+                "question": question,
+                "pre_ans": pre_ans if pre_ans else '',
+                "predicted_ans": predicted_ans,
+                "input_type": input_type,
+                "predicted_question_type": predicted_question_type,
+                "available_options": available_options
+            }
+            #get the valued from the model
+            predicted_question_type, predicted_ans = predict_ans(question_dict)
             question_dict["predicted_ans"]= predicted_ans
+            question_dict["predicted_question_type"]= predicted_question_type
 
-        logger.debug("Got the QA from the current QA")
-        return question_dict
+            if True:
+                # putting the ans based on the input type aceepted
+                if input_type == 'radio' and available_options:
+                    for radio in radio_buttons:
+                        if radio.get_attribute('value') == predicted_ans:
+                            element_type= 'radio options'
+                            label_for_radio = element.find_element(By.XPATH, f".//label[@for='{radio.get_attribute('id')}']")
+                            label_for_radio.click()
+                            break
+                elif input_type == 'radio' and not available_options:
+                    pass
+                    # if not pre_ans or pre_ans.lower()== 'select an option':
+                elif input_type == 'select' and available_options:
+                    try:
+                        index_of_first_occurrence= available_options.index(predicted_ans)
+                    except:
+                        index_of_first_occurrence= 0
+                    select.select_by_index(index_of_first_occurrence)
+                elif input_type == 'select' and not available_options:
+                    pass
+                else:
+                    input_element.clear()
+                    input_element.send_keys(predicted_ans)
+
+            logger.debug("Got the QA from the current QA")
+            return question_dict
+        except InvalidSessionIdException as e:
+            logger.error(f"Invalid session IDdetected. Restarting the session....")
+            #super().start_browser_driver_and_login()
+        except TimeoutException:
+            logger.error(f"Time out detected.")
+        except NoSuchElementException:
+            logger.warning(f"Can't find element type {element_type}")
+        except Exception as e:
+            logger.error(f"Applying job: {e}")
 
     def _job_form_check_error_input(self):
         """
