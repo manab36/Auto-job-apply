@@ -89,10 +89,10 @@ venv/
 .vscode/
 
 # Custom
-temp/
+.temp/
 Browser_cahche/
 DataBase/
 Logger/
 auto_apply_evn/
-model/
+model_results/
 
