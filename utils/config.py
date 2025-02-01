@@ -1,8 +1,5 @@
 import os
 import logging
-import torch
-from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification, T5ForConditionalGeneration, T5Tokenizer
-import json
 
 
 
@@ -23,35 +20,6 @@ LINKEDIN_GET_SUBMIT_JOB_APPLICATION= False
 LINKEDIN_APPLY_EASY_OPTION= True
 LINKEDIN_APPLY_24_HOURS_FILTER= False
 
-# prediction Model
-QUESTION_TYPES= [   
-    "current_ctc",
-    "expected_ctc",
-    "personal_information",
-    "education",
-    "working_experince",
-    "skills",
-    "availability",
-    "others",
-    ]
-with open("Model_dataset/cv.json", "r") as file:
-    CV_DATA= json.load(file)
-
-
-#Models
-q_type_model= 'model/fine_tuned_question_classifier_model_lite-AdamW'
-# MOCEL_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-QUESTION_CLASSIFIER = DistilBertForSequenceClassification.from_pretrained(q_type_model)
-QUESTION_CLASSIFIER.eval()
-# QUESTION_CLASSIFER_MODEL.to(MOCEL_DEVICE)  # Move model to GPU if available
-
-qa_type_model= "t5-large"
-QUESTION_ANSWER_MODEL = T5ForConditionalGeneration.from_pretrained(qa_type_model)
-QUESTION_ANSWER_MODEL.eval()
-QUESTION_ANSWER_TOKENIZER = T5Tokenizer.from_pretrained(qa_type_model, legacy= False)
-
-QUESTION_CLASSIFIER_TOKENIZER = DistilBertTokenizerFast.from_pretrained(q_type_model)
-ID2LABEL = QUESTION_CLASSIFIER.config.id2label
 
 
 # Path variables
