@@ -1,9 +1,9 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import InvalidSessionIdException
@@ -23,10 +23,7 @@ This module contains the `LinkedinJobApply` class, which automates job searching
 """
 """
 TODO:   
-    1. Handle radio option--> not able to click for few options --->_job_form_get_and_insert_qa
-    2. Handle select---> error when there is not selected anything ---> _job_form_get_and_insert_qa
-    3. 24 hours filter redo
-    4. add error+ logger handling in _job_form_get_and_insert_qa()
+    1. Handle text that turn select--> While putting few of the questions like address it turns as select--->_job_form_get_and_insert_qa
 """
 
 
@@ -96,7 +93,7 @@ class LinkedinJobApply(Linkedin):
                         logger.debug(f"current job linkedin url: {self.browser_driver.current_url}")
                         is_submited= False
                         job_details= self._get_job_details_to_json(job)
-                        if job_details["is_easy_apply"]== 'Y' and reach_daily_easy_apply_limit:
+                        if job_details["is_easy_apply"]== 'Y' and not reach_daily_easy_apply_limit:
                             is_submited= self.easy_apply_jobs_apply()
                         job_details["is_submited"]= 'Y' if is_submited else 'N'
                         df= pd.DataFrame([job_details])
@@ -263,7 +260,7 @@ class LinkedinJobApply(Linkedin):
         return keys:
             'job_title', 'job_location', 'job_posted', 'total_applicant', 'company_name', 'company_link', 
             'company_type', 'company_size', 'company_size_on_linkedin', 'job_description', 
-            'job_linkedin_link', 'is_easy_apply', 'emails_found', 'confidence_score', 'applied_Successfully'
+            'job_linkedin_link', 'is_easy_apply', 'emails_found', 'confidence_score'    #, 'applied_Successfully'
         '''
         try:
             job_description_html = self.browser_driver.find_element(By.CSS_SELECTOR, "[class*='jobs-search__job-details--wrapper']").get_attribute('outerHTML')
@@ -285,7 +282,7 @@ class LinkedinJobApply(Linkedin):
             job_details["emails_found"]= ', '.join(emails_found) if emails_found else ''
 
             job_details["confidence_score"]= 'N/A'
-            job_details["applied_Successfully"]= 'N'
+            # job_details["applied_Successfully"]= 'N'
 
             logger.debug("Scraped Job details from current job card")
             return job_details
@@ -325,12 +322,14 @@ class LinkedinJobApply(Linkedin):
             time.sleep(2)
             
             while True: # while there is a next botton click next:
-                temp_list_of_qa= []
+                # temp_list_of_qa= []
                 # Locate the form
                 element_type= 'form_elements'
                 form_elements = self.browser_driver.find_elements(By.CSS_SELECTOR, 'div[data-test-form-element]')
                 for element in form_elements:
-                    temp_list_of_qa.append(self._job_form_get_and_insert_qa(element))
+                    data= self._job_form_get_and_insert_qa(element)
+                    # temp_list_of_qa.append(data) if data else ''
+                    list_of_qa.append(data) if data else ''
                 
                 if self._job_form_check_error_input():
                     logger.warning("Encounter error in the form input")
@@ -369,7 +368,7 @@ class LinkedinJobApply(Linkedin):
                 
                 
                 #only storing when succefull clicked next/review
-                list_of_qa+= temp_list_of_qa
+                # list_of_qa+= temp_list_of_qa
 
             self._job_form_scroll_to_bottom()
             time.sleep(1)
@@ -389,9 +388,10 @@ class LinkedinJobApply(Linkedin):
             self._job_form_discard_option()
             time.sleep(2)
             
-            df= pd.DataFrame(list_of_qa)
-            if not df.empty:
-                df["applied_successfully"]= 'N'
+            # print(f"list_of_qa: {list_of_qa}, type= {type(list_of_qa[0])}")
+            if list_of_qa:
+                df= pd.DataFrame(list_of_qa)
+                df["applied_successfully"]= 'Y' if is_submited else 'N'
                 dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_FORM_QA_TABLE, df)
             return is_submited
 
@@ -424,7 +424,7 @@ class LinkedinJobApply(Linkedin):
         predicted_ans = None
         predicted_question_type= None
         available_options = []
-
+        got_model_output= False
         try:
             if True:
                 # Extract the question label
@@ -478,11 +478,15 @@ class LinkedinJobApply(Linkedin):
                 "available_options": available_options
             }
             #get the valued from the model
-            predicted_question_type, predicted_ans = predict_ans(question_dict)
-            question_dict["predicted_ans"]= predicted_ans
-            question_dict["predicted_question_type"]= predicted_question_type
-
-            if True:
+            try:
+                predicted_question_type, predicted_ans = predict_ans(question_dict)
+                question_dict["predicted_ans"]= predicted_ans
+                question_dict["predicted_question_type"]= predicted_question_type
+                got_model_output= True
+            except Exception as e:
+                logger.error(f"Unable to load model output, error: {e}")
+            # print(f"\n\ngot_model_output: {got_model_output}\n\n")
+            if got_model_output:
                 # putting the ans based on the input type aceepted
                 if input_type == 'radio' and available_options:
                     for radio in radio_buttons:
@@ -614,7 +618,7 @@ class LinkedinJobApply(Linkedin):
                 logger.info("Hit daily easy apply limit")
                 return True
         except NoSuchElementException:
-            logger.warning("Cant find daily limit warning")
+            logger.debug("Cant find daily limit warning")
         except Exception as e:
             logger.error(f"Cant find the submit button: {e}")
 
