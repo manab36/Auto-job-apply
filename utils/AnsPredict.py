@@ -21,7 +21,7 @@ q_type_models= [
         'model/fine_tuned_question_classifier_model_lite-default',
         'model/fine_tuned_question_classifier_model_lite-Adam',
         'model/fine_tuned_question_classifier_model_lite-AdamW',
-        'model/fine_tuned_question_classifier_model_lite-SGD'][-1]
+        'model/fine_tuned_question_classifier_model_lite-SGD']
 qa_type_model= "t5-large"
 similarity_check_model= "all-MiniLM-L6-v2"
 # Load CV data
@@ -39,13 +39,14 @@ except Exception as e:
 def get_question_type_prediction(text):
     # Load model:
     try: 
-        QUESTION_CLASSIFIER_MODEL = DistilBertForSequenceClassification.from_pretrained(q_type_models)
-        QUESTION_CLASSIFIER_TOKENIZER = DistilBertTokenizerFast.from_pretrained(q_type_models)
+        QUESTION_CLASSIFIER_MODEL = DistilBertForSequenceClassification.from_pretrained(q_type_models[-1])
+        QUESTION_CLASSIFIER_TOKENIZER = DistilBertTokenizerFast.from_pretrained(q_type_models[-1])
         ID2LABEL = QUESTION_CLASSIFIER_MODEL.config.id2label
         if not all(item in ID2LABEL.values() for item in QUESTION_TYPES) and all(ID2LABEL[key] in QUESTION_TYPES for key in ID2LABEL):
             logger.critical("Question classifier model doesn't match the class provided")
         try:
             torch.cuda.empty_cache()
+            torch.cuda.ipc_collect()
             gc.collect()
             QUESTION_CLASSIFIER_MODEL.to("cuda" if torch.cuda.is_available() else "cpu")  # Move model to GPU if available
         except RuntimeError as e:
@@ -65,6 +66,9 @@ def get_question_type_prediction(text):
     logits = outputs.logits
     predicted_classes = torch.argmax(logits, dim=1)
     id2label = QUESTION_CLASSIFIER_MODEL.config.id2label
+    torch.cuda.empty_cache()
+    torch.cuda.ipc_collect()
+    gc.collect()
     return id2label[predicted_classes.item()]
 
 
@@ -75,6 +79,7 @@ def get_model_out_raw(question):
         QUESTION_ANSWER_TOKENIZER = T5Tokenizer.from_pretrained(qa_type_model, legacy= False)
         try:
             torch.cuda.empty_cache()
+            torch.cuda.ipc_collect()
             gc.collect()
             QUESTION_ANSWER_MODEL.to("cuda" if torch.cuda.is_available() else "cpu")  # Move model to GPU if available
         except RuntimeError as e:
@@ -93,6 +98,9 @@ def get_model_out_raw(question):
     inputs = QUESTION_ANSWER_TOKENIZER(input_text, return_tensors="pt").to(QUESTION_ANSWER_MODEL.device)
     outputs = QUESTION_ANSWER_MODEL.generate(input_ids=inputs["input_ids"], max_length=50, num_beams=4, early_stopping=True)
     # print(f"\n\n\nQUESTION_ANSWER_MODEL_DEVICE: {QUESTION_ANSWER_MODEL.device}\n\n\n")
+    torch.cuda.empty_cache()
+    torch.cuda.ipc_collect()
+    gc.collect()
     return predicted_question_type, QUESTION_ANSWER_TOKENIZER.decode(outputs[0], skip_special_tokens=True)
 
 
@@ -103,6 +111,7 @@ def get_most_similar_option(text, available_options):
         SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_model)
         try:
             torch.cuda.empty_cache()
+            torch.cuda.ipc_collect()
             gc.collect()
             SIMILARITY_CHECK_MODEL.to("cuda" if torch.cuda.is_available() else "cpu")  # Move model to GPU if available
         except RuntimeError as e:
@@ -121,6 +130,9 @@ def get_most_similar_option(text, available_options):
     most_similar_index = cosine_similarities.argmax()
     most_similar_option = available_options[most_similar_index]
     # similarity_score = cosine_similarities[0][most_similar_index]
+    torch.cuda.empty_cache()
+    torch.cuda.ipc_collect()
+    gc.collect()
     return most_similar_option
 
 
