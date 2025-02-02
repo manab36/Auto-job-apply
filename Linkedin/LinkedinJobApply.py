@@ -421,7 +421,8 @@ class LinkedinJobApply(Linkedin):
         question = ''
         input_type = 'unknown'
         pre_ans = None
-        predicted_ans = None
+        raw_predicted_ans= None
+        filtered_predicted_ans = None
         predicted_question_type= None
         available_options = []
         got_model_output= False
@@ -472,16 +473,18 @@ class LinkedinJobApply(Linkedin):
             question_dict = {
                 "question": question,
                 "pre_ans": pre_ans if pre_ans else '',
-                "predicted_ans": predicted_ans,
+                "raw_predicted_ans": raw_predicted_ans,
+                "filtered_predicted_ans": filtered_predicted_ans,
                 "input_type": input_type,
                 "predicted_question_type": predicted_question_type,
                 "available_options": available_options
             }
             #get the valued from the model
             try:
-                predicted_question_type, predicted_ans = predict_ans(question_dict)
-                question_dict["predicted_ans"]= predicted_ans
+                predicted_question_type, raw_predicted_ans, filtered_predicted_ans = predict_ans(question_dict)
                 question_dict["predicted_question_type"]= predicted_question_type
+                question_dict["raw_predicted_ans"]= raw_predicted_ans
+                question_dict["filtered_predicted_ans"]= filtered_predicted_ans
                 got_model_output= True
             except Exception as e:
                 logger.error(f"Unable to load model output, error: {e}")
@@ -490,7 +493,7 @@ class LinkedinJobApply(Linkedin):
                 # putting the ans based on the input type aceepted
                 if input_type == 'radio' and available_options:
                     for radio in radio_buttons:
-                        if radio.get_attribute('value') == predicted_ans:
+                        if radio.get_attribute('value') == filtered_predicted_ans:
                             element_type= 'radio options'
                             label_for_radio = element.find_element(By.XPATH, f".//label[@for='{radio.get_attribute('id')}']")
                             label_for_radio.click()
@@ -500,7 +503,7 @@ class LinkedinJobApply(Linkedin):
                     # if not pre_ans or pre_ans.lower()== 'select an option':
                 elif input_type == 'select' and available_options:
                     try:
-                        index_of_first_occurrence= available_options.index(predicted_ans)
+                        index_of_first_occurrence= available_options.index(filtered_predicted_ans)
                     except:
                         index_of_first_occurrence= 0
                     select.select_by_index(index_of_first_occurrence)
@@ -508,7 +511,7 @@ class LinkedinJobApply(Linkedin):
                     pass
                 else:
                     input_element.clear()
-                    input_element.send_keys(predicted_ans)
+                    input_element.send_keys(filtered_predicted_ans)
 
             logger.debug("Got the QA from the current QA")
             return question_dict

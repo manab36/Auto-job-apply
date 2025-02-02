@@ -34,7 +34,7 @@ def set_chrome_settings(headless_browser= True):
 
     # chrome_options.add_argument("--log-level=3")  # Suppress ChromeDriver logs
     # chrome_options.add_argument("--silent")       # Silent mode for ChromeDriver
-    if headless_browser:
+    if False:
         chrome_options.add_argument("--headless")  # Enable headless mode
         chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (optional)
         chrome_options.add_argument("--no-sandbox")  # Bypass OS security model (optional)
