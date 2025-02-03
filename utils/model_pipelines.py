@@ -46,7 +46,29 @@ def get_question_type_predictions(texts, batch_size=64):
             torch.cuda.empty_cache()
             gc.collect()
     except torch.cuda.OutOfMemoryError:
-        print("CUDA Out of Memory! Consider reducing batch size further or using CPU.")
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            results= []
+            device = "cpu"
+            QUESTION_CLASSIFIER_MODEL.to(device)
+            QUESTION_CLASSIFIER_MODEL.eval()
+            for i in range(0, len(texts), batch_size):
+                batch_texts = texts[i:i + batch_size]
+                inputs = QUESTION_CLASSIFIER_TOKENIZER(batch_texts, padding=True, truncation=True, return_tensors="pt").to(device)
+                with torch.no_grad():
+                    outputs = QUESTION_CLASSIFIER_MODEL(**inputs)
+                logits = outputs.logits
+                predicted_classes = torch.argmax(logits, dim=1)
+                batch_results = [ID2LABEL[idx.item()] for idx in predicted_classes]
+                results.extend(batch_results)
+                # Free memory
+                del inputs, outputs, logits
+                torch.cuda.empty_cache()
+                gc.collect()
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     except Exception as e:
         print(f"Error occurred: {e}")
     finally:
@@ -87,7 +109,27 @@ def get_jd_vs_cv_similarity_score(job_description):
             similarity = cosine_similarity(text_embedding, content_embedding)[0][0]
             similarity_scores.append(similarity)
     except torch.cuda.OutOfMemoryError:
-        logger.critical("CUDA Out of Memory! Consider reducing input size or using CPU.")
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            device = "cpu"
+            SIMILARITY_CHECK_MODEL.to(device)
+            SIMILARITY_CHECK_MODEL.eval()
+            # Compute similarity scores
+            similarity_scores = []
+            device = SIMILARITY_CHECK_MODEL.device
+            for idx, row in df.iterrows():
+                text = row['text']
+                content = row['content']
+                # Compute embeddings
+                text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device=device, show_progress_bar=False)
+                content_embedding = SIMILARITY_CHECK_MODEL.encode([content], device=device, show_progress_bar=False)
+                # Compute cosine similarity
+                similarity = cosine_similarity(text_embedding, content_embedding)[0][0]
+                similarity_scores.append(similarity)
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     finally:
         # Cleanup: Release memory after execution
         del SIMILARITY_CHECK_MODEL
@@ -127,7 +169,23 @@ def get_question_type_prediction(text):
         predicted_classes = torch.argmax(logits, dim=1)
         result = ID2LABEL[predicted_classes.item()]
     except torch.cuda.OutOfMemoryError:
-        logger.critical("CUDA Out of Memory! Consider using a smaller batch size or switching to CPU.")
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            torch.cuda.empty_cache()
+            gc.collect()
+            device = "cpu"
+            QUESTION_CLASSIFIER_MODEL.to(device)
+            QUESTION_CLASSIFIER_MODEL.eval()
+            inputs = QUESTION_CLASSIFIER_TOKENIZER(text, padding=True, truncation=True, return_tensors="pt").to(device)
+            with torch.no_grad():
+                outputs = QUESTION_CLASSIFIER_MODEL(**inputs)
+            logits = outputs.logits
+            predicted_classes = torch.argmax(logits, dim=1)
+            result = ID2LABEL[predicted_classes.item()]
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     finally:
         # Cleanup: Release memory after execution
         del QUESTION_CLASSIFIER_MODEL, QUESTION_CLASSIFIER_TOKENIZER
@@ -159,8 +217,25 @@ def get_qa_model_out_raw(question):
             )
         result = QUESTION_ANSWER_TOKENIZER.decode(outputs[0], skip_special_tokens=True)
     except torch.cuda.OutOfMemoryError:
-        logger.critical("CUDA Out of Memory! Consider reducing input size or using CPU.")
-        result = None
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            device = "cpu"
+            QUESTION_ANSWER_MODEL.to(device)
+            QUESTION_ANSWER_MODEL.eval()
+            # Get predicted question type
+            predicted_question_type = get_question_type_prediction(question)
+            context = CV_DATA.get(predicted_question_type, "")
+            input_text = f"question: {question} context: {context}"
+            inputs = QUESTION_ANSWER_TOKENIZER(input_text, return_tensors="pt").to(device)
+            with torch.no_grad():
+                outputs = QUESTION_ANSWER_MODEL.generate(
+                    input_ids=inputs["input_ids"], max_length=50, num_beams=4, early_stopping=True
+                )
+            result = QUESTION_ANSWER_TOKENIZER.decode(outputs[0], skip_special_tokens=True)
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     finally:
         # Cleanup: Release memory after execution
         del QUESTION_ANSWER_MODEL, QUESTION_ANSWER_TOKENIZER
@@ -187,7 +262,22 @@ def get_most_similar_option(text, available_options):
         most_similar_index = cosine_similarities.argmax()
         most_similar_option = available_options[most_similar_index]
     except torch.cuda.OutOfMemoryError:
-        logger.critical("CUDA Out of Memory! Consider reducing input size or using CPU.")
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            device = "cpu"
+            SIMILARITY_CHECK_MODEL.to(device)
+            SIMILARITY_CHECK_MODEL.eval()
+            # Get predicted option
+            device = SIMILARITY_CHECK_MODEL.device
+            text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device= device, show_progress_bar=False)
+            options_embeddings = SIMILARITY_CHECK_MODEL.encode(available_options, device= device, show_progress_bar=False)
+            cosine_similarities = cosine_similarity(text_embedding, options_embeddings)
+            most_similar_index = cosine_similarities.argmax()
+            most_similar_option = available_options[most_similar_index]
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     finally:
         # Cleanup: Release memory after execution
         del SIMILARITY_CHECK_MODEL
