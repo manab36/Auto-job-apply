@@ -10,11 +10,13 @@ from selenium.common.exceptions import InvalidSessionIdException
 from tqdm import tqdm
 import threading
 import pandas as pd
+import uuid
 import time
 import re
 import os
+import gc
 from Linkedin.Linkedin import Linkedin
-from utils.AnsPredict import predict_ans
+from utils.model_pipelines import predict_ans, get_jd_vs_cv_similarity_score
 from utils.config import *
 from utils.utils import *
 logger = logging.getLogger(__name__)
@@ -80,11 +82,12 @@ class LinkedinJobApply(Linkedin):
                     estm_pages= self.max_pages_to_load
 
                 logger.debug(f"Searching for jobs in {estm_pages} pages")
-                for page_no in tqdm(range(estm_pages), desc="Processing jobs", leave=True):
+                for page_no in tqdm(range(estm_pages), desc="Processing jobs", leave=True, position=0, ncols=80, colour="GREEN"):
                 # starts ---->
                     jobs = self._get_jobs_from_current_page()
                     logger.debug(f"Found {len(jobs)} jobs on current page")
-                    for j in tqdm(range((len(jobs))), desc=f"Processing jobs on current page: {page_no+1}", leave=True):
+                    for j in tqdm(range((len(jobs))), desc=f"Processing jobs on current page: {page_no+1}", leave=False, position=1, dynamic_ncols=True, colour="BLUE"):
+                        qa_dataframe= pd.DataFrame()
                         job= jobs[j]
                         job.click()
                         time.sleep(2)
@@ -93,16 +96,32 @@ class LinkedinJobApply(Linkedin):
                         logger.debug(f"current job linkedin url: {self.browser_driver.current_url}")
                         is_submited= False
                         job_details= self._get_job_details_to_json(job)
-                        if job_details["is_easy_apply"]== 'Y' and not reach_daily_easy_apply_limit:
-                            is_submited= self.easy_apply_jobs_apply()
+
+                        #Get JD vs CV score out of 100
+                        confidence_score= get_jd_vs_cv_similarity_score(job_details["job_description"])
+                        confidence_score= confidence_score if confidence_score else 0
+                        job_details["confidence_score"]= confidence_score
+
+                        if job_details["is_easy_apply"]== 'Y' and not reach_daily_easy_apply_limit and confidence_score>= LINKEDIN_JD_VS_CV_THRESHOLD:
+                            is_submited, qa_dataframe= self.easy_apply_jobs_apply()
+                        
                         job_details["is_submited"]= 'Y' if is_submited else 'N'
-                        df= pd.DataFrame([job_details])
-                        dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, df)
+                        jd_dataframe= pd.DataFrame([job_details])
+                        primary_key= uuid.uuid4().hex
+                        jd_dataframe["id"]= primary_key
+                        qa_dataframe["job_details_id"]= primary_key if not qa_dataframe.empty else None
+
+                        dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_FORM_QA_TABLE, qa_dataframe) if not qa_dataframe.empty else None
+                        dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, jd_dataframe)
+                        del qa_dataframe, jd_dataframe
+                        gc.collect()
                 # <---- end here
                     if not self._click_next_page_on_job_search():
                         break
                     self.browser_driver.refresh()
-                    time.sleep(3)
+                    time.sleep(0.5)
+                self.browser_driver.refresh()
+                time.sleep(0.5)
                 
         except InvalidSessionIdException as e:
             logger.error(f"Invalid session IDdetected. Restarting the session....")
@@ -294,6 +313,7 @@ class LinkedinJobApply(Linkedin):
 
 
     def easy_apply_jobs_apply(self):
+        # return None, pd.DataFrame()
         """
         Handles the Easy Apply form submission process for LinkedIn jobs.
         Fills in required fields, clicks through the form, and attempts to submit the application.
@@ -307,6 +327,7 @@ class LinkedinJobApply(Linkedin):
         '''
         logger.info("Trying to access and fill the form.")
         is_submited= False
+        df= pd.DataFrame()
         element_type= ''
         
         if self._easy_apply_limit_reach():
@@ -376,7 +397,7 @@ class LinkedinJobApply(Linkedin):
             self._job_form_unfollow_comapny()
             time.sleep(1)
             
-            if LINKEDIN_GET_SUBMIT_JOB_APPLICATION:
+            if LINKEDIN_SUBMIT_JOB_APPLICATION:
                 # After filling in the form, check if the "Submit application" button is available and click it
                 is_submited= self._job_form_submit_option()   ################################
                 time.sleep(2)
@@ -391,9 +412,8 @@ class LinkedinJobApply(Linkedin):
             # print(f"list_of_qa: {list_of_qa}, type= {type(list_of_qa[0])}")
             if list_of_qa:
                 df= pd.DataFrame(list_of_qa)
-                df["applied_successfully"]= 'Y' if is_submited else 'N'
-                dataframe_to_sqlite(LINKEDIN_DB_FILE, LINKEDIN_FORM_QA_TABLE, df)
-            return is_submited
+                df["is_submited"]= 'Y' if is_submited else 'N'
+            return is_submited, df
 
         except InvalidSessionIdException as e:
             logger.error(f"Invalid session IDdetected. Restarting the session....")

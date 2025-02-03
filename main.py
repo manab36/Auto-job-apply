@@ -9,10 +9,10 @@ watch -n 1 nvidia-smi
 
 
 # # Linkedin()
-# LinkedinJobApply_obj= LinkedinJobApply()
-# LinkedinJobApply_obj.run()
-
-LinkedinJobApply_obj= LinkedinPostScrape()
+LinkedinJobApply_obj= LinkedinJobApply()
 LinkedinJobApply_obj.run()
+
+# LinkedinJobApply_obj= LinkedinPostScrape()
+# LinkedinJobApply_obj.run()
 
 

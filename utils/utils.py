@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from selenium.webdriver.common.by import By
 import json
-from utils.config import DB_FILE_DATETIME_FORMAT
+from utils.config import DB_FILE_DATETIME_FORMAT, USE_HEADLESS_BROWSER
 import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -34,7 +34,8 @@ def set_chrome_settings(headless_browser= True):
 
     # chrome_options.add_argument("--log-level=3")  # Suppress ChromeDriver logs
     # chrome_options.add_argument("--silent")       # Silent mode for ChromeDriver
-    if False:
+    headless_browser= headless_browser if USE_HEADLESS_BROWSER else False
+    if headless_browser:
         chrome_options.add_argument("--headless")  # Enable headless mode
         chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (optional)
         chrome_options.add_argument("--no-sandbox")  # Bypass OS security model (optional)
