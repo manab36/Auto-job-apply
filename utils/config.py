@@ -1,25 +1,62 @@
 import os
+import json
 import logging
 
 
 
 # Change what type of job needs to be searched
 JOB_TITLES = [
-    'Data Engineer',
     'Python Developer',
     'Python Engineer',
     'Software Engineer',
     'Software Developer',
     'Data Scientist',
+    'Data Engineer',
 ]
 JOB_LOCATIONS = 'India'
-LINKEDIN_MAX_PAGES_TO_LOAD_PER_JOB_TITLES= 50
-LINKEDIN_POST_TO_PROCESS= 99999
-LINKEDIN_GET_POST_LINK= False
-LINKEDIN_GET_SUBMIT_JOB_APPLICATION= False
+USE_HEADLESS_BROWSER= True
+LINKEDIN_MAX_PAGES_TO_LOAD_PER_JOB_TITLES= 20
+LINKEDIN_SUBMIT_JOB_APPLICATION= False
 LINKEDIN_APPLY_EASY_OPTION= True
 LINKEDIN_APPLY_24_HOURS_FILTER= False
+LINKEDIN_JD_VS_CV_THRESHOLD= 0
+LINKEDIN_POST_TO_PROCESS= 99999
+LINKEDIN_GET_POST_LINK= False
 
+# models
+q_type_models= [
+        'model/fine_tuned_question_classifier_model_lite-default',
+        'model/fine_tuned_question_classifier_model_lite-Adam',
+        'model/fine_tuned_question_classifier_model_lite-AdamW',
+        'model/fine_tuned_question_classifier_model_lite-SGD']
+qa_type_models= [
+    ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-2960",
+    ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-4440",
+    ".temp/model_results/fine_tuned_question_answer_model-base-temp/checkpoint-740",
+    "model/fine_tuned_question_answer_model-base",
+    "model/fine_tuned_question_answer_model-base-filtered",
+    ]
+similarity_check_model= "all-MiniLM-L6-v2"
+QUESTION_TYPES= [   
+    "current_ctc",
+    "expected_ctc",
+    "personal_information",
+    "education",
+    "working_experince",
+    "skills",
+    "availability",
+    "others",
+    ]
+JD_SIMILARITY_CHECK_WEIGHTS= {  #out of total 100
+    "current_ctc": 0,
+    "expected_ctc": 0,
+    "personal_information": 0,
+    "education": 15,
+    "working_experince": 30,
+    "skills": 40,
+    "availability": 5,
+    "others": 10,
+    }
 
 
 # Path variables
@@ -59,11 +96,27 @@ logging.getLogger('selenium').setLevel(logging.WARNING)
 # Configure application logging
 logging.basicConfig(
     filename= LOGGER_FILE,
-    level= logging.DEBUG,  # Adjust this to your desired logging level for application-specific logs
+    level= logging.INFO,  # Adjust this to your desired logging level for application-specific logs
     format= LOGGER_FORMAT
 )
 # DEBUG < INFO < WARNING < ERROR < CRITICAL
 
 
 
-
+# rising errors for model data missmatch
+for model_path in q_type_models:
+    config_path = os.path.join(model_path, 'config.json')
+    if os.path.exists(config_path):
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+        id2label_values = list(config.get("id2label", {}).values())
+        if sorted(id2label_values) != sorted(QUESTION_TYPES):
+            print(f"Directory: {model_path}")
+            raise ValueError(f"Mismatch in values for id2label and QUESTION_TYPES at config_path")
+    else:
+        raise FileNotFoundError(f"Config file not found. {config_path} is missing.")
+JD_SIMILARITY_CHECK_WEIGHTS_total= sum(JD_SIMILARITY_CHECK_WEIGHTS.values())
+if JD_SIMILARITY_CHECK_WEIGHTS_total != 100:
+    raise ValueError(f"Total weight in JD_SIMILARITY_CHECK_WEIGHTS is {JD_SIMILARITY_CHECK_WEIGHTS_total}, but it should be 100.")
+if sorted(list(JD_SIMILARITY_CHECK_WEIGHTS.keys()))!= sorted(QUESTION_TYPES):
+    raise ValueError(f"Some of the weights are missing at JD_SIMILARITY_CHECK_WEIGHTS.")
