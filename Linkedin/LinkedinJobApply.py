@@ -26,6 +26,7 @@ This module contains the `LinkedinJobApply` class, which automates job searching
 """
 TODO:   
     1. Handle text that turn select--> While putting few of the questions like address it turns as select--->_job_form_get_and_insert_qa
+    2. remove 'Select an option' from job form handler
 """
 
 
@@ -204,7 +205,7 @@ class LinkedinJobApply(Linkedin):
                 result_number = ''.join(filter(str.isdigit, results_text))
                 print(f"total jobs found {result_number}")
 
-            logger.info("All filter applied. Job found: {result_number}")
+            logger.info(f"All filter applied. Job found: {result_number}")
         except InvalidSessionIdException as e:
             logger.error(f"Invalid session IDdetected. Restarting the session....")
             #super().start_browser_driver_and_login()
