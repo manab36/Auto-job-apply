@@ -88,17 +88,15 @@ def get_jd_vs_cv_similarity_score(job_description):
         logger.error("Unable to fetch categorise description")
         return
     df['content'] = df['predicted_type'].map(CV_DATA)
-
+    SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_model)
     try:
         torch.cuda.empty_cache()
         gc.collect()
-        SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_model)
         device = "cuda" if torch.cuda.is_available() else "cpu"
         SIMILARITY_CHECK_MODEL.to(device)
         SIMILARITY_CHECK_MODEL.eval()
         # Compute similarity scores
         similarity_scores = []
-        device = SIMILARITY_CHECK_MODEL.device
         for idx, row in df.iterrows():
             text = row['text']
             content = row['content']
@@ -116,7 +114,6 @@ def get_jd_vs_cv_similarity_score(job_description):
             SIMILARITY_CHECK_MODEL.eval()
             # Compute similarity scores
             similarity_scores = []
-            device = SIMILARITY_CHECK_MODEL.device
             for idx, row in df.iterrows():
                 text = row['text']
                 content = row['content']
@@ -255,7 +252,6 @@ def get_most_similar_option(text, available_options):
         SIMILARITY_CHECK_MODEL.to(device)
         SIMILARITY_CHECK_MODEL.eval()
         # Get predicted option
-        device = SIMILARITY_CHECK_MODEL.device
         text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device= device, show_progress_bar=False)
         options_embeddings = SIMILARITY_CHECK_MODEL.encode(available_options, device= device, show_progress_bar=False)
         cosine_similarities = cosine_similarity(text_embedding, options_embeddings)
@@ -268,7 +264,6 @@ def get_most_similar_option(text, available_options):
             SIMILARITY_CHECK_MODEL.to(device)
             SIMILARITY_CHECK_MODEL.eval()
             # Get predicted option
-            device = SIMILARITY_CHECK_MODEL.device
             text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device= device, show_progress_bar=False)
             options_embeddings = SIMILARITY_CHECK_MODEL.encode(available_options, device= device, show_progress_bar=False)
             cosine_similarities = cosine_similarity(text_embedding, options_embeddings)
