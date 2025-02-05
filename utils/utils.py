@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from selenium.webdriver.common.by import By
 import json
-from utils.config import DB_FILE_DATETIME_FORMAT, USE_HEADLESS_BROWSER
+from utils.config import DB_FILE_DATETIME_FORMAT, USE_HEADLESS_BROWSER, LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, HTML_TABLE_FOLDER
 import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -22,28 +22,32 @@ def set_chrome_settings(headless_browser= True):
     '''
     Configures and returns a Chrome WebDriver instance with predefined settings.
     '''
-    logger.debug("nitializing chrome driver")
-    chrome_options = Options()
-    chrome_options.add_argument("--disable-extensions")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    chrome_options.add_argument("--start-maximized")
-    chrome_options.add_argument("--incognito")
-    chrome_options.add_argument("--start-maximized")  # Optional: start Chrome maximized
+    try:
+        logger.debug("nitializing chrome driver")
+        chrome_options = Options()
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+        chrome_options.add_argument("--start-maximized")
+        chrome_options.add_argument("--incognito")
+        chrome_options.add_argument("--start-maximized")  # Optional: start Chrome maximized
 
-    # chrome_options.add_argument("--log-level=3")  # Suppress ChromeDriver logs
-    # chrome_options.add_argument("--silent")       # Silent mode for ChromeDriver
-    headless_browser= headless_browser if USE_HEADLESS_BROWSER else False
-    if headless_browser:
-        chrome_options.add_argument("--headless")  # Enable headless mode
-        chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (optional)
-        chrome_options.add_argument("--no-sandbox")  # Bypass OS security model (optional)
-    chrome_service = Service(
-        ChromeDriverManager().install()
-        # ,log_output=os.devnull  # Suppress logs from WebDriverManager
-        )
-    return webdriver.Chrome(service= chrome_service, options= chrome_options)
+        # chrome_options.add_argument("--log-level=3")  # Suppress ChromeDriver logs
+        # chrome_options.add_argument("--silent")       # Silent mode for ChromeDriver
+        headless_browser= headless_browser if USE_HEADLESS_BROWSER else False
+        if headless_browser:
+            chrome_options.add_argument("--headless")  # Enable headless mode
+            chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (optional)
+            chrome_options.add_argument("--no-sandbox")  # Bypass OS security model (optional)
+        chrome_service = Service(
+            ChromeDriverManager().install()
+            # ,log_output=os.devnull  # Suppress logs from WebDriverManager
+            )
+        return webdriver.Chrome(service= chrome_service, options= chrome_options)
+    except Exception as e:
+        logger.exception(f"Unable to start the chrome browser driver, error: {e}")
+        raise
 
 
 def dataframe_to_sqlite(db_file, table_name, df):
@@ -155,56 +159,60 @@ def linkedin_extract_job_details(html_file_path):
     company_size= ""
     company_size_on_linkedin= ""
     job_description= ""
+    job_description_html= ""
 
+    try:
+        with open(html_file_path, 'r', encoding='utf-8') as file:
+            soup = BeautifulSoup(file, 'html.parser')
 
-    with open(html_file_path, 'r', encoding='utf-8') as file:
-        soup = BeautifulSoup(file, 'html.parser')
+        def safe_get_text(tag):
+            """Safely extract text from a BeautifulSoup tag."""
+            return tag.get_text(strip=True) if tag else ""
 
-    def safe_get_text(tag):
-        """Safely extract text from a BeautifulSoup tag."""
-        return tag.get_text(strip=True) if tag else ""
+        def safe_get_attr(tag, attr):
+            """Safely extract an attribute from a BeautifulSoup tag."""
+            return tag[attr] if tag and tag.has_attr(attr) else "N/A"
 
-    def safe_get_attr(tag, attr):
-        """Safely extract an attribute from a BeautifulSoup tag."""
-        return tag[attr] if tag and tag.has_attr(attr) else "N/A"
+        # Extract job title
+        job_title = safe_get_text(soup.find("h1", class_="t-24 t-bold inline"))
 
-    # Extract job title
-    job_title = safe_get_text(soup.find("h1", class_="t-24 t-bold inline"))
+        # Extract job other details
+        job_details_div = soup.find("div", class_="t-black--light mt2")
+        job_details = safe_get_text(job_details_div)
+        if job_details:
+            details_parts = job_details.split("·")
+            job_location = details_parts[0].strip() if len(details_parts) > 0 else ""
+            job_posted = details_parts[1].strip() if len(details_parts) > 1 else ""
+            total_applicant = int(re.search(r'\d+', details_parts[2].strip()).group()) if len(details_parts) > 2 else ""
+        
+        # Extract company name and link
+        company_div = soup.find('div', class_='job-details-jobs-unified-top-card__company-name')
+        if company_div:
+            company_link_tag = company_div.find('a')
+            company_name = safe_get_text(company_link_tag)
+            company_link = safe_get_attr(company_link_tag, 'href')
+        
+        # Extract company other details
+        company_details_div = soup.find("div", class_="t-14 mt5")
+        if company_details_div:
+            company_details = company_details_div.get_text("\n", strip=True).split("\n")
+            company_type = company_details[0].strip() if len(company_details) > 0 else ""
+            company_size = company_details[1].strip() if len(company_details) > 1 else ""
+            company_size_on_linkedin = company_details[-1].strip() if len(company_details) > 2 else ""
 
-    # Extract job other details
-    job_details_div = soup.find("div", class_="t-black--light mt2")
-    job_details = safe_get_text(job_details_div)
-    if job_details:
-        details_parts = job_details.split("·")
-        job_location = details_parts[0].strip() if len(details_parts) > 0 else ""
-        job_posted = details_parts[1].strip() if len(details_parts) > 1 else ""
-        total_applicant = int(re.search(r'\d+', details_parts[2].strip()).group()) if len(details_parts) > 2 else ""
+        # Extract hiring team name and link
+        hiring_team_div = soup.find('div', class_='display-flex align-items-center mt4')
+        if hiring_team_div:
+            hiring_team = hiring_team_div.find("a")
+            requiter_name = safe_get_text(hiring_team)
+            requiter_profile_link = safe_get_attr(hiring_team, 'href')
+
+        # Extract about job
+        job_description_html= soup.find("div", class_="jobs-description__content")
+        job_description = '\n'.join(line for line in job_description_html.get_text(strip= False).strip().splitlines() if line.strip())
     
-    # Extract company name and link
-    company_div = soup.find('div', class_='job-details-jobs-unified-top-card__company-name')
-    if company_div:
-        company_link_tag = company_div.find('a')
-        company_name = safe_get_text(company_link_tag)
-        company_link = safe_get_attr(company_link_tag, 'href')
-    
-    # Extract company other details
-    company_details_div = soup.find("div", class_="t-14 mt5")
-    if company_details_div:
-        company_details = company_details_div.get_text("\n", strip=True).split("\n")
-        company_type = company_details[0].strip() if len(company_details) > 0 else ""
-        company_size = company_details[1].strip() if len(company_details) > 1 else ""
-        company_size_on_linkedin = company_details[-1].strip() if len(company_details) > 2 else ""
-
-    # Extract hiring team name and link
-    hiring_team_div = soup.find('div', class_='display-flex align-items-center mt4')
-    if hiring_team_div:
-        hiring_team = hiring_team_div.find("a")
-        requiter_name = safe_get_text(hiring_team)
-        requiter_profile_link = safe_get_attr(hiring_team, 'href')
-
-    # Extract about job
-    job_description = '\n'.join(line for line in soup.find("div", class_="jobs-description__content").get_text(strip= False).strip().splitlines() if line.strip())
-
+    except Exception as e:
+        logger.exception(f"Unable to start the chrome browser driver, error: {e}")
     job_data = {
         'job_title': job_title,
         'job_location': job_location,
@@ -218,39 +226,92 @@ def linkedin_extract_job_details(html_file_path):
         # 'requiter_name': requiter_name,
         # 'requiter_profile_link': requiter_profile_link,
         'job_description': job_description,
+        'job_description_html': str(job_description_html),
     }
 
     return job_data
 
 
 def linkedin_check_if_easy_apply_avilable(job_page_html_content, driver= False):
-    # Parse HTML with BeautifulSoup
-    soup = BeautifulSoup(job_page_html_content, 'html.parser')
+    try:
+        # Parse HTML with BeautifulSoup
+        soup = BeautifulSoup(job_page_html_content, 'html.parser')
+        
+        # Find the button with the jobs-apply-button class
+        apply_button = soup.find('button', class_='jobs-apply-button')
+
+        # Find already applied 
+        applied_feedback = soup.find('div', class_='artdeco-inline-feedback artdeco-inline-feedback--success ember-view')
     
-    # Find the button with the jobs-apply-button class
-    apply_button = soup.find('button', class_='jobs-apply-button')
+        if apply_button:
+            aria_label = apply_button.get('aria-label', '')
+            if "Easy Apply" in aria_label:
+                return 'Y'
+            elif "Apply to" in aria_label:
+                external_url= 'N'
+                if driver:    # access external apply link
+                    apply_button = driver.find_element(By.CLASS_NAME, "jobs-apply-button")
+                    apply_button.click()
+                    driver.switch_to.window(driver.window_handles[-1])
+                    external_url = driver.current_url
+                    driver.close()
+                    driver.switch_to.window(driver.window_handles[0])
+                return external_url
+        elif applied_feedback:
+            applied_message = applied_feedback.find('span', class_='artdeco-inline-feedback__message')
+            if applied_message:
+                return applied_message.get_text(strip=True)
+        return ''
+    except Exception as e:
+        logger.exception(f"Unable to check easy apply option, error: {e}")
+        
 
-    # Find already applied 
-    applied_feedback = soup.find('div', class_='artdeco-inline-feedback artdeco-inline-feedback--success ember-view')
- 
-    if apply_button:
-        aria_label = apply_button.get('aria-label', '')
-        if "Easy Apply" in aria_label:
-            return 'Y'
-        elif "Apply to" in aria_label:
-            external_url= 'N'
-            if driver:    # access external apply link
-                apply_button = driver.find_element(By.CLASS_NAME, "jobs-apply-button")
-                apply_button.click()
-                driver.switch_to.window(driver.window_handles[-1])
-                external_url = driver.current_url
-                driver.close()
-                driver.switch_to.window(driver.window_handles[0])
-            return external_url
-    elif applied_feedback:
-        applied_message = applied_feedback.find('span', class_='artdeco-inline-feedback__message')
-        if applied_message:
-            return applied_message.get_text(strip=True)
-    return ''
+def get_job_details_in_html(days_from= 0):
+    df= read_from_sqlite(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE)
+    # columns_original= df.columns
+    df["inserted_at"]= pd.to_datetime(df["inserted_at"])
+    html_file= os.path.join(HTML_TABLE_FOLDER, "job_description.html")
+    
+    if days_from> -1:
+        today= pd.to_datetime('today').normalize()
+        n_days_ago = pd.to_datetime('today').normalize() - pd.Timedelta(days= days_from)
+        df[df['inserted_at'] >= n_days_ago]
+        html_file= html_file.replace(".html", f"_{today.strftime('%d_%m_%Y')}.html")
+    columns_modified= [
+        "job_title", "company_name", "confidence_score", "is_easy_apply",
+        "job_posted", "is_submited", "emails_found", "job_description_html", "job_location", "total_applicant",
+        "company_size_on_linkedin", "company_size", "company_type", "company_link",
+        "id", "job_linkedin_link", "inserted_at",
+        ]
+    try:
+        df= df[columns_modified].sort_values(by='inserted_at', ascending=False)
+        def clean_html(html):
+            html = re.sub(r'\s+', ' ', html)
+            html = re.sub(r'<span>\s*</span>', '', html)
+            html = re.sub(r'<br\s*/?>', '', html)
+            return html.strip()
+        df['job_description_html'] = df['job_description_html'].apply(clean_html)
+        df['confidence_score'] = df['confidence_score'].round(2).astype(str)
+        styled_df = df.reset_index(drop=True).style.set_table_styles([
+            {'selector': 'table', 'props': [('table-layout', 'fixed'), ('width', '100%'), ('border-collapse', 'collapse')]},  
+            {'selector': 'thead th', 'props': [('background-color', '#034f84'), 
+                                            ('color', 'white'), 
+                                            ('font-weight', 'bold'), 
+                                            ('font-size', '18px'),
+                                            ('position', 'sticky'),
+                                            ('top', '0'),
+                                            ('z-index', '2')]},  
+            {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#92a8d1')]},  
+            {'selector': 'tr:nth-child(odd)', 'props': [('background-color', '#deeaee')]},  
+            # {'selector': 'td:not(:nth-child(9))', 'props': [('width', '50px'), ('white-space', 'nowrap'), ('overflow', 'hidden'), ('text-overflow', 'ellipsis')]},
+        ])
+    except Exception as e:
+        logger.exception(f"While trying to store job_description in html, error, {e}")
+        return
+
+    # Save as an HTML file
+    styled_df.to_html(html_file, index=False, float_format="%.2f")
 
 
+
+    

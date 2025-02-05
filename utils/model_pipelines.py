@@ -14,8 +14,10 @@ try:
         CV_DATA= json.load(file)
 except FileNotFoundError:
     logger.error("CV file not found.")
+    raise
 except Exception as e:
-    logger.error("Unable to load the CV file ")
+    logger.error(f"Unable to load the CV file, error: {e}")
+    raise
 
 
 
@@ -70,7 +72,7 @@ def get_question_type_predictions(texts, batch_size=64):
         except Exception as e:
             logger.critical(f"Unexpected error while using CPU: {e}")
     except Exception as e:
-        print(f"Error occurred: {e}")
+        logger.exception(f"Error occurred: {e}")
     finally:
         del QUESTION_CLASSIFIER_MODEL, QUESTION_CLASSIFIER_TOKENIZER
         torch.cuda.empty_cache()
@@ -89,6 +91,8 @@ def get_jd_vs_cv_similarity_score(job_description):
         return
     df['content'] = df['predicted_type'].map(CV_DATA)
     SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_model)
+    similarity_scores = []
+    total_score= 0
     try:
         torch.cuda.empty_cache()
         gc.collect()
@@ -127,17 +131,21 @@ def get_jd_vs_cv_similarity_score(job_description):
             logger.critical("CPU MemoryError: System ran out of RAM.")
         except Exception as e:
             logger.critical(f"Unexpected error while using CPU: {e}")
+    except Exception as e:
+        logger.exception(f"While trying to fetch similarity score, error: {e}")
     finally:
         # Cleanup: Release memory after execution
         del SIMILARITY_CHECK_MODEL
         torch.cuda.empty_cache()
         gc.collect()
 
+    if len(similarity_scores) != len(df):
+        logger.error("Unexpected error while geeting the similarity score")
+        return round(total_score, 2)
+    
     # Add similarity scores to the DataFrame
     df['similarity_score'] = similarity_scores
     df= df.groupby('predicted_type')['similarity_score'].mean().reset_index().rename(columns={'similarity_score': 'avg_similarity_score'})
-
-    total_score= 0
     for index, row in df.iterrows():
         category = row['predicted_type']
         similarity_score = row['avg_similarity_score']
@@ -282,14 +290,22 @@ def get_most_similar_option(text, available_options):
 
 
 def predict_ans(question_dict):
-    question= question_dict["question"]
-    # pre_ans= question_dict["pre_ans"]
-    input_type= question_dict["input_type"]
-    available_options= question_dict["available_options"]
-    predicted_question_type, raw_predicted_ans= get_qa_model_out_raw(question)
-    filtered_predicted_ans= raw_predicted_ans
-    if input_type in ("select", "radio") and not raw_predicted_ans in available_options:
-        filtered_predicted_ans= get_most_similar_option(raw_predicted_ans, available_options)
-    return predicted_question_type, raw_predicted_ans, filtered_predicted_ans
+    predicted_question_type, raw_predicted_ans, filtered_predicted_ans= None, None,None
+    try:
+        question= question_dict["question"]
+        # pre_ans= question_dict["pre_ans"]
+        input_type= question_dict["input_type"]
+        available_options= question_dict["available_options"]
+        predicted_question_type, raw_predicted_ans= get_qa_model_out_raw(question)
+        filtered_predicted_ans= raw_predicted_ans
+        if input_type in ("select", "radio") and not raw_predicted_ans in available_options:
+            filtered_predicted_ans= get_most_similar_option(raw_predicted_ans, available_options)
+        return predicted_question_type, raw_predicted_ans, filtered_predicted_ans
+    except Exception as e:
+            logger.exception(f"While trying to predict, error: {e}")
+    finally:
+        return predicted_question_type, raw_predicted_ans, filtered_predicted_ans
+
+
 
 
