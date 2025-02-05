@@ -97,7 +97,7 @@ class LinkedinJobApply(Linkedin):
                         logger.debug(f"current job linkedin url: {self.browser_driver.current_url}")
                         is_submited= False
                         job_details= self._get_job_details_to_json(job)
-
+                        
                         #Get JD vs CV score out of 100
                         confidence_score= get_jd_vs_cv_similarity_score(job_details["job_description"])
                         confidence_score= confidence_score if confidence_score else 0
@@ -130,7 +130,7 @@ class LinkedinJobApply(Linkedin):
         except TimeoutException:
             logger.error(f"ime out detected. Might be due to element not found")
         except Exception as e:
-            logger.error(f"During processing: {e}")
+            logger.exception(f"During processing: {e}")
             print(f"Error during processing: {e}")
             
         finally:
@@ -212,7 +212,7 @@ class LinkedinJobApply(Linkedin):
         except TimeoutException:
             logger.error(f"ime out detected. Might be due to element not found")
         except Exception as e:
-            logger.error(f"Applying filters: {e}")
+            logger.exception(f"Applying filters: {e}")
         finally:
             return int(result_number)
 
@@ -247,7 +247,7 @@ class LinkedinJobApply(Linkedin):
         except TimeoutException:
             logger.error(f"Time out detected.")
         except Exception as e:
-            logger.error(f"Navigating to next page: {e}")
+            logger.exception(f"Navigating to next page: {e}")
 
     def _get_jobs_from_current_page(self):
         """
@@ -270,7 +270,7 @@ class LinkedinJobApply(Linkedin):
                     break
             return new_jobs
         except Exception as e:
-            logger.error(f"Retriving jobs from current page .{e}")
+            logger.exception(f"Retriving jobs from current page .{e}")
 
     def _get_job_details_to_json(self, job):
         '''
@@ -310,7 +310,7 @@ class LinkedinJobApply(Linkedin):
             logger.error("Invalid session ID/Time out detected. Restarting the session...")
             super().start_browser_driver_and_login(self.browser_driver.current_url)
         except Exception as e:
-            logger.error(f"Processing job: {e}")
+            logger.exception(f"Processing job: {e}")
 
 
     def easy_apply_jobs_apply(self):
@@ -382,10 +382,10 @@ class LinkedinJobApply(Linkedin):
                     except NoSuchElementException:
                         break
                     except Exception as e:
-                        logger.error(f"Unable to click review option: {e}")
+                        logger.exception(f"Unable to click review option: {e}")
                         break
                 except Exception as e:
-                    logger.error(f"Unable to click next option: {e}")
+                    logger.exception(f"Unable to click next option: {e}")
                     break
                 
                 
@@ -424,7 +424,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.warning(f"Can't find element type {element_type}")
         except Exception as e:
-            logger.error(f"Applying job: {e}")
+            logger.exception(f"Applying job: {e}")
         finally:
             logger.info(f"Closed job form. submitted- {is_submited}")
     
@@ -503,12 +503,13 @@ class LinkedinJobApply(Linkedin):
             #get the valued from the model
             try:
                 predicted_question_type, raw_predicted_ans, filtered_predicted_ans = predict_ans(question_dict)
-                question_dict["predicted_question_type"]= predicted_question_type
-                question_dict["raw_predicted_ans"]= raw_predicted_ans
-                question_dict["filtered_predicted_ans"]= filtered_predicted_ans
-                got_model_output= True
+                if predicted_question_type and raw_predicted_ans and filtered_predicted_ans:
+                    question_dict["predicted_question_type"]= predicted_question_type
+                    question_dict["raw_predicted_ans"]= raw_predicted_ans
+                    question_dict["filtered_predicted_ans"]= filtered_predicted_ans
+                    got_model_output= True
             except Exception as e:
-                logger.error(f"Unable to load model output, error: {e}")
+                logger.exception(f"Unable to load model output, error: {e}")
             # print(f"\n\ngot_model_output: {got_model_output}\n\n")
             if got_model_output:
                 # putting the ans based on the input type aceepted
@@ -544,19 +545,22 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.warning(f"Can't find element type {element_type}")
         except Exception as e:
-            logger.error(f"Applying job: {e}")
+            logger.exception(f"Applying job: {e}")
 
     def _job_form_check_error_input(self):
         """
         Helper of "easy_apply_jobs_apply" function
         """
-        error_message_elements = self.browser_driver.find_elements(By.CLASS_NAME, 'artdeco-inline-feedback__message')
-        if error_message_elements:
-            for error_element in error_message_elements:
-                error_message_text = error_element.text.strip()
-                if error_message_text:
-                    return True
-        return False
+        try:
+            error_message_elements = self.browser_driver.find_elements(By.CLASS_NAME, 'artdeco-inline-feedback__message')
+            if error_message_elements:
+                for error_element in error_message_elements:
+                    error_message_text = error_element.text.strip()
+                    if error_message_text:
+                        return True
+            return False
+        except Exception as e:
+            logger.exception(f"error {e}")
 
     def _job_form_scroll_to_bottom(self):
         """
@@ -573,7 +577,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.debug("Cant find the scroll option for the div")
         except Exception as e:
-            logger.error(f"Unable to scroll the div: {e}")
+            logger.exception(f"Unable to scroll the div: {e}")
 
     def _job_form_close_div_cross(self):
         """
@@ -586,7 +590,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.warning("Unable to click discard button")
         except Exception as e:
-            logger.error(f"Cant find the discard button: {e}")
+            logger.exception(f"Cant find the discard button: {e}")
     
     def _job_form_discard_option(self):
         """
@@ -598,7 +602,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             pass
         except Exception as e:
-            logger.error(f"Cant find the discard button: {e}")
+            logger.exception(f"Cant find the discard button: {e}")
 
     def _job_form_unfollow_comapny(self):
         """
@@ -611,7 +615,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.debug("Unable to click unfollow option")
         except Exception as e:
-            logger.error(f"Cant find the unfollow option: {e}")
+            logger.exception(f"Cant find the unfollow option: {e}")
 
     def _job_form_submit_option(self):
         """
@@ -629,7 +633,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.warning("Unable to click submit button")
         except Exception as e:
-            logger.error(f"Cant find the submit button: {e}")
+            logger.exception(f"Cant find the submit button: {e}")
 
     def _easy_apply_limit_reach(self):
         """
@@ -644,7 +648,7 @@ class LinkedinJobApply(Linkedin):
         except NoSuchElementException:
             logger.debug("Cant find daily limit warning")
         except Exception as e:
-            logger.error(f"Cant find the submit button: {e}")
+            logger.exception(f"Cant find the submit button: {e}")
 
 
 

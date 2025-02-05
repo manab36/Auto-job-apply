@@ -6,21 +6,21 @@ import logging
 
 # Change what type of job needs to be searched
 JOB_TITLES = [
+    'Data Engineer',
     'Python Developer',
     'Python Engineer',
     'Software Engineer',
     'Software Developer',
     'Data Scientist',
-    'Data Engineer',
 ]
 JOB_LOCATIONS = 'India'
 USE_HEADLESS_BROWSER= True
 LINKEDIN_MAX_PAGES_TO_LOAD_PER_JOB_TITLES= 20
 LINKEDIN_SUBMIT_JOB_APPLICATION= False
 LINKEDIN_APPLY_EASY_OPTION= True
-LINKEDIN_APPLY_24_HOURS_FILTER= False
+LINKEDIN_APPLY_24_HOURS_FILTER= True
 LINKEDIN_JD_VS_CV_THRESHOLD= 0
-LINKEDIN_POST_TO_PROCESS= 99999
+LINKEDIN_POST_TO_PROCESS= 9999
 LINKEDIN_GET_POST_LINK= False
 
 # models
@@ -28,7 +28,9 @@ q_type_models= [
         'model/fine_tuned_question_classifier_model_lite-default',
         'model/fine_tuned_question_classifier_model_lite-Adam',
         'model/fine_tuned_question_classifier_model_lite-AdamW',
-        'model/fine_tuned_question_classifier_model_lite-SGD']
+        'model/fine_tuned_question_classifier_model_lite-SGD',
+        "model/fine_tuned_question_classifier_model_lite-SGD-v2",
+        ]
 qa_type_models= [
     ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-2960",
     ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-4440",
@@ -66,6 +68,7 @@ LOGGER_FILE = os.path.join(LOGGER_FOLDER, "basic_log.log")
 BROWSER_CAHCHE_FOLDER = os.path.join(os.getcwd(), "Browser_cahche")
 TEMP_FOLDER = os.path.join(os.getcwd(), ".temp")
 JOB_TABLE_FOLDER = os.path.join(os.getcwd(), "DataBase")
+HTML_TABLE_FOLDER= os.path.join(os.getcwd(), "file_out")
 
 # File variables
 LINKEDIN_DB_FILE = os.path.join(JOB_TABLE_FOLDER, 'Linkedin.db')
@@ -83,6 +86,7 @@ os.makedirs(LOGGER_FOLDER, exist_ok=True)
 os.makedirs(BROWSER_CAHCHE_FOLDER, exist_ok=True)
 os.makedirs(TEMP_FOLDER, exist_ok=True)
 os.makedirs(JOB_TABLE_FOLDER, exist_ok=True)
+os.makedirs(HTML_TABLE_FOLDER, exist_ok=True)
 
 
 
@@ -96,7 +100,7 @@ logging.getLogger('selenium').setLevel(logging.WARNING)
 # Configure application logging
 logging.basicConfig(
     filename= LOGGER_FILE,
-    level= logging.INFO,  # Adjust this to your desired logging level for application-specific logs
+    level= logging.DEBUG,  # Adjust this to your desired logging level for application-specific logs
     format= LOGGER_FORMAT
 )
 # DEBUG < INFO < WARNING < ERROR < CRITICAL
