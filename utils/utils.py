@@ -1,20 +1,12 @@
+from utils.config import DB_FILE_DATETIME_FORMAT, USE_HEADLESS_BROWSER, LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, HTML_TABLE_FOLDER
+from datetime import datetime
 import pandas as pd
 import sqlite3
-from bs4 import BeautifulSoup
 import re
-from datetime import datetime
-from selenium.webdriver.common.by import By
 import json
-from utils.config import DB_FILE_DATETIME_FORMAT, USE_HEADLESS_BROWSER, LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, HTML_TABLE_FOLDER
 import logging
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 import os
 logger = logging.getLogger(__name__)
-
-
 
 
 
@@ -22,6 +14,10 @@ def set_chrome_settings(headless_browser= True):
     '''
     Configures and returns a Chrome WebDriver instance with predefined settings.
     '''
+    from webdriver_manager.chrome import ChromeDriverManager
+    from selenium.webdriver import Chrome as ChromeDriver
+    from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.chrome.options import Options
     try:
         logger.debug("nitializing chrome driver")
         chrome_options = Options()
@@ -44,7 +40,7 @@ def set_chrome_settings(headless_browser= True):
             ChromeDriverManager().install()
             # ,log_output=os.devnull  # Suppress logs from WebDriverManager
             )
-        return webdriver.Chrome(service= chrome_service, options= chrome_options)
+        return ChromeDriver(service= chrome_service, options= chrome_options)
     except Exception as e:
         logger.exception(f"Unable to start the chrome browser driver, error: {e}")
         raise
@@ -130,7 +126,6 @@ def read_from_sqlite(db_file, table_name):
     
     except Exception as e:
         print(f"Error reading data from SQLite: {e}")
-        logger.error(f"Error reading data from SQLite: {e}")
         return None
 
 
@@ -149,7 +144,7 @@ def linkedin_extract_job_details(html_file_path):
             'company_size_on_linkedin', 'job_description',
         
     """
-
+    from bs4 import BeautifulSoup
     job_location= ""
     job_posted= ""
     total_applicant= ""
@@ -233,6 +228,8 @@ def linkedin_extract_job_details(html_file_path):
 
 
 def linkedin_check_if_easy_apply_avilable(job_page_html_content, driver= False):
+    from selenium.webdriver.common.by import By
+    from bs4 import BeautifulSoup
     try:
         # Parse HTML with BeautifulSoup
         soup = BeautifulSoup(job_page_html_content, 'html.parser')
@@ -311,6 +308,45 @@ def get_job_details_in_html(days_from= 0):
 
     # Save as an HTML file
     styled_df.to_html(html_file, index=False, float_format="%.2f")
+
+
+def linkedin_is_job_details_present(db_file, table_name, new_data, N= 30):
+    """
+    Check if a given job entry exists in the DataFrame within the last N days.
+    Parameters:
+        new_data (dict): A dictionary containing 'job_title', 'company_name', 'company_type', 'job_location'.
+        N (int): The number of days to check within.
+
+    Returns:
+        bool: True if the job exists in the last N days, else False.
+    """
+    if N<0:
+        return False
+    df= read_from_sqlite(db_file, table_name)[["job_title", 
+                                                "company_name", 
+                                                "company_type", 
+                                                "job_location", 
+                                                "company_size_on_linkedin", 
+                                                "is_submited",
+                                                "inserted_at",
+                                            ]]
+    df['inserted_at'] = pd.to_datetime(df['inserted_at'])
+    N_days_ago = pd.Timestamp.now().normalize() - pd.Timedelta(days=N)
+    job_title = new_data['job_title']
+    company_name = new_data['company_name']
+    company_type = new_data['company_type']
+    job_location = new_data['job_location']
+
+    # Use .query() with extracted variables
+    match = df.query(
+        "inserted_at >= @N_days_ago and "
+        "job_title == @job_title and "
+        "company_name == @company_name and "
+        "company_type == @company_type and "
+        "job_location == @job_location and "
+        "is_submited == 'Y'"
+    )
+    return not match.empty
 
 
 

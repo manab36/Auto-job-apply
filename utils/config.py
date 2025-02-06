@@ -22,21 +22,16 @@ LINKEDIN_APPLY_24_HOURS_FILTER= True
 LINKEDIN_JD_VS_CV_THRESHOLD= 0
 LINKEDIN_POST_TO_PROCESS= 9999
 LINKEDIN_GET_POST_LINK= False
-
+DAYS_TO_CHECK_FOR_SAME_JD= 30
 # models
 q_type_models= [
         'model/fine_tuned_question_classifier_model_lite-default',
-        'model/fine_tuned_question_classifier_model_lite-Adam',
-        'model/fine_tuned_question_classifier_model_lite-AdamW',
-        'model/fine_tuned_question_classifier_model_lite-SGD',
-        "model/fine_tuned_question_classifier_model_lite-SGD-v2",
+        "model/fine_tuned_question_classifier_model_lite-SGD_v2",
         ]
 qa_type_models= [
-    ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-2960",
-    ".temp/model_results/fine_tuned_question_answer_model-base/checkpoint-4440",
-    ".temp/model_results/fine_tuned_question_answer_model-base-temp/checkpoint-740",
     "model/fine_tuned_question_answer_model-base",
     "model/fine_tuned_question_answer_model-base-filtered",
+    "model/fine_tuned_question_answer_model-small",
     ]
 similarity_check_model= "all-MiniLM-L6-v2"
 QUESTION_TYPES= [   
@@ -118,9 +113,23 @@ for model_path in q_type_models:
             print(f"Directory: {model_path}")
             raise ValueError(f"Mismatch in values for id2label and QUESTION_TYPES at config_path")
     else:
-        raise FileNotFoundError(f"Config file not found. {config_path} is missing.")
+        raise FileNotFoundError(f"Config file not found for a model. {config_path} is missing.")
 JD_SIMILARITY_CHECK_WEIGHTS_total= sum(JD_SIMILARITY_CHECK_WEIGHTS.values())
 if JD_SIMILARITY_CHECK_WEIGHTS_total != 100:
     raise ValueError(f"Total weight in JD_SIMILARITY_CHECK_WEIGHTS is {JD_SIMILARITY_CHECK_WEIGHTS_total}, but it should be 100.")
 if sorted(list(JD_SIMILARITY_CHECK_WEIGHTS.keys()))!= sorted(QUESTION_TYPES):
     raise ValueError(f"Some of the weights are missing at JD_SIMILARITY_CHECK_WEIGHTS.")
+
+try:
+    CV_DATA = {
+        "availability": (lambda: open('Model_dataset/cv_data/availability.txt', 'r').read())(),
+        "current_ctc": (lambda: open('Model_dataset/cv_data/current_ctc.txt', 'r').read())(),
+        "education": (lambda: open('Model_dataset/cv_data/education.txt', 'r').read())(),
+        "expected_ctc": (lambda: open('Model_dataset/cv_data/expected_ctc.txt', 'r').read())(),
+        "others": (lambda: open('Model_dataset/cv_data/others.txt', 'r').read())(),
+        "personal_information": (lambda: open('Model_dataset/cv_data/personal_information.txt', 'r').read())(),
+        "skills": (lambda: open('Model_dataset/cv_data/skills.txt', 'r').read())(),
+        "working_experience": (lambda: open('Model_dataset/cv_data/working_experience.txt', 'r').read())(),
+        }
+except Exception as e:
+    raise e

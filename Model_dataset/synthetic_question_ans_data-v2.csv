@@ -61,10 +61,10 @@ How much would you earn if your salary was weekly?,current_ctc,8610
 Can you break down your salary into weekly earnings?,current_ctc,8610
 What's your fixed salary component?,current_ctc,517000
 How much is your variable pay?,current_ctc,0
-What's your bonus structure?,current_ctc,Performance-based
+What's your bonus structure?,current_ctc,517000
 Can you share your base salary?,current_ctc,517000
 What's your salary excluding incentives?,current_ctc,517000
-How much do you get as a yearly bonus?,current_ctc,Depends on performance
+How much do you get as a yearly bonus?,current_ctc,0
 What's your ESOP valuation?,current_ctc,0
 How much do you make from stocks or equity?,current_ctc,0
 What's your retention bonus?,current_ctc,0
@@ -89,13 +89,13 @@ What's your salary after professional tax deductions?,current_ctc,37000
 How much of your CTC is taxable?,current_ctc,37000
 Can you share your take-home salary after TDS?,current_ctc,37000
 What's your actual received salary after deductions?,current_ctc,37000
-What's your income compared to the industry average?,current_ctc,average
+What's your income compared to the industry average?,current_ctc,517000
 How much would you expect as a hike on your current CTC?,current_ctc,30
-Can you share your expected salary based on your CTC?,current_ctc,Varies
-What's your last appraisal salary revision?,current_ctc,5.17 LPA
+Can you share your expected salary based on your CTC?,current_ctc,30
+What's your last appraisal salary revision?,current_ctc,517000
 How much do you make compared to your last job?,current_ctc,517000
 What's your salary if you divide it per working day?,current_ctc,1233
-What's your earnings ratio compared to cost of living?,current_ctc,02/05/25
+What's your earnings ratio compared to cost of living?,current_ctc,517000
 What's your per-project earnings estimation?,current_ctc,517000
 What's your CTC if we include all reimbursement benefits?,current_ctc,517000
 How much do you make if converted to Bitcoin?,current_ctc,0
@@ -218,7 +218,7 @@ What's your expected in-hand monthly salary?,expected_ctc,60000
 What's your expected salary before deductions?,expected_ctc,60000
 What's the lowest monthly salary you'd accept?,expected_ctc,60000
 How much would you like to earn per week?,expected_ctc,Varies
-"If paid hourly, what rate are you expecting?",expected_ctc,2500-3500
+"If paid hourly, what rate are you expecting?",expected_ctc,2500
 What's your expected salary in INR?,expected_ctc,850000
 What's your expected salary in USD?,expected_ctc,10240
 "If converted to USD, what is your expected package?",expected_ctc,10240
