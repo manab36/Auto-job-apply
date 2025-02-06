@@ -22,7 +22,7 @@ LINKEDIN_APPLY_24_HOURS_FILTER= True
 LINKEDIN_JD_VS_CV_THRESHOLD= 0
 LINKEDIN_POST_TO_PROCESS= 9999
 LINKEDIN_GET_POST_LINK= False
-
+DAYS_TO_CHECK_FOR_SAME_JD= 30
 # models
 q_type_models= [
         'model/fine_tuned_question_classifier_model_lite-default',

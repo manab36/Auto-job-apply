@@ -10,15 +10,16 @@ from selenium.common.exceptions import InvalidSessionIdException
 from tqdm import tqdm
 import threading
 import pandas as pd
-import uuid
+from hashlib import sha1
 import time
 import re
 import os
 import gc
 from Linkedin.Linkedin import Linkedin
+from utils.utils import linkedin_is_job_details_present, linkedin_check_if_easy_apply_avilable, \
+    linkedin_extract_job_details, dataframe_to_sqlite
 from utils.model_pipelines import predict_ans, get_jd_vs_cv_similarity_score
 from utils.config import *
-from utils.utils import *
 logger = logging.getLogger(__name__)
 """
 This module contains the `LinkedinJobApply` class, which automates job searching and applying on LinkedIn using Selenium.
@@ -28,6 +29,8 @@ TODO:
     1. Handle text that turn select--> While putting few of the questions like address it turns as select--->_job_form_get_and_insert_qa
     2. remove 'Select an option' from job form handler
 """
+
+
 
 
 class LinkedinJobApply(Linkedin):
@@ -95,9 +98,12 @@ class LinkedinJobApply(Linkedin):
                         reach_daily_easy_apply_limit=  self._easy_apply_limit_reach()
 
                         logger.debug(f"current job linkedin url: {self.browser_driver.current_url}")
-                        is_submited= False
                         job_details= self._get_job_details_to_json(job)
-                        
+                        if linkedin_is_job_details_present(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE, job_details, DAYS_TO_CHECK_FOR_SAME_JD):
+                            logger.info(f"Same job found in the db last {DAYS_TO_CHECK_FOR_SAME_JD} days. Skipping the application process.")
+                            continue
+
+                        is_submited= False
                         #Get JD vs CV score out of 100
                         confidence_score= get_jd_vs_cv_similarity_score(job_details["job_description"])
                         confidence_score= confidence_score if confidence_score else 0
@@ -108,7 +114,7 @@ class LinkedinJobApply(Linkedin):
                         
                         job_details["is_submited"]= 'Y' if is_submited else 'N'
                         jd_dataframe= pd.DataFrame([job_details])
-                        primary_key= uuid.uuid4().hex
+                        primary_key= f"{sha1("".join([job_details[key] for key in ['job_title', 'company_name', 'company_type', 'job_location']]).encode()).hexdigest()}_{str(int(time.time()))}"
                         jd_dataframe["id"]= primary_key
                         qa_dataframe["job_details_id"]= primary_key if not qa_dataframe.empty else None
 

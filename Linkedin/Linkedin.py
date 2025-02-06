@@ -6,8 +6,8 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 import os
 import pickle
-from utils.config import *
-from utils.utils import *
+from utils.config import logging, BROWSER_CAHCHE_FOLDER
+from utils.utils import set_chrome_settings
 logger = logging.getLogger(__name__)
 '''
 So that the it encounter no issue run just one tab/window at a time for a single instance of this class !!!
