@@ -1,0 +1,66 @@
+Total Work Experience: 2+ years (including internships and full-time roles)
+Current Role: 'Software Engineer' at 'Triedatum Inc' (Jan 2023 To Present)
+Type: Full-time, Remote
+Current Role: 'Software Engineer'
+Company: 'Triedatum Inc'
+Timeline: Jan 2023 To Present
+Location: Remote
+
+As a 'Software Engineer', He has been instrumental in enhancing the efficiency and reliability of data engineering pipelines and business intelligence solutions. His core responsibilities include optimizing database queries, automating workflows, and ensuring seamless data integration for critical business operations.
+Key Responsibilities and Achievements:
+    Database Optimization: Spearheaded the optimization of Snowflake queries, achieving a 25% reduction in query execution time, which significantly improved the speed and reliability of business intelligence processes.
+    Automation: Designed and implemented end-to-end business report generation pipelines using tools like dbt, Apache Airflow, and Python, resulting in a 40% improvement in process efficiency.
+    Data Integration: Successfully managed the integration of business reports to Amazon S3 and SFTP servers, maintaining a 100% success rate in timely delivery, ensuring uninterrupted access to business-critical data for stakeholders.
+    Data Quality Assurance: Executed comprehensive manual testing protocols, proactively identifying and resolving 95% of potential data integrity issues, which contributed to a zero-error rate in production environments.
+    Recognition: Awarded the Excellence in Performance Award for outstanding contributions to organizational success, reflecting his commitment to delivering high-quality, impactful solutions.
+
+Previous Role: 'Associate Software Engineer'
+Company: 'Paralaxiom Technologies'
+Timeline: Jun 2022 To Nov 2022
+Location: Bengaluru, Karnataka, India
+In this role, He worked on cutting-edge AI solutions and machine learning workflows, focusing on improving system accuracy and efficiency. He collaborated with cross-functional teams to deliver scalable and reliable solutions for real-world applications.
+Key Responsibilities and Achievements:
+    Deep Learning Model Training: Trained deep learning models using the NVIDIA TAO Toolkit, achieving a 20% improvement in accuracy, which enhanced the performance of AI-driven applications.
+    Performance Metrics Improvement: Optimized the mean Average Precision (mAP) evaluation for NVIDIA DeepStream, leading to a 15% improvement in performance metrics.
+    System Debugging: Debugged and optimized features in NVIDIA DeepStream, reducing bugs by 30% and boosting system reliability and user satisfaction.
+    Automation: Automated dataset preprocessing tasks using Python, which resulted in a 25% improvement in workflow efficiency.
+
+Internship Role: 'Python Developer Intern'
+Company: 'Paralaxiom Technologies'
+Timeline: Jun 2022 To Nov 2022
+Location: Remote
+During his internship, He contributed to multiple high-impact projects, focusing on debugging, automation, and scalable AI solutions. This role helped him lay the foundation for his future career as a data engineer and AI practitioner.
+Key Responsibilities and Achievements:
+    Debugging: Identified and resolved critical bugs in DeepStream features, leading to a 30% improvement in software reliability.
+    Workflow Automation: Automated repetitive data preprocessing tasks, increasing overall efficiency by 25%.
+    AI Scalability: Contributed to the development of scalable AI solutions, ensuring adaptability to diverse application needs.
+
+Technical Skills and Tools:
+    Programming Languages: Proficient in Python, C, and Java with a focus on building efficient, modular, and scalable codebases.
+    Data Engineering Tools: Skilled in Apache Airflow, dbt, Snowflake, PostgreSQL, and Redis.
+    Cloud Technologies: Hands-on experience with AWS, enabling robust and scalable cloud-based solutions.
+    AI and ML Frameworks: Expertise in Scikit-learn, OpenCV, and NVIDIA TAO Toolkit, used for designing and training machine learning models.
+    Testing and Debugging: Adept at identifying and resolving software bugs, ensuring high-quality and reliable deliverables.
+
+Career Highlights:
+    Excellence in Performance Award: Recognized at 'Triedatum Inc' for delivering innovative solutions and exceeding performance benchmarks.
+    DeepStream Optimization: Improved the efficiency and reliability of NVIDIA DeepStream-based solutions during his tenure at 'Paralaxiom Technologies'.
+    Automation Expertise: Demonstrated a consistent ability to automate complex workflows, saving significant time and resources across roles.
+
+Future Aspirations:
+He aspires to deepen his expertise in AI and machine learning while contributing to the development of scalable and impactful AI solutions. His primary goal is to work on projects involving cloud-based AI systems, data optimization, and process automation, leveraging his technical and analytical skills to drive innovation in the field.
+
+Soft Skills:
+He is highly collaborative, enjoys problem-solving in teams, and has excellent communication skills. He has experience working in cross-functional teams and coordinating with stakeholders to ensure project alignment and successful delivery. He thrives in remote and fast-paced environments and is eager to share knowledge and mentor junior developers.
+
+Project Highlights:
+One notable project involved automating the generation of business reports, which resulted in a 40% improvement in process efficiency. This was achieved using a combination of Apache Airflow, dbt, and Python, demonstrating his ability to automate complex workflows and optimize system performance.
+
+Mentorship and Leadership:
+Though still early in his career, he has taken on informal mentorship roles, guiding new team members through on-boarding processes and technical challenges. He is eager to continue developing his leadership abilities as his career progresses.
+
+Publications and Community Engagement:
+He is actively engaged in the tech community, regularly exploring new technologies and sharing insights on platforms like GitHub and Stack Overflow. His contributions have helped peers solve technical challenges and stay updated with industry best practices.
+
+Certifications:
+While he has not yet pursued certifications, he plans to pursue further learning in machine learning, cloud technologies, and system design to enhance his skill set.

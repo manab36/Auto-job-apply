@@ -1,6 +1,6 @@
 from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification, T5ForConditionalGeneration, T5Tokenizer
 from sentence_transformers import SentenceTransformer
-from utils.config import logging, q_type_models, qa_type_models, similarity_check_model, JD_SIMILARITY_CHECK_WEIGHTS
+from utils.config import logging, q_type_models, qa_type_models, similarity_check_model, JD_SIMILARITY_CHECK_WEIGHTS, CV_DATA
 from sklearn.metrics.pairwise import cosine_similarity
 import torch
 import re
@@ -8,16 +8,6 @@ import json
 import gc
 import pandas as pd
 logger = logging.getLogger(__name__)
-# Load CV data
-try: 
-    with open("Model_dataset/cv.json", "r") as file:
-        CV_DATA= json.load(file)
-except FileNotFoundError:
-    logger.error("CV file not found.")
-    raise
-except Exception as e:
-    logger.error(f"Unable to load the CV file, error: {e}")
-    raise
 
 
 

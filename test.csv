@@ -1,0 +1,517 @@
+question,predicted_question_type,raw_predicted_ans,input_type,available_options
+Willing to WFO (Hybrid) mode for a 12.30 Noon - 9.30 PM IST shift from day one?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you flexible working for Ahmedabad or Pune locations ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Client is looking to hire someone asap. What is the Minimum notice period you require in days,availability,Yes,text,[]
+"What is your notice period (in Days)? If you are serving notice period, please provide days remaining in notice period.",availability,30,text,[]
+Are you able to join us immediately or within 30 days?,availability,30 days,radio,"[""true"", ""false""]"
+Are you willing to attend 2nd round f2f in Bangalore in the next 10 days? Please don't apply if not interested to come for f2f interview,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Is your notice period less than 30 days? Please don't apply if more,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you currently based in Mumbai? if not are you ready to relocate?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Are you based in Bangalore, as an in-person interview is a mandatory part of the selection process.",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Open to working in a hybrid model from the Gurgaon location,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"By clicking ""Yes"" you agree to our Privacy Policy and data processing. Providing accurate information is essential, as any dishonesty may lead to the rejection of an application or termination.*",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you available for F2F interview on 5th Feb at Chennai location,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Does your notice period exceed 60 days?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Will you be comfortable to work out of Pune location?,availability,Yes,radio,"[""true"", ""false""]"
+Are you open for Chennai. ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your notice period (In days 30-60)?,availability,30,text,[]
+Are you open to working from an office in Mumbai? (Ghatkopar),availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Immediate Joiner,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Would you be open to working at our onsite location in Gurgaon?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable to work from office all 5 days a week? (Hitech city Hyderabad location),availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"This is a long-term contract job, Are you fine taking up a contract job? ",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many days of notice period you would need to serve?,availability,30,text,[]
+Do you have any offer in hand ?,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+How much is your Notice Period ?,availability,30,text,[]
+What's your Notice Period?,availability,30,text,[]
+Are you open to working 5 days a week from the Bangalore office?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable commuting to Gurgaon location?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+2 days per week hybrid from Vikhroli Mumbai?,availability,2,select,"[""Select an option"", ""Yes"", ""No""]"
+In how many days can you join us?,availability,30,text,[]
+Are you comfortable with sub-contractual role?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"This remote role is required you to work from 7:30 PM IST to 4:30 AM IST, would you be comfortable with it ?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Willing to work hybrid model (Mon & Friday) remote as per 12.30 Noon - 9.30 PM IST shift from day one?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you willing to work from office?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Would you be available to come for a Face to Face interview to our Hyderabad office on 8th Feb 2025 (Saturday)?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable to work in 5 days work from office in a week?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Can you join within 15 days or immediately?,availability,30 days,select,"[""Select an option"", ""Yes"", ""No""]"
+This is an onsite role. Are you open to working from office in Coimbatore? ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many days for Notice Period you have ?,availability,30,text,[]
+Kindly apply only if you have more than 5years in ML and backend systems,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your availability for a quick call to brief on this call from our recruitment team?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+what's your current notice period (in days)?,availability,30,text,[]
+In how many days can you join us ?,availability,30,text,[]
+Can you join in before Jan 31st?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Please confirm if your experience is between 5 - 12 Years only.,availability,Limited experience.,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice Period? (in days),availability,30,text,[]
+In how many days you join.,availability,30,text,[]
+Notice period should be less than 30 days.,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+"This is a part time job, is that a problem since this is not full time job position?",availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you applying on this job just for fun?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you aware that this is a part time gig ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How many hours can you spend on a day?,availability,30,text,[]
+How many days' notice period you have?,availability,30,text,[]
+What is your notice period? Please specify the LWD if serving notice.,availability,30 days,text,[]
+Notice period? (Serving Y/N),availability,Yes,radio,"[""true"", ""false""]"
+Last working day?,availability,Last day,text,[]
+Will you now or in the future require visa sponsorship?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you currently serving notice period?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice Period (days),availability,30,text,[]
+How many notice you need to serve (in days)?,availability,30,text,[]
+Immediate joiner ?,availability,30 days,select,"[""Select an option"", ""Yes"", ""No""]"
+Is your notice period 30 days or less and are you okay with a fixed CTC of 14-17 LPA? ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"If your notice period is 90 days, is it negotiable?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you available for a face-to-face interview on February 5 or February 7?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon can you join us (No. of days)?,availability,30,text,[]
+Will you be able to join within a week onsite in Pune?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you presently reside or ready to relocate to Bangalore or Hyderabad ?,availability,Ready,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon you'll be able to join?,availability,30 days,text,[]
+"All applicants are invited to complete this section. The information you provide will allow us to monitor the effectiveness of our policies and procedures, and enable us to conform to equal opportunities legislation. In providing this information, you consent to the information given below to be used for monitoring the effectiveness of equal opportunities policies. This information is confidential and only used for internal statistical purposes.",availability,Yes,select,"[""Select an option"", ""Male"", ""Female"", ""Transgender"", ""I do not wish to answer""]"
+"Are you comfortable with Ahmedabad, Gujarat (Work from office) job location.",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Kindly confirm if you are available to join within 15 - 20 Days.,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are You Immediate Joiner?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you in Hyderabad or willing to relocate to Hyderabad Location?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you willing to work hybrid from Bangalore office every week?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Ready to Join within 30 Days ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you currently residing in Hyderabad or willing to relocate to Hyderabad?,availability,Currently living in Hyderabad,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you an immediate joiner,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your notice period/ days left?,availability,30,text,[]
+How long you need to serve the notice period?,availability,30,text,[]
+Are you willing to work remote ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you willing to do night shift ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Would you be comfortable for in person face to face interview? ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable for working in shift timings from 2PM to 11 PM?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"This is an onsite role, our office is in Basavanagar, Bangalore. Are you comfortable working from office?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you willing to travel to Project Location -Ranchi frequently ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you flexible to work from 12 Pm to 10 PM shift in Hybrid mode,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice period days . (if any),availability,No,text,[]
+Are you comfortable working from 2 pm to 11 pm IST?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Are you currently based in Mumbai/Pune, available for full-time on-site work, and able to attend in-person interviews? If not, please refrain from applying?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you interested in any location? (Bangalore/Chennai/Mumbai),availability,"Bangalore, Chennai, Mumbai",select,"[""Select an option"", ""Yes"", ""No""]"
+"Do you have exactly 4-8 years of work experience? If your experience falls outside this range, kindly refrain from applying. The client strictly requires candidates within this specific experience.",availability,4-8,select,"[""Select an option"", ""Yes"", ""No""]"
+Please specify your notice period?,availability,Yes,text,[]
+Do you own a two wheeler with required documents?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Are you comfortable with job location - Marathahalli / Kudlu Gate, Bangalore",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable with the Gurgaon location?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable with the US shift?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+NOTICE PERIOD?,availability,30,text,[]
+What is your notice period ?,availability,30 days,text,[]
+This job is for Pune location. Are you comfortable working from Pune ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your notice period,availability,30,text,[]
+This is an Onsite Position at our Bangalore office. Are you ok with that?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your Notice Period? if serving Please let us know the no.of days left,availability,30,text,[]
+What is your notice period ( in days)?,availability,30,text,[]
+"Willing to work from office at Hi Tech, Hyderabad.",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+ARE YOU OKAY WITH BHUBNESWAR/HYDERABAD/BANGALORE NOIDA LOCATION?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you open to working 4 days a week from our Bangalore office?,availability,Yes,text,[]
+Are you interested in 6 months contract role?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you legally authorized to work in the country which you are applying?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice period in days?,availability,30,text,[]
+Are you willing to work from Office? (Location: Bangalore),availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Current CTC, ECTC and Notice period",availability,CTC,text,[]
+Are you interested in joining this long-term contract role?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you able to Join immediately or within 30days?,availability,30 days,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice period should be less than 30 days,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Notice Period in days,availability,Yes,text,[]
+"Are you comfortable for work location - Gurugram, Onsite?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon can you join us?(Mention in days),availability,30,text,[]
+Are you comfortable for 5.5 working days i.e. alternate Saturdays will be week off.,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+When can you join us and what is your official notice period?,availability,30 days,text,[]
+Notice,availability,Yes,text,[]
+Are you from Kolkata or willing to move to Kolkata within 15 days?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Will you work from Bangalore office (hybrid)? If you are not local, will you relocate to Pune at your own cost, before the start of the assignment?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your current notice period?,availability,30 days,text,[]
+Are you serving Notice Period/ Immediate Joiner?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Looking for someone who can join us immediate to 15days.,availability,30 days,text,[]
+Are you Willing to go to our Office in Bangalore?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon can you join?,availability,30,text,[]
+We must fill this position urgently. Can you start immediately with 15 days? If not kindly refrain from applying. The client strictly requires candidates within this period.,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Will you now, or in the future, require work visa sponsorship (i.e. visa application, transfer, etc.) to legally work in the Country which you are applying?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"THIS IS A CONTACT JOB - ( EVERY 6 MONTHS, THE CONTRACT WILL KEEP ON EXTENDING - NO DUAL JOBS )",availability,CONTACT JOB,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you willing to work onsite in Bengaluru 3 days/week?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you available on February 8th for interveiew?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Are you an immediate joiner ? If not, then what is your official notice period ?",availability,30 days,text,[]
+Official Notice Period left to serve (in days),availability,Yes,text,[]
+Immediate Joiner ,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you comfortable to work Hybrid from Pune office and to travel as required ?,availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"If this role requires you to work in office, would you be willing to consider relocation?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No"", ""Not applicable for this role""]"
+Are you a prior employee or contractor of Perforce?,availability,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Can you join within 15 to 30 days ?,availability,15,select,"[""Select an option"", ""Yes"", ""No""]"
+"This is a pan India-Hybrid role, Are you fine working onsite for at least 3 days in a week ?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+How soon you can join us? Please mention your notice period in days.,availability,30,text,[]
+Notice Period:,availability,Yes,text,[]
+In how many days you can join once offered the role ?,availability,30,text,[]
+Available Start Date:,availability,Available Start Date,text,[]
+"This is not a full time role, are you comfortable with long term contract engagement ?",availability,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What's your current ctc?,current_ctc,517000,text,[]
+CCTC in LPA?,current_ctc,5.17,text,[]
+Current compensation per annum in INR?,current_ctc,517000,text,[]
+What is your Currenct CTC?,current_ctc,517000,text,[]
+What is your current CTC (in LPA)?,current_ctc,5.17,text,[]
+Current Inhand Salary?,current_ctc,517000,text,[]
+Please mention your current CTC.,current_ctc,517000,text,[]
+"Apply only if you have completed B.Tech, B.E or M.Tech. Mention the Percentage.",current_ctc,Varies,text,[]
+What is your current CTC?(in LPA),current_ctc,517000,text,[]
+What is your current CTC (in lacs)?,current_ctc,5.17,text,[]
+Current CTC (in LPA),current_ctc,5.17,text,[]
+Current Salary? (in LPA),current_ctc,5.17,text,[]
+What is your CCTC in lakhs?,current_ctc,5.17,text,[]
+Current Compensation (Fixed) ?,current_ctc,517000,text,[]
+Mention the Current Salary.(CTC in lakhs),current_ctc,5.17,text,[]
+Please share current CTC in INR LPA,current_ctc,Varies,text,[]
+What is your current annual CTC (in INR)?,current_ctc,517000,text,[]
+Please specify your current CTC?,current_ctc,517000,text,[]
+what is your current ctc?,current_ctc,517000,text,[]
+Kindly share your current CTC for our reference.,current_ctc,517000,text,[]
+What is your Current CTC? (In LPA),current_ctc,517000,text,[]
+Current Compensation: (Please provide your current compensation. Failure to answer this questions with a real number may result in your application being dismissed or rejected.),current_ctc,Varies,text,[]
+What is your current CTC (Annual) ?,current_ctc,517000,text,[]
+Please mention: Current CTC [Fixed + Variable] in LPA,current_ctc,5.17,text,[]
+What is your hourly rate? (write in Indian Rupees),current_ctc,231,text,[]
+What is your Current CTC in LPA?,current_ctc,5.17,text,[]
+What is your ctc?,current_ctc,517000,text,[]
+What is your current salary per year?,current_ctc,517000,text,[]
+What is your current compensation?,current_ctc,517000,text,[]
+What is your current compenstaion,current_ctc,517000,text,[]
+CURRENT CTC?,current_ctc,517000,text,[]
+Current CTC in LPA,current_ctc,5.17,text,[]
+what's your current CTC in LPA?,current_ctc,5.17,text,[]
+Total Year of Experience?,education,Master's degree,text,[]
+What was your GPA?,education,Master's degree,text,[]
+Relevant years of experience?,education,AI & Machine Learning,text,[]
+Have you completed the following level of education: Associate's Degree?,education,Master's degree,radio,"[""Yes"", ""No""]"
+Are you from IIT/NIT/IIIT college ?,education,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+what is your expected CTC?,expected_ctc,850000,text,[]
+What are your compensation expectations with this role?,expected_ctc,850000,text,[]
+Expected CTC (in LPA),expected_ctc,850000,text,[]
+"What is your expected CTC salary in Lakh Per Annum (that will have PF, TDS deductions)?",expected_ctc,850000,text,[]
+What is your salary expectations?,expected_ctc,850000,text,[]
+Would you be fine with an annual package of 15 LPA? ,expected_ctc,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Mention the Salary Expectations.,expected_ctc,850000,text,[]
+What is your Expected CTC in LPA?,expected_ctc,8.5,text,[]
+How much is your expected CTC ?,expected_ctc,850000,text,[]
+What is your expected compensation?,expected_ctc,850000,text,[]
+what is your Expected current ctc?,expected_ctc,850000,text,[]
+Expected CTC? (in LPA),expected_ctc,850000,text,[]
+Would you be fine with an annual package of 15 LPA?,expected_ctc,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Kindly share your expected CTC for our reference.,expected_ctc,850000,text,[]
+What is your expected CTC ?,expected_ctc,850000,text,[]
+What is your Expected CTC (Annual) ?,expected_ctc,850000,text,[]
+Desired Compensation:,expected_ctc,850000,text,[]
+EXPECTED CTC?,expected_ctc,850000,text,[]
+Expected CTC in LPA,expected_ctc,850000,text,[]
+what is your expected salary ?,expected_ctc,850000,text,[]
+Would you be fine with an annual package of 4 LPA? ,expected_ctc,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your expected salary per year?,expected_ctc,850000,text,[]
+What is your Current CTC and Expected CTC,expected_ctc,850000,text,[]
+What's your expected ctc ( budget 30 LPA )?,expected_ctc,850000,text,[]
+Expected salary per month?,expected_ctc,850000,text,[]
+Expected compensation per annum in INR ?,expected_ctc,850000,text,[]
+The salary for this position is upto 17 LPA. Are you ok with this?,expected_ctc,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your expected CTC (in LPA)?,expected_ctc,850000,text,[]
+Would you be fine with an annual package of 14 LPA?,expected_ctc,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Please mention your expected CTC.,expected_ctc,850000,text,[]
+What is your expected CTC (in lacs)?,expected_ctc,850000,text,[]
+What is your expected annual CTC (in INR)?,expected_ctc,850000,text,[]
+Please mention: Expected CTC [Fixed + Variable] in LPA,expected_ctc,850000,text,[]
+Do you have an understanding about different vehicle components?,others,Value ethical decision-making.,select,"[""Select an option"", ""Yes"", ""No""]"
+"All applicants are invited to complete this section. The information you provide will allow us to monitor the effectiveness of our policies and procedures, and enable us to conform to equal opportunities legislation. In providing this information, you consent to the information given below to be used for monitoring the effectiveness of equal opportunities policies. This information is confidential and only used for internal statistical purposes.",others,Value ethical decision-making.,select,"[""Select an option"", ""Male"", ""Female"", ""Transgender"", ""I do not wish to answer""]"
+Relevant experience in years,others,Value ethical decision-making.,text,[]
+Ansible/Puppet/Chef,others,Value ethical decision-making.,text,[]
+Are you in Chennai?,personal_information,No,select,"[""Select an option"", ""Yes"", ""No""]"
+"If referred by a current employee, please provide the employee's name:",personal_information,Manab,text,[]
+Do you have valid passport with validity of more than 1 year? ,personal_information,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you currently working remotely?,personal_information,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you an EV Enthusiast?,personal_information,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Current Location?,personal_information,"Assam, India",text,[]
+Are you currently residing in Chennai?,personal_information,No,select,"[""Select an option"", ""Yes"", ""No""]"
+"If you're an employee referral, please provide the name of the employee",personal_information,Yes,text,[]
+Veteran Status,personal_information,No military background,select,"[""Select an option"", ""I don't wish to answer"", ""I identify as one or more of the classifications of a protected veteran"", ""I am not a protected veteran""]"
+Disability Status,personal_information,No,select,"[""Select an option"", ""I do not want to answer"", ""No, I do not have a disability and have not had one in the past"", ""Yes, I have a disability, or have had one in the past""]"
+Are your immediate joiner?,personal_information,No,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you legally authorized to work in your country of application,personal_information,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+Dates attended,personal_information,Yes,select,"[""Month"", ""January"", ""February"", ""March"", ""April"", ""May"", ""June"", ""July"", ""August"", ""September"", ""October"", ""November"", ""December""]"
+How many years of work experience do you have with Front-End Development?,skills,2,text,[]
+How many years of work experience do you have with System on a Chip (SoC)?,skills,2,text,[]
+How many years of work experience do you have with VMware Infrastructure?,skills,2,text,[]
+How many years of work experience do you have with OpenStack?,skills,2,text,[]
+"How many years of experience do you have in LWC, AURA, APEX ?",skills,2,text,[]
+How many years of work experience do you have with Robot Framework?,skills,2,text,[]
+How many years of work experience do you have with dSPACE?,skills,2,text,[]
+Are you Salesforce Platform Developer 2 Certified?,skills,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with CANoe?,skills,2,text,[]
+How many years of experience do you have in technical assistance for Microsoft 365 services?,skills,2,text,[]
+How many years of work experience do you have with data center migration - VMware to Openstack ?,skills,2,text,[]
+How many years of work experience do you have with Advanced Driver-Assistance Systems (ADAS)?,skills,2,text,[]
+How many total years of experience do you have ?,skills,2,text,[]
+How many years of work experience do you have in Salesforce Development?,skills,2,text,[]
+How many years of work experience do you have with Medical Devices?,skills,2,text,[]
+How many years of work experience do you have with Dell Boomi?,skills,2,text,[]
+How many years of work experience do you have with Dotnet developer,skills,2,text,[]
+How many year's of experience do you have on Salesforce testing ?,skills,2,text,[]
+"How many years of work experience do you have with the following tools and technologies: Azure Cloud, Ansible, Terraform scripting?",skills,2,text,[]
+How many years of overall experience do you have?,skills,2,text,[]
+How many years of work experience do you have with Database Administration?,skills,2,text,[]
+How many years of experience do you have in PCI and SOC2 Compliance?,skills,2,text,[]
+How many years of work experience do you have with ASP.NET MVC?,skills,2,text,[]
+How many years of experience do you have with .Net?,skills,2,text,[]
+How many years of work experience do you have with ConnectWise?,skills,2,text,[]
+Total years of experience in full stack web developement.,skills,2,text,[]
+How many years of experience do you have with .Net core?,skills,2,text,[]
+How many years of experience do you have with Cloud Native Architecture?,skills,2,text,[]
+How many years of work experience do you have with WordPress?,skills,2,text,[]
+How many years of experience do you have with Debugging?,skills,2,text,[]
+Do you Have 5+ Years of Experience in Java Development?,skills,5,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Databricks Products?,skills,2,text,[]
+How many years of work experience do you have with Exposure to SAP?,skills,2,text,[]
+How many years of experience do u have in AI/ML developer?,skills,2,text,[]
+How many years of work experience do you have with Computer Architecture?,skills,2,text,[]
+DevOps; groovy; gradle,skills,Graovy,text,[]
+How many year's of experience do you have on Automation / Selenium ?,skills,2,text,[]
+How many years of work experience do you have with NetSuite?,skills,2,text,[]
+How many years of experience you have in AI/ ML Engineering?,skills,2,text,[]
+Do you have Salesforce Platform Developer 1 Certification,skills,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Hands-on experience with Salesforce Development in years,skills,2,text,[]
+How many years of work experience do you have with BPMN?,skills,2,text,[]
+How many years of work experience do you have with IBM BPM?,skills,2,text,[]
+How many years of work experience do you have with VMware?,skills,2,text,[]
+How many years of experience you have in Design and Implement of Data Centre advance network & security architecture ?,skills,2,text,[]
+How many years of work experience do you have with IBM Operational Decision Manager (ODM)?,skills,2,text,[]
+How many years of work experience do you have with Microsoft Power Pages?,skills,2,text,[]
+How many years of work experience do you have with MERN Stack?,skills,2,text,[]
+How many years of work experience do you have with Microsoft Power Platform?,skills,2,text,[]
+How Many Year of Experience in BAW Developer?,skills,2,text,[]
+How many years of work experience do you have with Cramer?,skills,2,text,[]
+How many years of work experience do you have with Palo Alto Networks?,skills,2,text,[]
+How many years of work experience do you have with Webrtc?,skills,2,text,[]
+How many years of work experience do you have with Microsoft Dynamics CRM?,skills,2,text,[]
+How many years of work experience do you have with Enterprise Software?,skills,2,text,[]
+How many years of Consulting experience do you currently have?,skills,2,text,[]
+How many years of Experience in Deployment?,skills,2,text,[]
+How many years of experience do you have with Salesforce Health Cloud?,skills,2,text,[]
+How many years of experience do you have as a salesforce developer?,skills,2,text,[]
+How many years of work experience do you have with Citrix Products?,skills,2,text,[]
+How many years of work experience do you have with HTML5?,skills,2,text,[]
+How many years of work experience do you have with QR?,skills,2,text,[]
+How many years of work experience do you have with Azure IoT?,skills,2,text,[]
+What is your relevant experience in QA Manual?,skills,2,text,[]
+"Are you well verse with SDLC & STLC Process? If yes, how many years ?",skills,2,text,[]
+How many years of experience do you have in Java?,skills,1,text,[]
+Do you have at least 3 years of experience in React.js?,skills,2,select,"[""Select an option"", ""Yes"", ""No""]"
+Experience with Apttus and different callbacks in years,skills,2,text,[]
+Do you have at least 6 years of overall experience?,skills,2,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with AIML Architech ?,skills,2,text,[]
+How Many Years of Hands on experience you have in Go-Lang Programming Language.,skills,2,text,[]
+How many years of work experience do you have with Bootstrap (Framework)?,skills,2,text,[]
+How many years of work experience do you have with R (Programming Language)?,skills,2,text,[]
+How many years of Pharmaceutical Manufacturing experience do you currently have?,skills,2,text,[]
+How many years of work experience do you have with Bitbucket?,skills,2,text,[]
+How many years of work experience do you have with AWS Glue?,skills,2,text,[]
+How many years of work experience do you have with Maven?,skills,2,text,[]
+Cloud Experience? AWS/Azure,skills,AWS,text,[]
+How many years of experience do you have in API/Web Services?,skills,2,text,[]
+How many years of experience in SQL?,skills,2,text,[]
+How many years of work experience do you have with Full-Stack Development?,skills,2,text,[]
+How many years of work experience do you have with Cisco Systems Products?,skills,2,text,[]
+How many years of work experience do you have with ARM Architecture?,skills,2,text,[]
+How many Years of experience do you have with Full Stack Developer?,skills,2,text,[]
+How many years of experience do you have in TypeScript?,skills,2,text,[]
+How many years of work experience do you have with C# in .NET?,skills,2,text,[]
+How many years of work experience do you have with Hibernate?,skills,2,text,[]
+PS Note : The role needs some who has lead backend task for ML models hence good knowledge in backend architecture along with ML is needed.,skills,5,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Splunk?,skills,2,text,[]
+How many years of work experience do you have with J2EE Application Development?,skills,2,text,[]
+How many years of work experience do you have with Algorithms?,skills,2,text,[]
+How many years of work experience do you have with Embedded Systems?,skills,2,text,[]
+How many years of work experience do you have as mean Stack Developer?,skills,2,text,[]
+How many years of work experience do you have with Mango dB?,skills,2,text,[]
+How many years of Banking experience do you currently have?,skills,2,text,[]
+How many years experience do you have in VMware administration?,skills,2,text,[]
+How many years of experience do you have in Fullstack Development?,skills,2,text,[]
+How many years of work experience do you have with ServiceNow?,skills,2,text,[]
+How many years of work experience do you have in IT?,skills,2,text,[]
+How many years of work experience do you have with Snowflakes?,skills,2,text,[]
+How many years of total experience do you have in ML and Generative AI?,skills,2,text,[]
+How many years of experience in AI ML Development,skills,2,text,[]
+How many years of work experience do you have with Azure Functions?,skills,2,text,[]
+How many years of work experience do you have with Apache Beam?,skills,2,text,[]
+How many years of work experience do you have with Adobe Experience Manager (AEM)?,skills,2,text,[]
+How many years' experiences you have in Data Science?,skills,2,text,[]
+"How many years' experiences you have for Data Science (Pydantic, Pytorch, Pyarrow, Scikit, Hugging Face, Pandas)?",skills,2,text,[]
+Do you have at least 3 years experience working in Test Automation?,skills,2,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with SQL Database Administration?,skills,2,text,[]
+How many years of work experience do you have with Spring Framework?,skills,2,text,[]
+How many years of work experience do you have with SQL Server Reporting Services (SSRS)?,skills,2,text,[]
+How many years of work experience do you have with Microsoft Power Apps?,skills,2,text,[]
+"Years of experience working with defect or incident tracking software (e.g., SMAX, HP ALM/Quality Center, Remedy, ServiceNow)",skills,2,text,[]
+"How many years of experience you have with HTTP, XML, JSON?",skills,2,text,[]
+How many years of experience you have in APIGEE x?,skills,2,text,[]
+How many years of experience you have as Apigee API Engineer?,skills,2,text,[]
+How many years of work experience do you have with TCL?,skills,2,text,[]
+How many years of work experience do you have with Azure DevOps Services?,skills,2,text,[]
+How many years of work experience do you have with Azure Automation?,skills,2,text,[]
+How much experience do you have with backend development?,skills,2,text,[]
+How many years of work experience do you have with Azure's durable function?,skills,2,text,[]
+"How many years of work experience do you have in delivering highly available, scalable cloud based distributed systems in Java ?",skills,1,text,[]
+How many years of work experience do you have with Kafka?,skills,1,text,[]
+How many years of experience do you have with GEN AI?,skills,2,text,[]
+"Do you have work experience with Cloud skills (AWS/Azure) ? If yes, please mention the number of years.",skills,2,text,[]
+What is your overall years of work experience?,skills,2,text,[]
+How many years of work experience do you have with Cloudera?,skills,2,text,[]
+How many years of experience with native Android app development?,skills,2,text,[]
+How many years of experience do you have in Golang?,skills,2,text,[]
+How many years of work experience do you have with Open-Source Software?,skills,2,text,[]
+Do you have atleast 3 yrs handson experience in Python Development,skills,2,radio,"[""Yes"", ""No""]"
+How many years of work experience do you have as an AI Engineer,skills,2,text,[]
+How many years of work experience do you have with Cloud?,skills,2,text,[]
+How many years of work experience do you have with Elasticsearch?,skills,2,text,[]
+How many years of experience on Snowflakes ?,skills,2,text,[]
+How many years of experience on DBT ?,skills,2,text,[]
+How many years of experience on Airflow ?,skills,2,text,[]
+How many years of work experience do you have with Visual Basic .NET (VB.NET)?,skills,2,text,[]
+How many years of work experience do you have with snowflake?,skills,2,text,[]
+How many years of experience as an ETL Developer?,skills,2,text,[]
+How many years of experience do you have as a full stack developer,skills,2,text,[]
+What's your DevOps experience in terms of years?,skills,2,text,[]
+How many years of experience do you have in information retrieval?,skills,2,text,[]
+How many years of work experience do you have with Kotlin?,skills,2,text,[]
+How many years of work experience do you have with Fivetran?,skills,2,text,[]
+How many years of work experience do you have with Android?,skills,2,text,[]
+How many years of work experience do you have as a Javascript Fullstack Developer?,skills,1,text,[]
+How many years of IT Services and IT Consulting experience do you currently have?,skills,2,text,[]
+How many years of work experience do you have with Jira?,skills,1,text,[]
+How many years of work experience do you have with NestJS?,skills,2,text,[]
+How many years of Data Engineering experience do you have?,skills,2,text,[]
+How many years of work experience do you have with Oracle Data Integrator (ODI)?,skills,2,text,[]
+Do you have 6+ years of experience with Backend development?,skills,2,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of experience you have into software design and programming?,skills,2,text,[]
+How many years of work experience do you have with Cloverleaf?,skills,2,text,[]
+How many years of experience do you have in AUTOSAR?,skills,2,text,[]
+How many years of work experience do you have as an Android Developer?,skills,2,text,[]
+"Min 5 years of hands-on experience with Core Java, Spring, Spring Boot, Hibernate, and JUnit, writing optimized, efficient, and clean code? ",skills,2,select,"[""Select an option"", ""Yes"", ""No""]"
+How many years of work experience do you have with Microsoft Bot Framework?,skills,2,text,[]
+How many years of work experience do you have with Azure Kubernetes Service (AKS)?,skills,2,text,[]
+How many years of work experience do you have with Active Directory Experience?,skills,2,text,[]
+"How many years of work experience do you have with deploying, managing, and upgrading Kubernetes?",skills,2,text,[]
+How many minimum years of experience you have as SDE - 3 ?,skills,2,text,[]
+How many years of experience do you have in JavaScript?,skills,1,text,[]
+How many years of work experience do you have with Information Technology?,skills,2,text,[]
+How many years of experience do you have in software development?,skills,2,text,[]
+How many years of work experience do you have with Capital Markets?,skills,2,text,[]
+How many years of work experience do you have with Adobe Spark?,skills,1,text,[]
+How many years of work experience do you have working on Salesforce?,skills,2,text,[]
+How many years of work experience do you have with Apex Programming?,skills,2,text,[]
+How many years of exp do you have in AWS EKS?,skills,2,text,[]
+Are you Salesforce Platform Developer 1 Certified?,skills,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+How many minimum of professional experience you have as a Full Stack Developer ?,skills,2,text,[]
+How many years of work experience do you have with Crestron?,skills,2,text,[]
+How many years of work experience do you have with Groovy?,skills,2,text,[]
+How many years of experience do you have in Production Support?,skills,2,text,[]
+How many years of experience do you have in SQL Development?,skills,2,text,[]
+How many years of work experience do you have with Performance Tuning?,skills,2,text,[]
+How many years of experience do you have leading a team of 4+ engineers?,skills,2,text,[]
+How many years of work experience do you have with Microsoft Foundation Class (MFC)?,skills,2,text,[]
+How many years of software development experience do you have ?,skills,2,text,[]
+"How many years of work experience do you have with query optimization techniques, indexing strategies, and performance tuning techniques?",skills,2,text,[]
+"How many years of work experience do you have with in T-SQL for developing stored procedures, triggers, views, functions, and complex queries?",skills,2,text,[]
+How many years of work experience do you have with Database Development?,skills,2,text,[]
+How many years of work experience do you have with JUnit?,skills,1,text,[]
+How many years of work experience do you have with Snaplogic ?,skills,2,text,[]
+Node.Js experience?,skills,2,text,[]
+How many years of work experience as an Senior software frontend Engineer?,skills,2,text,[]
+How many years of work experience do you have as SQL Developer?,skills,2,text,[]
+How many years of work experience do you have with Deployment Strategies?,skills,2,text,[]
+How many years of work experience do you have with Apache Sling?,skills,2,text,[]
+How many years of work experience do you have with Azure API Management?,skills,2,text,[]
+"How many years of experience do you have in POC, solutioning?",skills,2,text,[]
+How many years of work experience do you have with OpenShift?,skills,2,text,[]
+How many years of experience do you have in application development in Python?,skills,2,text,[]
+How many years of experience in MicroServices?,skills,2,text,[]
+How many years of work experience do you have with Object-Oriented Programming (OOP),skills,2,text,[]
+How many years of work experience do you have with Express.js?,skills,2,text,[]
+First Round is coding assignment (end to end project). Will you be okay,skills,Yes,select,"[""Select an option"", ""Yes"", ""No""]"
+"Do you hold any relevant certifications such as Microsoft Azure, Fortinet, Aruba, or CompTIA Network+?",working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked with Microsoft Azure and M365 in a system or network administration role? ,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience in Playright tool?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you a M365-certified ?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you a current employee of Perforce?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+years of experience in angular,working_experience,"Yes, angular programming.",text,[]
+Do you have hands-on experience managing and configuring Aruba and Fortinet networking solutions?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience in RAG architecture?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your total year of experience?,working_experience,2,text,[]
+Experience in the e-commerce domain.,working_experience,"Experience in data engineering, AI, and AI.",select,"[""Select an option"", ""Yes"", ""No""]"
+Do you hold certifications in Salesforce?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Experience working within Agile practices and knowledge of Agile values & principles.,working_experience,Experience with Agile methodologies.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience with z/OS MF tool,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Years of experience with Java programming,working_experience,"Experience with Python, C, and Java.",text,[]
+Do you have experience designing highly scalable distributed system/microservices?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience with zOS system programming along with ISV upgrade,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience of NodeJs,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your total years of experience ?,working_experience,2,text,[]
+Did you do any Electrical Vehicle Course/External Certification during your Graduation / Post Graduation?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Strong experience in unit testing and Test-Driven Development.,working_experience,"Experience in unit testing, test-driven development.",select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience with Docker or containerization? ,working_experience,Experience with Docker.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you now or have you in the past worked for Bottomline Technologies?,working_experience,Yes.,select,"[""Select an option"", ""I am a current Bottomline employee"", ""I am a previous Bottomline employee"", ""No, I have never worked for Bottomline""]"
+Mention the total years of experience.,working_experience,2,text,[]
+Do you have Experience working with ISO?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Kafka Cluster,working_experience,"Yes, Kafka Cluster.",text,[]
+Have you worked on Generative AI applications using LangChain or LangGraph?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Experience with Data extraction?,working_experience,Experience with DeepStream Optimization.,select,"[""Select an option"", ""Yes"", ""No""]"
+Experience with Data manipulation,working_experience,"Yes, data engineering.",select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked on E-commerce projects?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Databricks and ETL experience ?,working_experience,"Databricks, ETL.",text,[]
+"Do you have any experience with AWS services relevant to application migrations, such as EC2, VPC, IAM, and EBS.",working_experience,No.,text,[]
+Do you have experience in building scalable systems (handling 10 million+ API calls/day)? ,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Total Experience,working_experience,No direct experience.,text,[]
+"-This role requires dedicated MS SQL Server development exp, are you a SQL Deve -If your background is in Data Analysis, Data Engineering, .NET, MS BI, or Oracle PL/SQL, please refrain from applying.",working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Hands on AWS experience ?,working_experience,Hands-on with AWS.,select,"[""Select an option"", ""Yes"", ""No""]"
+"Do you have strong understanding of database design principles, including normalization?",working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Linux,working_experience,"Yes, Linux.",text,[]
+"Do you have experience in Llama2, Mistral AI or equivalent?",working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Hands on expertise in implementing HTTP/HTTPS and REST interfaces and services?,working_experience,"Using REST, HTTPS, and REST APIs.",select,"[""Select an option"", ""Yes"", ""No""]"
+Have you written unit tests that exercise all major logic components of the code?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked with ELK and Redis?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have ability to design & execute complex Test Cases & Test Scenarios?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience with dbt databases?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Are you currently working with a product based organization?,working_experience,Yes.,radio,"[""true"", ""false""]"
+Do you have understanding of IAM?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience in .net core backend integration?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Total years of experience?,working_experience,2,text,[]
+Do you have experience in unit testing and Test-Driven Development?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked in the e-commerce domain?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have good Understanding in process of JIRA bug tracking? ,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+"Have you worked with DevOps tools and practices (container orchestration, CI, monitoring and alerting, Kubernetes)?",working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked with Spring framework?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked with Java 11+?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked for a product-based company ever?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have valid Cloud /VM Ware certifications ?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your years of experience?,working_experience,2,select,"[""Select an option"", ""10-12"", ""12-14"", ""14-16"", ""16-18"", ""18-20""]"
+Have you ever worked in the Electrical Vehicle?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Total Experience in years,working_experience,No direct experience.,text,[]
+Have you worked with MongoDB and PostgreSQL?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Have you worked with Microservices?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Years of experience working on project(s) involving the implementation of solutions applying development life cycles (SDLC),working_experience,No direct experience.,text,[]
+What is your total experience?,working_experience,2,text,[]
+Do you experience in testing on AI chatbots with prompts?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Years of Unix Shell Scripting,working_experience,Experience with Unix Shell Scripting.,text,[]
+"Experience in documentation, monitoring, end-to-end verification, and troubleshooting",working_experience,No direct experience.,text,[]
+Do you have ( 7 Years ) Relevant Experience as Data Engineer ?,working_experience,Yes.,text,[]
+Do you have experience in implementing Data Structures & Algorithms? ,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Years with on premises / cloud implementations Open-Source Integration Solutions,working_experience,Yes.,text,[]
+Do you have experience with developing Saas application ?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Years of experience writing technical documentation in a software development environment,working_experience,"Experience with data engineering, AI, and automation.",text,[]
+Years of experience working with source code control systems,working_experience,No direct experience.,text,[]
+What is your relevant experience in QA Automation?,working_experience,Limited experience.,text,[]
+Your total years of experience ?,working_experience,2,text,[]
+"Do you have work experience with any of the technologies like JAVA, Python or Node JS ?",working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have AWS certification - Professional Certification,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+What is your experience in MERN Stack Development ?,working_experience,Limited experience.,text,[]
+Do you have hands on experience working in Manufacturing domain?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you experience in Database testing?,working_experience,Limited experience.,text,[]
+Do you have experience in web Application testing & Mobile Application testing?,working_experience,Yes.,text,[]
+"Professional certifications in Power BI, Azure, or similar tools ",working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have hands on experience working in Image Processing and Objection Detection ?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have hands on experience working with edge devices ?,working_experience,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you hold an active certification in Elasticsearch ?,working_experience,No.,select,"[""Select an option"", ""Yes"", ""No""]"
+Do you have experience in testing Mobile Apps (IOS and Android Platform) which are based on Location services & Maps?,working_experience,Yes.,text,[]
+Have experience in Pyspark; AWS Glue; SQL.?,working_experince,Yes.,select,"[""Select an option"", ""Yes"", ""No""]"
