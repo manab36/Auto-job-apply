@@ -1,72 +1,29 @@
-Recent Academic Qualification
-    Recent Degree completed: MCA
-    Degree: 'Master of Computer Applications' (MCA)
-    Institution: 'Tezpur University'
-    Location: 'Tezpur, Assam, India'
-    Duration: Jully 2019 to Jully 2022
-    Final CGPA: '7.57/10'
-    Final Percentage: 75 %
-    Type of degree: Full time
-    
-    Degree: 'Bachelor of Science' (Bsc) in 'Computer Science'
-    Institution: 'Gauhati University' 
-    Location: 'Guwahati, Assam, India'
-    Duration: Jully 2019 to Jully 2022
-    Final CGPA: '7.57'
-    Final Percentage: 75 %
-    Type of degree: Full time
+Academic Qualifications
+Master of Computer Applications (MCA) | Tezpur University, Assam | 2019 – 2022 | CGPA: 7.57/10 (75%)
+Bachelor of Science (BSc) in Computer Science | Gauhati University, Assam | 2016 – 2019 | CGPA: 7.57/10 (75%)
+Notable Academic Projects
+    VF2 Algorithm Implementation (MCA Minor Project, 2022) | C, Python, Matplotlib
+    Implemented VF2 in C for efficient graph matching.
+    Built a Python visualization tool, reducing analysis time by 40%.
 
-During his MCA, He gained foundational knowledge in software development, data engineering, and computational theory. The curriculum emphasized both theoretical concepts and practical application, enabling him to develop technical expertise in programming, algorithms, and system design. His academic excellence was evident in his ability to translate classroom knowledge into impactful projects and research initiatives.
-Notable Projects
-    Implementation of VF2 Algorithm (MCA Minor Project)
-        Timeline: December 2022
-        Tools Used: C, Python, Matplotlib
-        Objective: To develop and implement the VF2 algorithm, solving the Sub-Graph Isomorphism Problem, a critical challenge in graph theory.
-        Outcomes:
-            Designed and executed the VF2 algorithm in C, achieving efficient solutions for complex graph-matching problems.
-            Developed a Python-based visualization tool to present algorithmic performance metrics in an interactive and user-friendly manner.
-            Reduced analysis time by 40% using visualized data insights, improving the interpretability of algorithm behavior.
-            Gained hands-on experience in algorithm design, programming, and performance optimization.
-        Skills Acquired: Advanced problem-solving, algorithm implementation, and graphical data representation.
-    AutoEDA (Exploratory Data Analysis Automation)
-        Timeline: August 2024
-        Project Link: AutoEDA Tool
-        Tools Used: Python, Pandas, Matplotlib, Parallel Computing
-        Objective: To create an automated tool for Exploratory Data Analysis (EDA), enabling faster and more efficient analysis of large datasets.
-        Outcomes:
-            Automated key EDA tasks such as data cleaning, generating summary statistics, and creating visualizations.
-            Integrated parallel computing techniques to optimize processing speed, making the tool scalable for large datasets.
-            Delivered a user-friendly interface for data analysts to explore datasets without writing complex code.
-            Reduced computation time significantly, ensuring effectiveness for real-world applications.
-        Skills Acquired: Data preprocessing, automation, parallel computing, and user-centric design.
+    AutoEDA – Exploratory Data Analysis Automation (Aug 2024) | Python, Pandas, Parallel Computing
+    Automated data cleaning, statistics, and visualization.
+    Optimized processing speed using parallel computing.
 
-Additional Academic Achievements
-    Core Java Certification (RCPL)
-        Date: June 2017
-        Overview: Developed proficiency in Java programming, covering OOP principles, multithreading, exception handling, and data structures.
-    Advanced SQL Certification (HackerRank)
-        Date: August 2024
-        Overview: Mastered advanced SQL concepts, including complex joins, window functions, and database optimization techniques.
-    Data Science Certification (Cutshort)
-        Date: August 2024
-        Overview: Acquired hands-on skills in data analysis, predictive modeling, and machine learning workflows.
+Certifications & Achievements
+    Core Java (RCPL, 2017) – OOP, multithreading, exception handling.
+    Advanced SQL (HackerRank, 2024) – Complex joins, window functions, DB optimization.
+    Data Science (Cutshort, 2024) – Predictive modeling, ML workflows, data analysis.
 
-Key Academic Skills and Coursework
-    Programming Skills Acquired:
-        Proficient in Python, C, and Java, with a strong foundation in object-oriented programming and data structures.
-        Experienced in developing automation pipelines and working with cloud platforms like AWS.
-    Relevant Coursework:
-        Machine Learning: Hands-on experience in supervised and unsupervised learning algorithms, including regression, classification, and clustering techniques.
-        Data Structures and Algorithms: Advanced knowledge of graph algorithms, dynamic programming, and performance optimization.
-        Database Management: Proficiency in SQL, Snowflake, and other relational databases for data storage and retrieval.
-        Data Visualization: Expertise in using tools like Matplotlib, Seaborn, and Tableau for creating insightful dashboards.
+Technical Skills & Coursework
+    Programming: Python, C, Java (OOP, data structures)
+    Data Engineering: Snowflake, SQL, Apache Airflow, AWS
+    Visualization: Matplotlib, Seaborn, Tableau
+    Machine Learning: Regression, classification, clustering
+    Algorithms: Graph theory, dynamic programming, optimization
+    Databases: Advanced SQL, relational DBs, data warehousing
 
-Educational Interests and Future Aspirations
-He is particularly passionate about using his education to solve real-world problems. He actively seeks opportunities to apply his academic knowledge to practical projects, focusing on data optimization, scalable AI solutions, and cloud-based systems. He aims to contribute to cutting-edge research and development in artificial intelligence, leveraging his strong academic foundation and hands-on project experience.
-Frequently Asked Questions About Education
-    What are your strongest academic subjects?
-    My strongest subjects include machine learning, data engineering, and algorithm design.
-    Have you worked on any notable academic projects?
-    Yes, my VF2 algorithm implementation and AutoEDA projects are highlights of my academic journey.
-    Do you plan to pursue further education or certifications?
-    Yes, I plan to acquire certifications in cloud architecture and advanced AI systems to complement my academic and professional background.
+Future Aspirations & Interests
+    Passionate about AI, cloud computing, and data optimization.
+    Plans to pursue certifications in cloud architecture & AI systems.
+    Interested in R&D for scalable AI applications.

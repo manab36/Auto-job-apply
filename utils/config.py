@@ -27,13 +27,25 @@ DAYS_TO_CHECK_FOR_SAME_JD= 30
 q_type_models= [
         'model/fine_tuned_question_classifier_model_lite-default',
         "model/fine_tuned_question_classifier_model_lite-SGD_v2",
+        "model/fine_tuned_question_classifier_model_lite-default_v2",
         ]
-qa_type_models= [
-    "model/fine_tuned_question_answer_model-base",
-    "model/fine_tuned_question_answer_model-base-filtered",
+qa_models= [
     "model/fine_tuned_question_answer_model-small",
+    "model/fine_tuned_question_answer_model-small_v2",
+    "model/google-flan-t5-small",
+    "model/google-flan-t5-small-v2",
     ]
-similarity_check_model= "all-MiniLM-L6-v2"
+skill_extract_models= [
+    "flair/ner-english-fast",
+    "flair/ner-english",
+    "flair/ner-english-large",
+]
+QA_MODEL_MAX_TOKEN_SIZE= 2048
+similarity_check_models= [
+    "all-MiniLM-L6-v2",
+    "all-MiniLM-L12-v2",
+    "all-Mpnet-base-v2",
+    ]
 QUESTION_TYPES= [   
     "current_ctc",
     "expected_ctc",

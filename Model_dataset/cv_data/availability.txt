@@ -1,45 +1,39 @@
-Availability for Interviews
-I am available for interviews from 2 PM to 9 PM daily. Please feel free to schedule within this timeframe.
+Interview Availability: 2 PM – 9 PM daily.
 
-Joining Date
-    Earliest Availability: He can join a new role 30 days after accepting an offer due to his official notice period.
-    Notice Period: Requires a 30-day notice period at his current organization, Triedatum Inc.
+Joining Date:
+    Notice Period: 30 days.
+    Earliest Availability: Can join 30 days after accepting an offer.
 
-Employment Preferences
-    Type of Employment: Open to both full-time and remote positions. Prefers full-time remote roles aligned with his expertise in data engineering and AI/ML.
-    Work Schedule Flexibility: Comfortable with flexible working hours and collaborating across different time zones, leveraging prior remote work experience.
+Employment Preferences:
+    Open to full-time and remote roles, with a preference for full-time remote positions in data engineering & AI/ML.
+    Flexible work schedule, experienced in remote collaboration across time zones.
 
-Current Location and Relocation
+Location & Relocation:
     Current Location: Guwahati, Assam, India.
-    Relocation: Open to relocating within India or internationally for the right opportunity. Prefers roles that allow for remote work but is willing to consider relocation for exceptional offers.
+    Relocation: Open to relocating within India or internationally for the right opportunity, though prefers remote roles.
 
-Previous Employment
-    Current Employer: Triedatum Inc (Jan 2023 To Present)
-    Role: Software Engineer
-    Responsibilities: Optimizing data engineering pipelines, automating workflows, and delivering scalable solutions for business intelligence.
-    Prior Companies:
-        Paralaxiom Technologies (Jun 2022 To Nov 2022): Associate Software Engineer
-        Paralaxiom Technologies (Mar 2022 To Jun 2022): Software Engineer Intern
+Employment History
+Current Role: Software Engineer | Triedatum Inc (Jan 2023 – Present)
+    Optimizing data pipelines, automating workflows, and delivering scalable BI solutions.
 
-Contractual and Legal Considerations
-    Non-compete Agreement: No active non-compete agreements or restrictions that would limit his ability to join a new organization.
-    Work Authorization: Legally authorized to work for remote roles internationally and onsite roles within India.
+Previous Roles:
+    Associate Software Engineer | Paralaxiom Technologies (Jun 2022 – Nov 2022)
+    Software Engineer Intern | Paralaxiom Technologies (Mar 2022 – Jun 2022)
 
-Blockers or Challenges
-    Notice Period: Requires 30 days to transition from his current organization, ensuring smooth handover of responsibilities.
-    No Additional Blockers: He has no other legal, contractual, or personal blockers preventing him from joining a new organization.
+Legal & Contractual Considerations
+    Work Authorization: Legally authorized for international remote and onsite roles in India.
+    Non-compete Agreements: None that restrict joining a new organization.
+    Notice Period: 30 days, ensuring a smooth transition.
 
-Full-Time or Part-Time Roles
-    Preferred Employment Type: Full-time roles are preferred, especially in areas related to data engineering, AI/ML, and automation.
-    Part-Time Opportunities: Open to part-time roles for projects requiring specialized skills in Python, Snowflake, or machine learning.
+Role Preferences & Future Commitments
+    Preferred: Full-time roles in data engineering, AI/ML, and automation.
+    Part-time: Open to specialized projects in Python, Snowflake, ML.
+    Long-term Commitment: Seeking stable roles aligned with cloud-based AI solutions.
+    Freelance/Consulting: Available until securing a full-time position.
 
-Future Availability Adjustments
-    Commitment to Long-Term Roles: He is looking for long-term opportunities with organizations that align with his technical skills and aspirations in building scalable, cloud-based AI solutions.
-    Additional Considerations: Available for freelance or consulting projects until securing a full-time position, ensuring continuous contribution to impactful initiatives.
-
-Availability Summary
-    Earliest Joining Date: 30 days after accepting an offer (official notice period).
-    Employment Type: Full-time (preferred) or part-time, remote roles.
-    Relocation Flexibility: Open to relocating from Guwahati, Assam, India, for exceptional opportunities. Prefers remote work but will consider relocation if necessary.
-    Work Authorization: No restrictions for international remote roles or onsite roles within India.
+Summary
+    Joining: 30 days after offer acceptance.
+    Employment Type: Full-time preferred, open to part-time/consulting.
+    Relocation: Open but prefers remote work.
+    Work Authorization: No restrictions for international remote or onsite roles in India.
     Contractual Blockers: None.

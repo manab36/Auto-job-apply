@@ -1,55 +1,36 @@
-Full Name: Manab Boro
-Email Address: mboro497@gmail.com
-Phone Number: +91 9101925089
-Current Location: Guwahati, Assam, India
-Pincode: 781454
-LinkedIn Profile: https://www.linkedin.com/in/manab-boro-875051217
-GitHub Profile: https://github.com/manab36
-Date of birth: 20 Jully 1997
+Name- Manab Boro
+Email- mboro497@gmail.com
+Phone- +91 9101925089
+Location- Guwahati, Assam, India
+Pincode- 781454
+LinkedIn- https-//www.linkedin.com/in/manab-boro-875051217
+GitHub- https-//github.com/manab36
+Date of birth- 20 Jully 1997
 
-About Me:
+About Me-
 I am a dedicated Software Engineer with extensive knowledge in AI and machine learning, currently pursuing my Master's in Computer Science while excelling in data optimization and process automation. My professional journey has equipped me with strong programming skills, notably in Python and C, along with experience in data engineering.
 
-Work Authorization:
+Work Authorization
+    Indian Citizen | No visa sponsorship required | Open to relocation (India & abroad)
 
-    Nationality: Indian
-    Work Eligibility: Manab is legally authorized to work in India and does not require any visa sponsorship within the country.
-    Relocation: Open to relocation both within India and internationally, provided the opportunity aligns with my career goals and offers professional growth.
+Languages
+    English: Proficient (verbal & written)
+    Hindi: Fluent
+    Assamese: Native
 
-Diversity & Inclusion:
+Hobbies & Interests
+    AI & ML advancements, automation tools
+    Competitive coding & cloud computing
+    Traveling & outdoor exploration
 
-    Gender: Male
-    Disability Status: No reported physical or mental disabilities.
-    Veteran Status: Not applicable, as I do not have a military background.
+Preferred Communication
+    Email, Phone, WhatsApp
+    Interview Availability: Flexible, including weekends with prior notice
 
-Languages Spoken:
+Additional Details
+    Time Zone: IST (UTC+5:30) | 🏡 Marital Status: Single
+    Active on LinkedIn, sharing industry insights
 
-    English: Proficient in both verbal and written communication, ensuring smooth collaboration with international teams.
-    Hindi: Fluent in conversational and formal contexts, facilitating communication in Indian workplaces.
-    Assamese: Native language, enabling strong local connections and cultural understanding.
-
-Hobbies and Interests:
-Outside of my professional work, I am passionate about exploring advancements in artificial intelligence and machine learning. I enjoy working on personal projects, such as building automation tools to optimize workflows. Additionally, I am keenly interested in:
-
-    Programming Challenges: Participating in competitive coding to sharpen my problem-solving skills.
-    Technology Trends: Staying updated with innovations in cloud computing, data pipelines, and AI-powered applications.
-    Outdoor Activities: Enjoys traveling and exploring nature to rejuvenate.
-
-Preferred Communication:
-
-    Primary Contact Methods:
-        Email, Phone, Whatsapp
-    Availability for Interviews: Flexible with prior notice; can accommodate weekend interviews if needed.
-
-Additional Personal Details:
-
-    Marital Status: Single
-    Date of Birth: 20 July 1997
-    Time Zone: Indian Standard Time (IST, UTC+5:30), Kolkata, making me easily accessible to teams in APAC regions.
-    Social Media Presence: Actively shares professional updates and industry insights on LinkedIn.
-
-Additional FAQs:
-
-    Do you have any blockers to joining a company immediately? No, I do not have any contractual obligations or other blockers and can join as per the agreed-upon notice period.
-    Do you require any specific accommodations at the workplace? No, I do not require any accommodations and am fully equipped to work in a regular office or remote setup.
-    Do you prefer working in a team or independently? I am comfortable working both independently and in team environments, as my past roles involved collaboration and individual contributions.
+- I do not have any contractual obligations or other blockers and can join as per the agreed-upon notice period.
+- I do not require any accommodations and am fully equipped to work in a regular office or remote setup.
+- I am comfortable working both independently and in team environments, as my past roles involved collaboration and individual contributions.

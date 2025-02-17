@@ -227,7 +227,7 @@ What's your expected earnings in euros?,expected_ctc,Varies
 "If paid in another currency, what would your expected CTC be?",expected_ctc,Varies
 What's your expected compensation in millions?,expected_ctc,10.24
 Can you break down your expected CTC in terms of monthly and yearly amounts?,expected_ctc,850000
-How much are you expecting in base salary versus bonuses?,expected_ctc,Base salary expected
+How much are you expecting in base salary versus bonuses?,expected_ctc,850000
 What percentage increase in salary are you looking for?,expected_ctc,Varies based on negotiation
 Are you looking for a fixed salary or performance-based incentives?,expected_ctc,Both fixed and performance-based
 Would you consider a lower base salary with higher bonuses?,expected_ctc,Yes
@@ -471,7 +471,7 @@ What's your religion?,personal_information,Hindusim
 Are you comfortable sharing your faith?,personal_information,Yes
 Do you have any dietary preferences?,personal_information,No
 What's your blood type?,personal_information,o +ve
-What's your emergency contact number?,personal_information,9678515625
+What's your emergency contact number?,personal_information,9101925089
 Who should we contact in case of emergency?,personal_information,Father
 Do you have a disability we should know about?,personal_information,No disability
 Are you a permanent resident?,personal_information,Permanent resident of India
@@ -645,17 +645,17 @@ What surname do you go by in public?,personal_information,Boro
 What’s the last name you were given at birth?,personal_information,Boro
 What do you prefer for your last name?,personal_information,Boro
 What's your education?,education,Master of Computer Application (MCA)
-Your academic background?,education,Master's in Computer Science
+Your academic background?,education,Master of Computer Application (MCA)
 What degree attained?,education,Master of Computer Application (MCA)
 Highest qualification earned?,education,Master of Computer Application (MCA)
 Your educational details?,education,Remote learning
-Degree or diploma?,education,Master's degree
+Degree or diploma?,education,Master of Computer Application (MCA)
 What's your schooling?,education,Tezpur University
 Education qualification level?,education,Master's degree
 Formal education completed?,education,Master of Computer Application (MCA)
 Academic credentials?,education,Master of Computer Application (MCA)
 What's your major?,education,Computer Science
-Qualification specialization?,education,AI & Machine Learning
+Qualification specialization?,education,Computer Science
 Last degree earned?,education,Master of Computer Application (MCA)
 Your education level?,education,Master's level
 What did you study?,education,Computer Science
@@ -665,137 +665,137 @@ Your qualification type?,education,Master's degree
 Last academic degree?,education,Master of Computer Application (MCA)
 Subject specialization?,education,Computer Science
 College education details?,education,Tezpur University
-Educational background summary?,education,"Master of Computer Application (MCA), AI & Machine Learning"
+Educational background summary?,education,Master of Computer Application (MCA)
 Your study field?,education,Computer Science
 What's your graduation?,education,Master of Computer Application (MCA)
 University degree?,education,Master of Computer Application (MCA)
 Education qualification achieved?,education,Master of Computer Application (MCA)
 Completed studies?,education,"Yes, completed"
-Your highest degree?,education,Master's degree
-Academic level attained?,education,Master's level
+Your highest degree?,education,Master of Computer Application (MCA)
+Academic level attained?,education,Master of Computer Application (MCA)
 What's your grad subject?,education,Computer Science
-Major academic focus?,education,AI & Machine Learning
-Your professional degree?,education,Master's degree
+Major academic focus?,education,Computer Science
+Your professional degree?,education,Master of Computer Application (MCA)
 What's your study track?,education,Computer Science
 Degree in which?,education,Master of Computer Application (MCA)
-Graduation focus area?,education,AI & Machine Learning
+Graduation focus area?,education,Computer Science
 What's your learning path?,education,Master of Computer Application (MCA)
 Last course completed?,education,Master of Computer Application (MCA)
 Academic subject area?,education,Computer Science
-Education specialization field?,education,AI & Machine Learning
+Education specialization field?,education,Computer Science
 Degree qualification type?,education,Master's degree
 Studies completed in?,education,Tezpur University
 What's your stream?,education,Computer Science
-Area of study?,education,AI & Machine Learning
+Area of study?,education,Computer Science
 Last diploma earned?,education,Master of Computer Application (MCA)
 Education stream chosen?,education,Computer Science
 Academic discipline?,education,Computer Science
-Highest studied field?,education,AI & Machine Learning
+Highest studied field?,education,Computer Science
 Degree specialization topic?,education,Master of Computer Application (MCA)
-Your highest course?,education,AI & Machine Learning
+Your highest course?,education,Computer Science
 What did you graduate in?,education,Master of Computer Application (MCA)
 Last qualification done?,education,Master of Computer Application (MCA)
-Field of expertise?,education,AI & Machine Learning
+Field of expertise?,education,Computer Science
 Professional qualification title?,education,Master of Computer Application (MCA)
-Last academic focus?,education,AI & Machine Learning
+Last academic focus?,education,Computer Science
 What's your qualification degree?,education,Master of Computer Application (MCA)
-Specialization in which?,education,AI & Machine Learning
+Specialization in which?,education,Computer Science
 Your formal studies?,education,Computer Science
 What's your academic path?,education,Master of Computer Application (MCA)
 Degree title obtained?,education,Master of Computer Application (MCA)
 Your field of grad?,education,Computer Science
 Final degree completed?,education,Master of Computer Application (MCA)
 What's your education stream?,education,Computer Science
-Completed field of study?,education,AI & Machine Learning
+Completed field of study?,education,Computer Science
 College education focus?,education,Computer Science
-Last degree subject?,education,AI & Machine Learning
+Last degree subject?,education,Computer Science
 Qualification area?,education,Computer Science
 Academic achievement level?,education,Master's degree
-Subject of expertise?,education,AI & Machine Learning
+Subject of expertise?,education,Computer Science
 Graduation field name?,education,Computer Science
 What's your formal training?,education,Computer Science
 Your major academic field?,education,Computer Science
-Highest academic subject?,education,AI & Machine Learning
+Highest academic subject?,education,Computer Science
 Degree obtained in?,education,Computer Science
-Focus area of study?,education,AI & Machine Learning
+Focus area of study?,education,Computer Science
 What's your discipline?,education,Computer Science
-Education concentration?,education,AI & Machine Learning
+Education concentration?,education,Computer Science
 Main academic area?,education,Computer Science
 Degree certification in?,education,Master of Computer Application (MCA)
 Stream of studies?,education,Computer Science
-Subject studied?,education,AI & Machine Learning
+Subject studied?,education,Computer Science
 What's your grad discipline?,education,Computer Science
-Graduation topic?,education,AI & Machine Learning
+Graduation topic?,education,Computer Science
 Qualification earned in?,education,Computer Science
 Major course title?,education,Master of Computer Application (MCA)
 Academic field?,education,Computer Science
-What's your degree focus?,education,AI & Machine Learning
+What's your degree focus?,education,Computer Science
 Professional field studied?,education,Computer Science
-Your academic specialization?,education,AI & Machine Learning
+Your academic specialization?,education,Computer Science
 Course title completed?,education,Master of Computer Application (MCA)
-Main education focus?,education,AI & Machine Learning
+Main education focus?,education,Computer Science
 What's your formal degree?,education,Master of Computer Application (MCA)
 Completed qualification name?,education,Master of Computer Application (MCA)
 Education discipline field?,education,Computer Science
-What's your subject focus?,education,AI & Machine Learning
-Last field studied?,education,AI & Machine Learning
+What's your subject focus?,education,Computer Science
+Last field studied?,education,Computer Science
 Graduation area completed?,education,Computer Science
-Educational stream focus?,education,AI & Machine Learning
+Educational stream focus?,education,Computer Science
 Major learning area?,education,Computer Science
 Your academic study?,education,Computer Science
-Academic area expertise?,education,AI & Machine Learning
+Academic area expertise?,education,Computer Science
 What's your degree?,education,Master of Computer Application (MCA)
 Your education stream?,education,Computer Science
 What did you graduate in?,education,Computer Science
 Field of graduation?,education,Computer Science
 Academic level achieved?,education,Master's level
 Highest education qualification?,education,Master of Computer Application (MCA)
-Your specialization degree?,education,AI & Machine Learning
-Area of academic focus?,education,AI & Machine Learning
+Your specialization degree?,education,Computer Science
+Area of academic focus?,education,Computer Science
 What's your qualification level?,education,Master's degree
 Subject of qualification?,education,Computer Science
 Your formal academic title?,education,Master of Computer Application (MCA)
 Academic field studied?,education,Computer Science
-What's your subject area?,education,AI & Machine Learning
+What's your subject area?,education,Computer Science
 Education level completed?,education,Master's degree
 What's your academic title?,education,Master of Computer Application (MCA)
-Last degree completed in?,education,AI & Machine Learning
+Last degree completed in?,education,Computer Science
 Formal qualification field?,education,Computer Science
 Degree stream chosen?,education,Computer Science
-Your focus area of study?,education,AI & Machine Learning
+Your focus area of study?,education,Computer Science
 What is your stream?,education,Computer Science
 Major academic subject?,education,Computer Science
-What did you specialize in?,education,AI & Machine Learning
-Subject of expertise?,education,AI & Machine Learning
+What did you specialize in?,education,Computer Science
+Subject of expertise?,education,Computer Science
 Last studied field?,education,Computer Science
-Graduation subject?,education,AI & Machine Learning
-Major focus of study?,education,AI & Machine Learning
+Graduation subject?,education,Computer Science
+Major focus of study?,education,Computer Science
 What's your completed stream?,education,Computer Science
 Education subject completed?,education,Computer Science
-Field of expertise academically?,education,AI & Machine Learning
+Field of expertise academically?,education,Computer Science
 Academic qualification type?,education,Master's degree
 Highest achieved degree?,education,Master of Computer Application (MCA)
 What's your education stream?,education,Computer Science
-Academic specialization title?,education,MSc in AI & Machine Learning
+Academic specialization title?,education,Master of Computer Application (MCA)
 Your completed degree?,education,Master of Computer Application (MCA)
 Subject you graduated in?,education,Computer Science
-Graduation major subject?,education,AI & Machine Learning
-Degree specialization focus?,education,AI & Machine Learning
+Graduation major subject?,education,Computer Science
+Degree specialization focus?,education,Computer Science
 What's your education discipline?,education,Computer Science
-Field of study completed?,education,AI & Machine Learning
+Field of study completed?,education,Computer Science
 Professional degree earned?,education,Master's degree
 What degree do you hold?,education,Master of Computer Application (MCA)
-Area of your specialization?,education,AI & Machine Learning
+Area of your specialization?,education,Computer Science
 Educational field completed?,education,Computer Science
 What's your core subject?,education,Computer Science
 Degree title earned?,education,Master of Computer Application (MCA)
 Field of qualification obtained?,education,AI & Machine Learning
 Last studied qualification?,education,Master of Computer Application (MCA)
-Graduation stream focus?,education,AI & Machine Learning
-Area of your academic expertise?,education,AI & Machine Learning
-What is your educational focus?,education,AI & Machine Learning
+Graduation stream focus?,education,Computer Science
+Area of your academic expertise?,education,Computer Science
+What is your educational focus?,education,Computer Science
 Field of learning achieved?,education,Computer Science
-Last course specialization?,education,AI & Machine Learning
+Last course specialization?,education,Computer Science
 Subject of your major?,education,Computer Science
 Degree name earned?,education,Master of Computer Application (MCA)
 Area of focus academically?,education,AI & Machine Learning
@@ -804,144 +804,144 @@ What's your field of study?,education,Computer Science
 Completed academic degree?,education,Master of Computer Application (MCA)
 What's your completed major?,education,Computer Science
 Field of your education?,education,Computer Science
-Education stream completed?,education,AI & Machine Learning
+Education stream completed?,education,Computer Science
 What's your degree title?,education,Master of Computer Application (MCA)
 What's your college major?,education,Computer Science
-Subject focus of study?,education,AI & Machine Learning
-What's your degree specialization?,education,AI & Machine Learning
+Subject focus of study?,education,Computer Science
+What's your degree specialization?,education,Computer Science
 Main academic discipline?,education,Computer Science
 What's your highest degree title?,education,Master of Computer Application (MCA)
-What area did you study?,education,AI & Machine Learning
-Academic expertise area?,education,AI & Machine Learning
+What area did you study?,education,Computer Science
+Academic expertise area?,education,Computer Science
 Core field of study?,education,Computer Science
 What's your formal degree title?,education,Master of Computer Application (MCA)
-Your focus subject?,education,AI & Machine Learning
+Your focus subject?,education,Computer Science
 What subject is your degree in?,education,Computer Science
 What did you study formally?,education,Computer Science
 Highest formal qualification?,education,Master of Computer Application (MCA)
 Academic path completed?,education,Master of Computer Application (MCA)
-Last degree subject area?,education,AI & Machine Learning
+Last degree subject area?,education,Computer Science
 Stream of your degree?,education,Computer Science
 Education field name?,education,Computer Science
-What field did you study?,education,AI & Machine Learning
-Academic specialization achieved?,education,AI & Machine Learning
+What field did you study?,education,Computer Science
+Academic specialization achieved?,education,Computer Science
 Field of degree completion?,education,Computer Science
 What's your academic track?,education,Master of Computer Application (MCA)
 Main subject you studied?,education,Computer Science
-Your academic subject area?,education,AI & Machine Learning
+Your academic subject area?,education,Computer Science
 What's your major field of study?,education,Computer Science
 What course did you complete?,education,Master of Computer Application (MCA)
-Focus of your degree?,education,AI & Machine Learning
+Focus of your degree?,education,Computer Science
 Formal education area?,education,Computer Science
-Stream name of qualification?,education,AI & Machine Learning
+Stream name of qualification?,education,Computer Science
 Your core academic stream?,education,Computer Science
 What was your last course?,education,Master of Computer Application (MCA)
-Graduation specialization area?,education,AI & Machine Learning
+Graduation specialization area?,education,Computer Science
 Formal education field?,education,Computer Science
-Academic subject expertise?,education,AI & Machine Learning
-Your highest studied topic?,education,AI & Machine Learning
+Academic subject expertise?,education,Computer Science
+Your highest studied topic?,education,Computer Science
 Stream name of degree?,education,Master of Computer Application (MCA)
-Educational focus title?,education,AI & Machine Learning
+Educational focus title?,education,Computer Science
 Field of graduation study?,education,Computer Science
-What is your academic stream?,education,AI & Machine Learning
-What's your work experience like?,working_experience,2
-How long have you been working?,working_experience,2
+What is your academic stream?,education,Computer Science
+What's your work experience like?,working_experience,NA
+How long have you been working?,working_experience,2 years
 Can you summarize your experience?,working_experience,"Experience in data engineering, AI, and automation, optimizing workflows and improving system efficiency."
 What roles have you worked in?,working_experience,"Software Engineer, Associate Software Engineer, Python Developer Intern."
 What's your professional background?,working_experience,"software engineering, data engineering, and AI."
-How many years of experience do you have?,working_experience,2
+How many years of experience do you have?,working_experience,2 years
 What's your career journey so far?,working_experience,"Started as a Python Developer Intern, then Associate Software Engineer, now Software Engineer focusing on data engineering."
 Which industries have you worked in?,working_experience,Tech industry 
-What's your total work experience?,working_experience,2
+What's your total work experience?,working_experience,2 years
 How would you describe your career path?,working_experience,"Progressed from AI-focused roles to data engineering, emphasizing automation and optimization."
-Do you have experience in data engineering?,working_experience,Yes.
-How many years have you worked as a Data Engineer?,working_experience,1
-Have you worked on ETL pipelines?,working_experience,Yes.
+Do you have experience in data engineering?,working_experience,Yes
+How many years have you worked as a Data Engineer?,working_experience,2 years
+Have you worked on ETL pipelines?,working_experience,Yes
 What tools do you use for data engineering?,working_experience,"Apache Airflow, dbt, Snowflake, PostgreSQL, Redis, Python."
-Have you handled big data projects?,working_experience,Yes.
+Have you handled big data projects?,working_experience,Yes
 Do you have experience with data lakes?,working_experience,Limited direct experience.
 Have you worked on data warehouses?,working_experience,Yes
 How do you design data pipelines?,working_experience,"Using Apache Airflow, dbt, and Python to automate and optimize workflows."
 What's your experience with cloud data platforms?,working_experience,AWS
 Have you worked with Spark or Hadoop?,working_experience,No
-How many years have you been coding in Python?,working_experience,2
-Have you developed Python-based applications?,working_experience,Yes.
+How many years have you been coding in Python?,working_experience,2 years
+Have you developed Python-based applications?,working_experience,Yes
 What Python frameworks have you used?,working_experience,"Scikit-learn, OpenCV, NVIDIA TAO Toolkit."
-Do you have experience with Django or Flask?,working_experience,No.
-How proficient are you in Python scripting?,working_experience,Proficient.
-Have you worked on automation projects with Python?,working_experience,Yes.
-Have you implemented APIs in Python?,working_experience,No.
+Do you have experience with Django or Flask?,working_experience,No
+How proficient are you in Python scripting?,working_experience,Proficient
+Have you worked on automation projects with Python?,working_experience,Yes
+Have you implemented APIs in Python?,working_experience,No
 What's your experience with Python libraries like Pandas or NumPy?,working_experience,"Experience with Pandas, NumPy."
-Do you have experience with machine learning in Python?,working_experience,Yes.
-Have you built end-to-end Python applications?,working_experience,Yes.
-Have you used SQL extensively?,working_experience,Yes.
+Do you have experience with machine learning in Python?,working_experience,Yes
+Have you built end-to-end Python applications?,working_experience,Yes
+Have you used SQL extensively?,working_experience,Yes
 What's your experience with NoSQL databases?,working_experience,Limited experience.
-Do you have experience with Airflow?,working_experience,Yes.
-Have you worked with Kafka?,working_experience,No.
+Do you have experience with Airflow?,working_experience,Yes
+Have you worked with Kafka?,working_experience,No
 What cloud platforms have you used?,working_experience,AWS.
-Do you have experience with AWS or GCP?,working_experience,Yes (AWS).
-Have you worked with Docker or Kubernetes?,working_experience,No.
-How comfortable are you with Git or version control?,working_experience,Comfortable.
-Have you used Terraform or similar tools?,working_experience,No.
+Do you have experience with AWS or GCP?,working_experience,"Yes, AWS"
+Have you worked with Docker or Kubernetes?,working_experience,No
+How comfortable are you with Git or version control?,working_experience,Comfortable
+Have you used Terraform or similar tools?,working_experience,No
 What's your experience with CI/CD pipelines?,working_experience,Limited experience.
 What's the biggest project you've worked on?,working_experience,Optimizing Snowflake queries and automating business report pipelines.
-Have you led any technical projects?,working_experience,No.
+Have you led any technical projects?,working_experience,No
 How do you approach debugging?,working_experience,"Systematic debugging using logs, testing, and profiling."
-Have you worked on real-time data processing?,working_experience,No.
+Have you worked on real-time data processing?,working_experience,No
 Can you explain a complex problem you solved?,working_experience,"Optimized Snowflake queries, reducing execution time by 25%."
-Have you migrated any systems to the cloud?,working_experience,No.
-Have you automated any workflows?,working_experience,Yes.
+Have you migrated any systems to the cloud?,working_experience,No
+Have you automated any workflows?,working_experience,Yes
 Do you have experience scaling systems?,working_experience,Limited experience.
 How do you handle large datasets?,working_experience,"Optimized queries, automated pipelines, and ensured efficient data integration."
-Have you ever optimized a pipeline?,working_experience,Yes.
-Have you worked in cross-functional teams?,working_experience,Yes.
+Have you ever optimized a pipeline?,working_experience,Yes
+Have you worked in cross-functional teams?,working_experience,Yes
 How do you communicate with stakeholders?,working_experience,"Clear documentation, regular updates, and meetings."
-Have you mentored junior developers?,working_experience,No.
+Have you mentored junior developers?,working_experience,No
 What's your experience with pair programming?,working_experience,Limited experience.
-Have you worked in an Agile environment?,working_experience,Yes.
+Have you worked in an Agile environment?,working_experience,Yes
 How do you manage team collaboration?,working_experience,"Regular standups, sprint planning, and collaboration tools."
-Have you coordinated with data analysts?,working_experience,Yes.
+Have you coordinated with data analysts?,working_experience,Yes
 Do you have experience working with data scientists?,working_experience,Limited experience.
 Have you worked with product managers?,working_experience,Limited experience.
 What's your experience with team leadership?,working_experience,No leadership role.
 How do you approach system design?,working_experience,"Focus on scalability, modularity, and efficiency."
-Have you solved any major production issues?,working_experience,Yes.
+Have you solved any major production issues?,working_experience,Yes
 Can you share a challenging debugging experience?,working_experience,Debugging Snowflake query performance issues and optimizing execution time.
 What's your approach to optimizing performance?,working_experience,"Profiling, indexing, and query optimization."
 How do you ensure data quality?,working_experience,"Manual testing, validation, and proactive monitoring."
-Have you implemented failover mechanisms?,working_experience,No.
+Have you implemented failover mechanisms?,working_experience,No
 How do you handle data pipeline failures?,working_experience,"Monitoring, logging, and retry mechanisms."
 Have you resolved issues with distributed systems?,working_experience,No direct experience.
 How do you approach code reviews?,working_experience,"Providing constructive feedback, ensuring best practices, and maintaining code quality."
-Have you worked on improving system reliability?,working_experience,Yes.
+Have you worked on improving system reliability?,working_experience,Yes
 How do you prioritize tasks at work?,working_experience,"Based on impact, deadlines, and dependencies."
-Have you handled tight deadlines?,working_experience,Yes.
+Have you handled tight deadlines?,working_experience,Yes
 How do you manage shifting project requirements?,working_experience,Adapt by reassessing priorities and maintaining clear communication.
-Have you worked in a startup environment?,working_experience,Yes.
+Have you worked in a startup environment?,working_experience,Yes
 How do you stay updated on industry trends?,working_experience,"Reading blogs, research papers, and following industry leaders."
-Have you taken on non-technical roles?,working_experience,No.
+Have you taken on non-technical roles?,working_experience,No
 How do you explain technical concepts to non-tech stakeholders?,working_experience,"Using simple analogies, visuals, and concise explanations."
-Have you managed multiple projects simultaneously?,working_experience,Yes.
+Have you managed multiple projects simultaneously?,working_experience,Yes
 How do you document your work?,working_experience,"Maintain clear documentation with comments, wikis, and reports."
-Have you worked independently on projects?,working_experience,Yes.
-Do you have any technical certifications?,working_experience,No.
-Have you completed any cloud certifications?,working_experience,No.
-Are you certified in Python programming?,working_experience,Yes.
-Have you taken any big data courses?,working_experience,No.
-Have you done any specialized training in ETL?,working_experience,No.
-Are you certified in SQL or database technologies?,working_experience,No.
-Have you completed any ML or AI certifications?,working_experience,No.
-Have you taken advanced Python courses?,working_experience,No.
-Are you pursuing any certifications currently?,working_experience,No.
-Have you attended industry workshops?,working_experience,No.
-Do you have experience with PySpark?,working_experience,No.
-Have you used TensorFlow or PyTorch?,working_experience,No.
+Have you worked independently on projects?,working_experience,Yes
+Do you have any technical certifications?,working_experience,No
+Have you completed any cloud certifications?,working_experience,No
+Are you certified in Python programming?,working_experience,Yes
+Have you taken any big data courses?,working_experience,No
+Have you done any specialized training in ETL?,working_experience,No
+Are you certified in SQL or database technologies?,working_experience,No
+Have you completed any ML or AI certifications?,working_experience,No
+Have you taken advanced Python courses?,working_experience,No
+Are you pursuing any certifications currently?,working_experience,No
+Have you attended industry workshops?,working_experience,No
+Do you have experience with PySpark?,working_experience,No
+Have you used TensorFlow or PyTorch?,working_experience,No
 What's your experience with Scikit-learn?,working_experience,Experience in using it for ML tasks.
-Have you worked with FastAPI?,working_experience,No.
-Do you have experience with NumPy for data analysis?,working_experience,Yes.
+Have you worked with FastAPI?,working_experience,No
+Do you have experience with NumPy for data analysis?,working_experience,Yes
 How comfortable are you with Pandas?,working_experience,Comfortable.
-Have you integrated APIs using Python?,working_experience,No.
-Have you used SQLAlchemy in projects?,working_experience,No.
+Have you integrated APIs using Python?,working_experience,No
+Have you used SQLAlchemy in projects?,working_experience,No
 Do you have experience with Matplotlib or Seaborn?,working_experience,Limited experience.
 What's your experience with REST and GraphQL APIs?,working_experience,"Experience with REST, no GraphQL."
 How long have you been working in tech?,working_experience,2
@@ -953,55 +953,55 @@ What's your expertise in data and software?,working_experience,"Expertise in dat
 How would you summarize your career in a sentence?,working_experience,"Data engineer with experience in AI, automation, and optimizing business intelligence pipelines."
 Can you walk me through your work history?,working_experience,"Started as an intern in AI, moved to deep learning optimization, and now focus on data engineering and automation."
 What's your most recent role?,working_experience,Software Engineer
-Have you built any large-scale ETL pipelines?,working_experience,No.
+Have you built any large-scale ETL pipelines?,working_experience,No
 What's your experience with batch vs. streaming data?,working_experience,"Experience with batch processing, no streaming experience."
 How do you design fault-tolerant data pipelines?,working_experience,"Use retries, monitoring, and data validation."
 Have you optimized data warehouse performance?,working_experience,Yes
 How do you handle schema evolution in pipelines?,working_experience,No direct experience.
 What's your experience with data modeling?,working_experience,Limited experience.
-Have you implemented any data governance frameworks?,working_experience,No.
+Have you implemented any data governance frameworks?,working_experience,No
 What tools do you prefer for data wrangling?,working_experience,"Pandas, NumPy."
-Have you worked with distributed computing frameworks?,working_experience,No.
+Have you worked with distributed computing frameworks?,working_experience,No
 How do you manage data versioning?,working_experience,No direct experience.
-How many years of Python development experience do you have?,working_experience,2
-Have you built scalable back-end systems in Python?,working_experience,No.
+How many years of Python development experience do you have?,skills,2 years
+Have you built scalable back-end systems in Python?,working_experience,No
 "Which Python IDE do you use, and why?",working_experience,"VS Code, for flexibility and extensions."
-Have you created any open-source projects using Python?,working_experience,No.
+Have you created any open-source projects using Python?,working_experience,No
 How do you manage dependencies in Python projects?,working_experience,"Virtual environments, requirements.txt, pip."
-Have you integrated machine learning models with Python?,working_experience,Yes.
+Have you integrated machine learning models with Python?,working_experience,Yes
 What's your experience in Python testing frameworks like Pytest?,working_experience,Limited experience.
-Have you automated workflows using Python?,working_experience,Yes.
+Have you automated workflows using Python?,working_experience,Yes
 Can you share a Python project you're proud of?,working_experience,Optimized Snowflake query execution and automated data pipelines.
-Have you contributed to any Python communities?,working_experience,No.
+Have you contributed to any Python communities?,working_experience,No
 "Do you have experience with Redshift, BigQuery, or Snowflake?",working_experience,Experience with Snowflake.
 How proficient are you with PostgreSQL?,working_experience,Proficient.
 Have you worked with data orchestration tools?,working_experience,Yes (Apache Airflow).
 How do you handle logging and monitoring in your pipelines?,working_experience,"Logging with Airflow, monitoring with AWS CloudWatch."
-What's your experience with Kubernetes for data workflows?,working_experience,No.
-Have you used Azure Data Factory?,working_experience,No.
-Have you worked with Databricks?,working_experience,No.
+What's your experience with Kubernetes for data workflows?,working_experience,No
+Have you used Azure Data Factory?,working_experience,No
+Have you worked with Databricks?,working_experience,No
 How comfortable are you with API integrations?,working_experience,Comfortable.
-Have you implemented serverless solutions?,working_experience,No.
+Have you implemented serverless solutions?,working_experience,No
 How do you ensure security in your pipelines?,working_experience,"Access controls, encryption, monitoring."
 Can you describe a challenging data migration project?,working_experience,No major data migration experience.
-Have you built pipelines from scratch?,working_experience,Yes.
+Have you built pipelines from scratch?,working_experience,Yes
 How do you prioritize tasks in complex projects?,working_experience,"Based on impact, dependencies, and deadlines."
-Have you worked on end-to-end product delivery?,working_experience,No.
+Have you worked on end-to-end product delivery?,working_experience,No
 How do you ensure scalability in your systems?,working_experience,"Optimize queries, modular design, and caching."
 Have you implemented any major design patterns?,working_experience,No major design patterns implemented.
 What's the most complex system you've debugged?,working_experience,Snowflake query optimization and pipeline debugging.
 How do you handle large-scale code refactoring?,working_experience,"Incremental changes, extensive testing, and documentation."
-Have you led any cross-team initiatives?,working_experience,No.
+Have you led any cross-team initiatives?,working_experience,No
 Can you share an instance where you improved a process?,working_experience,"Automated report generation, reducing processing time by 40%."
 How do you work with business intelligence teams?,working_experience,Provide optimized data pipelines and ensure data availability.
 Have you collaborated with DevOps engineers?,working_experience,Limited collaboration.
 What's your approach to team-based problem-solving?,working_experience,"Brainstorming, structured discussions, and collective decision-making."
 Have you handled disagreements in technical decisions?,working_experience,Present data-driven arguments and seek consensus.
 How do you ensure alignment with project stakeholders?,working_experience,"Regular updates, documentation, and stakeholder meetings."
-Have you trained new team members?,working_experience,No.
+Have you trained new team members?,working_experience,No
 What's your experience collaborating with UI/UX teams?,working_experience,No
 How do you divide tasks among team members?,working_experience,Based on strengths and project needs.
-Have you ever worked in a fully remote team?,working_experience,Yes.
+Have you ever worked in a fully remote team?,working_experience,Yes
 How do you contribute to team knowledge sharing?,working_experience,"Regular knowledge sharing sessions, documentation, and code reviews."
 Have you resolved bottlenecks in data pipelines?,working_experience,"Yes, optimized Snowflake queries to remove bottlenecks."
 What's the toughest coding bug you've encountered?,working_experience,Debugging Snowflake query performance issues.
@@ -1009,7 +1009,7 @@ How do you handle system failures in production?,working_experience,"Proactive m
 Have you optimized query performance in SQL?,working_experience,"Yes, optimized Snowflake queries and automated report pipelines."
 How do you deal with outliers in data?,working_experience,Using statistical methods or domain knowledge for detection and treatment.
 What's your approach to ensuring high availability?,working_experience,"Implement monitoring, redundancy, and failover mechanisms."
-Have you implemented disaster recovery plans?,working_experience,No.
+Have you implemented disaster recovery plans?,working_experience,No
 How do you handle schema drift in production pipelines?,working_experience,"Use version control, migration strategies, and data validation techniques."
 What's your debugging process for Python scripts?,working_experience,"Debugging with logging, step-by-step analysis, and unit testing."
 Have you automated any manual processes to save time?,working_experience,"Yes, automated report generation and data integration processes."
@@ -1018,33 +1018,33 @@ Have you transitioned between roles in your career?,working_experience,"Yes, tra
 How do you handle feedback from peers?,working_experience,"Embrace feedback, focus on improvement, and act on suggestions."
 Have you faced challenges in adapting to new tools?,working_experience,"Yes, learning new tools and adapting to changing environments."
 How do you communicate technical details to non-technical teams?,working_experience,"Use analogies, visual aids, and clear explanations."
-Have you worked on tight deadlines?,working_experience,Yes.
+Have you worked on tight deadlines?,working_experience,Yes
 How do you document your technical processes?,working_experience,"Clear, concise, and structured documentation for future reference."
-Have you worked in fast-paced environments?,working_experience,Yes.
+Have you worked in fast-paced environments?,working_experience,Yes
 How do you manage time during long projects?,working_experience,"Break tasks into manageable milestones, set deadlines, and reassess priorities regularly."
 What's your process for learning new technologies?,working_experience,"Follow tutorials, online courses, and apply knowledge in hands-on projects."
-Do you have certifications in cloud platforms?,working_experience,No.
-Have you completed Python-specific certifications?,working_experience,No.
+Do you have certifications in cloud platforms?,working_experience,No
+Have you completed Python-specific certifications?,working_experience,No
 What's your most recent technical certification?,working_experience,No technical certifications yet.
-Have you taken any data science courses?,working_experience,No.
-Have you pursued any database-related certifications?,working_experience,No.
-Are you certified in big data frameworks?,working_experience,No.
-Do you have a certification in machine learning?,working_experience,No.
-Are you pursuing any certifications currently?,working_experience,No.
-Have you taken courses in system design?,working_experience,No.
-Have you attended Python conferences or events?,working_experience,No.
+Have you taken any data science courses?,working_experience,No
+Have you pursued any database-related certifications?,working_experience,No
+Are you certified in big data frameworks?,working_experience,No
+Do you have a certification in machine learning?,working_experience,No
+Are you pursuing any certifications currently?,working_experience,No
+Have you taken courses in system design?,working_experience,No
+Have you attended Python conferences or events?,working_experience,No
 How experienced are you with Flask for web development?,working_experience,Limited experience.
-Have you used FastAPI for API development?,working_experience,No.
+Have you used FastAPI for API development?,working_experience,No
 How do you handle data visualization in Python?,working_experience,Using Matplotlib and Seaborn for data visualization.
-Have you implemented models using Keras?,working_experience,No.
+Have you implemented models using Keras?,working_experience,No
 What's your experience with PyTorch or TensorFlow?,working_experience,Limited experience with TensorFlow.
 Have you worked with asynchronous programming in Python?,working_experience,Limited experience with asynchronous programming.
-Do you use Jupyter Notebooks for prototyping?,working_experience,Yes.
+Do you use Jupyter Notebooks for prototyping?,working_experience,Yes
 How comfortable are you with Python's multiprocessing module?,working_experience,Comfortable using Python's multiprocessing for parallel execution.
-Have you developed custom libraries in Python?,working_experience,No.
+Have you developed custom libraries in Python?,working_experience,No
 How do you manage memory optimization in Python?,working_experience,"Use memory profiling, garbage collection, and efficient data structures for optimization."
 How would you rate your Python expertise out of 10?,skills,8
-How many years of experience do you have in Python?,skills,2
+How many years of experience do you have in Python?,skills,2 years
 How proficient are you with Python scripting (1-10)?,skills,8
 How often do you use Python in your projects (daily/weekly)?,skills,Daily
 How many Python-based projects have you worked on?,skills,10
@@ -1053,7 +1053,7 @@ How would you rate your debugging skills in Python (1-10)?,skills,8
 How many Python libraries are you proficient with?,skills,5
 How many machine learning models have you implemented in Python?,skills,3
 What percentage of your work involves Python?,skills,80
-How many years have you worked in data engineering?,skills,1
+How many years have you worked in data engineering?,skills,2 years
 How would you rate your expertise in building ETL pipelines (1-10)?,skills,8
 How many data pipelines have you built from scratch?,skills,5
 How proficient are you with Airflow (1-10)?,skills,8
@@ -1062,18 +1062,18 @@ How many terabytes of data have you processed in a project?,skills,5
 How experienced are you with distributed data systems (1-10)?,skills,6
 How many cloud-based data engineering projects have you completed?,skills,3
 What percentage of your work involves real-time data processing?,skills,30
-How many years have you worked with data lakes?,skills,1
+How many years have you worked with data lakes?,skills,0.6 years
 How proficient are you with data visualization tools (1-10)?,skills,7
 How many dashboards have you created?,skills,3
 How would you rate your ability to analyze large datasets (1-10)?,skills,7
-How many years of experience do you have in data analysis?,skills,2
+How many years of experience do you have in data analysis?,skills,0.6 years
 What's the largest dataset you've analyzed (in GB/TB)?,skills,1 TB
 How skilled are you in SQL for data analysis (1-10)?,skills,8
 How many reports have you generated from raw data?,skills,5
 How would you rate your statistical analysis skills (1-10)?,skills,7
 How often do you use data visualization tools like Tableau or Power BI?,skills,Weekly
 How many business insights have you derived from data?,skills,20
-How many years of experience do you have with SQL?,skills,2
+How many years of experience do you have with SQL?,skills,2 years
 How proficient are you in writing complex SQL queries (1-10)?,skills,8
 How many databases have you designed from scratch?,skills,5
 How would you rate your expertise in NoSQL databases (1-10)?,skills,8
@@ -1083,7 +1083,7 @@ How many database migrations have you performed?,skills,7
 How would you rate your knowledge of data normalization (1-10)?,skills,7
 What's the largest database size you've managed?,skills,8
 How proficient are you with database performance tuning (1-10)?,skills,5
-How many years of experience do you have with cloud platforms?,skills,2
+How many years of experience do you have with cloud platforms?,skills,2 years
 How would you rate your AWS expertise (1-10)?,skills,8
 How proficient are you with Google Cloud Platform (1-10)?,skills,6
 How many cloud-based data pipelines have you built?,skills,3
@@ -1099,7 +1099,7 @@ How proficient are you with Scala for data processing (1-10)?,skills,6
 How many lines of production code have you written in your career?,skills,10000
 How would you rate your debugging skills across all languages (1-10)?,skills,8
 How proficient are you with version control tools like Git (1-10)?,skills,8
-How many years of experience do you have in scripting languages?,skills,2
+How many years of experience do you have in scripting languages?,skills,2 years
 How many times have you refactored legacy code?,skills,5
 How would you rate your understanding of object-oriented programming (1-10)?,skills,8
 How many open-source contributions have you made?,skills,10
@@ -1250,7 +1250,7 @@ Are there any restrictions preventing you from relocating?,availability,No
 How soon could you relocate if required?,availability,30
 Would you relocate internationally if needed?,availability,Yes
 Are you open to relocating temporarily for a project?,availability,Yes
-Are there any family or personal commitments that affect your relocation plans?,availability,No.
+Are there any family or personal commitments that affect your relocation plans?,availability,No
 Have you relocated for work in the past?,availability,No
 Are you willing to relocate at your own expense?,availability,Yes
 Are you comfortable working full-time from the office?,availability,Yes
@@ -1259,12 +1259,12 @@ Are there any blockers preventing you from working onsite?,availability,No
 Would you prefer a hybrid model over full WFO?,availability,Yes
 Are you comfortable commuting to the office daily?,availability,No
 Do you have any location preferences for the office?,availability,No
-How far are you willing to commute for an onsite role?,availability,5
+How far are you willing to commute for an onsite role?,availability,Yes
 Would you attend all-hands meetings in the office if needed?,availability,Yes
 Are you okay with a mandatory in-office presence for key projects?,availability,Yes
 Do you require any special accommodations for an office setting?,availability,No
 Are you comfortable working remotely full-time?,availability,Yes
-How many days a week do you prefer WFH?,availability,5
+How many days a week do you prefer WFH?,availability,5 days
 Do you have a dedicated workspace for remote work?,availability,Yes
 Are there any challenges you face while working remotely?,availability,No
 Would you be willing to attend occasional office meetings despite WFH?,availability,Yes
@@ -1273,14 +1273,14 @@ Are you open to working in different time zones while working from home?,availab
 Would you consider a role with a hybrid WFH model?,availability,Yes
 How productive are you in a remote work setup?,availability,Very Productive
 Are there any restrictions on your ability to WFH?,availability,No
-What's your current notice period?,availability,30
+What's your current notice period?,availability,30 days
 Can you shorten your notice period if needed?,availability,No
 Would you consider buying out your notice period?,availability,No
 How flexible is your current notice period?,availability,Flexible
 Are there any contractual obligations tied to your notice period?,availability,No
 What's the earliest date you can join this role?,availability,30 days
 Have you served notice for your current role yet?,availability,Yes
-How many weeks of notice are you required to give?,availability,4
+How many weeks of notice are you required to give?,availability,4 weeks
 Can you start immediately if an offer is made?,availability,No
 Are there any handover responsibilities delaying your notice?,availability,No
 Are you open to working 5 days a week?,availability,Yes
@@ -1353,7 +1353,7 @@ Do you have a preferred region or city for relocation?,availability,No preferenc
 Have you lived in different locations for work before?,availability,Yes
 How do you manage family commitments when relocating?,availability,By planning ahead
 Are you okay with a temporary relocation to client sites?,availability,Yes
-How many hours per week are you available for in-office work?,availability,40
+How many hours per week are you available for in-office work?,availability,40 hours
 Are you open to working from a co-working space instead of a main office?,availability,Yes
 Is commuting to the office daily a manageable option for you?,availability,Yes
 Do you prefer set office hours or a flexible onsite schedule?,availability,Flexible
@@ -1377,7 +1377,7 @@ When does your current notice period officially begin?,availability,Begins after
 Could you work part-time during your notice period?,availability,Yes
 Are there any conditions that could extend your notice period?,availability,No
 Would your current employer negotiate an earlier release?,availability,Yes
-What's the maximum notice period you're willing to serve?,availability,30
+What's the maximum notice period you're willing to serve?,availability,30 days
 Are you ready to serve the entire notice period if required?,availability,Yes
 How confident are you in negotiating your notice period?,availability,Yes
 Are you able to overlap with the current team during the handover?,availability,Yes
