@@ -116,17 +116,16 @@ def read_from_sqlite(db_file, table_name):
     Returns:
         pd.DataFrame: DataFrame containing the data from the table.
     """
+    df= pd.DataFrame()
     try:
         # Connect to the SQLite database
         with sqlite3.connect(db_file) as conn:
             # Read data from the table into a DataFrame
             df = pd.read_sql_query(f"SELECT * FROM {table_name}", conn)
-        
-        return df
-    
     except Exception as e:
-        print(f"Error reading data from SQLite: {e}")
-        return None
+        logger.error(f"Error reading data from SQLite: {e}")
+    finally:
+        return df
 
 
 def linkedin_extract_job_details(html_file_path):
@@ -203,8 +202,9 @@ def linkedin_extract_job_details(html_file_path):
             requiter_profile_link = safe_get_attr(hiring_team, 'href')
 
         # Extract about job
+        strip_text= lambda line: line.strip().replace("\\n","").strip()
         job_description_html= soup.find("div", class_="jobs-description__content")
-        job_description = '\n'.join(line for line in job_description_html.get_text(strip= False).strip().splitlines() if line.strip())
+        job_description = '\n'.join(strip_text(line) for line in job_description_html.get_text("\n").splitlines() if len(strip_text(line))>1)
     
     except Exception as e:
         logger.exception(f"Unable to start the chrome browser driver, error: {e}")
@@ -263,6 +263,50 @@ def linkedin_check_if_easy_apply_avilable(job_page_html_content, driver= False):
         logger.exception(f"Unable to check easy apply option, error: {e}")
         
 
+def linkedin_is_job_details_present(db_file, table_name, new_data, N= 30):
+    """
+    Check if a given job entry exists in the DataFrame within the last N days.
+    Parameters:
+        new_data (dict): A dictionary containing 'job_title', 'company_name', 'company_type', 'job_location'.
+        N (int): The number of days to check within.
+
+    Returns:
+        bool: True if the job exists in the last N days, else False.
+    """
+    if N<0:
+        return False
+    df= read_from_sqlite(db_file, table_name)
+    
+    if df.empty:
+        return
+    
+    df= df[["job_title", 
+            "company_name", 
+            "company_type", 
+            "job_location", 
+            "company_size_on_linkedin", 
+            "is_submited",
+            "inserted_at",
+        ]]
+    df['inserted_at'] = pd.to_datetime(df['inserted_at'])
+    N_days_ago = pd.Timestamp.now().normalize() - pd.Timedelta(days=N)
+    job_title = new_data['job_title']
+    company_name = new_data['company_name']
+    company_type = new_data['company_type']
+    job_location = new_data['job_location']
+
+    # Use .query() with extracted variables
+    match = df.query(
+        "inserted_at >= @N_days_ago and "
+        "job_title == @job_title and "
+        "company_name == @company_name and "
+        "company_type == @company_type and "
+        "job_location == @job_location and "
+        "is_submited == 'Y'"
+    )
+    return not match.empty
+
+
 def get_job_details_in_html(days_from= 0):
     df= read_from_sqlite(LINKEDIN_DB_FILE, LINKEDIN_JOB_DETAILS_TABLE)
     # columns_original= df.columns
@@ -308,45 +352,6 @@ def get_job_details_in_html(days_from= 0):
 
     # Save as an HTML file
     styled_df.to_html(html_file, index=False, float_format="%.2f")
-
-
-def linkedin_is_job_details_present(db_file, table_name, new_data, N= 30):
-    """
-    Check if a given job entry exists in the DataFrame within the last N days.
-    Parameters:
-        new_data (dict): A dictionary containing 'job_title', 'company_name', 'company_type', 'job_location'.
-        N (int): The number of days to check within.
-
-    Returns:
-        bool: True if the job exists in the last N days, else False.
-    """
-    if N<0:
-        return False
-    df= read_from_sqlite(db_file, table_name)[["job_title", 
-                                                "company_name", 
-                                                "company_type", 
-                                                "job_location", 
-                                                "company_size_on_linkedin", 
-                                                "is_submited",
-                                                "inserted_at",
-                                            ]]
-    df['inserted_at'] = pd.to_datetime(df['inserted_at'])
-    N_days_ago = pd.Timestamp.now().normalize() - pd.Timedelta(days=N)
-    job_title = new_data['job_title']
-    company_name = new_data['company_name']
-    company_type = new_data['company_type']
-    job_location = new_data['job_location']
-
-    # Use .query() with extracted variables
-    match = df.query(
-        "inserted_at >= @N_days_ago and "
-        "job_title == @job_title and "
-        "company_name == @company_name and "
-        "company_type == @company_type and "
-        "job_location == @job_location and "
-        "is_submited == 'Y'"
-    )
-    return not match.empty
 
 
 

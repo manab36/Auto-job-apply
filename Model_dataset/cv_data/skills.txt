@@ -1,143 +1,42 @@
-Programming Skills
-Python
-    Rating out of 10: 8
-    Years of experience: 2 years
-    Advanced proficiency in Python for data engineering, automation, and machine learning workflows.
-    Expert in libraries like Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn.
-    Designed and deployed custom tools like AutoEDA, showcasing robust coding and problem-solving abilities.
+Programming Skills: 2+ years:
+Python | Rating: 8/10 | Experience: 2 years | Expertise: Advanced in data engineering, automation, and machine learning | Technologies: Proficient in Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn | Projects: Developed AutoEDA for automated data analysis.
+C Programming Language | Rating: 7/10 | Experience: 2 years | Expertise: Strong in low-level programming and algorithm implementation | Projects: Implemented VF2 algorithm for subgraph isomorphism.
+Java | Rating: 6/10 | Experience: 1 year | Expertise: Familiar with object-oriented programming and core Java concepts.
+Shell Scripting | Rating: 7/10 | Experience: 2 years | Expertise: Writing automation scripts for system tasks and process optimization.
 
-C
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Strong understanding of low-level programming concepts and algorithm design.
-    Successfully implemented the VF2 algorithm for solving subgraph isomorphism problems in graph theory.
+Data Engineering and ETL Tools: 2+ years:
+SQL | Rating: 8/10 | Experience: 2 years | Expertise: Writing advanced queries, optimizing performance with window functions | Certification: HackerRank certified.
+Apache Airflow | Rating: 8/10 | Experience: 2 years | Expertise: Designed and implemented ETL workflows, reducing processing time by 40%.
+dbt (Data Build Tool) | Rating: 7/10 | Experience: 2 years | Expertise: Developed robust data transformations and modeling strategies.
+Snowflake | Rating: 7/10 | Experience: 2 years | Expertise: Data warehousing, query optimization (improved query performance by 25%).
+PostgreSQL | Rating: 7/10 | Experience: 2 years | Expertise: Database management, writing and optimizing complex queries.
+MySQL | Rating: 7/10 | Experience: 2 years | Expertise: Database management, writing and optimizing complex queries.
 
-Java
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Knowledge of object-oriented programming, multithreading, and exception handling.
-    Certified in Core Java, with practical experience in building modular and efficient applications.
+Cloud and DevOps: 2+ years:
+AWS | Rating: 7/10 | Experience: 2 years | Expertise: Worked with S3, EC2, and Lambda for cloud-based solutions.
+Docker | Rating: 6/10 | Experience: 1 year | Expertise: Containerization and deployment of applications.
+Redis | Rating: 7/10 | Experience: 1 year | Expertise: Caching and in-memory data storage.
+CI/CD | Rating: 6/10 | Experience: 1 year | Expertise: Implemented continuous integration and deployment pipelines.
 
-Shell Scripting
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Skilled in writing shell scripts to automate system tasks and data workflows, improving efficiency in ETL processes.
+ML and AI: 1+ years:
+Scikit-learn | Rating: 7/10 | Experience: 2 years | Expertise: Applied regression, classification, and clustering techniques.
 
-Data Engineering and ETL Tools
-SQL (Structured Query Language)
-    Rating out of 10: 8
-    Years of experience: 2 years
-    Advanced knowledge of complex joins, window functions, and query optimization techniques.
-    Certified in Advanced SQL (HackerRank), with practical experience in managing relational databases.
+Data Visualization: 2+ years:
+Matplotlib, Seaborn | Rating: 8/10 | Experience: 2 years | Expertise: Created analytical visualizations for data insights.
+Tableau | Rating: 6/10 | Experience: 1 year | Expertise: Designed interactive dashboards for business reporting.
+Power BI | Rating: 6/10 | Experience: 1 year | Expertise: Created stakeholder reports with data-driven insights.
 
-Apache Airflow
-    Rating out of 10: 8
-    Years of experience: 2 years
-    Proficient in designing, orchestrating, and managing ETL workflows using Airflow.
-    Automated business-critical data pipelines, reducing processing time by 40%.
+Version Control and Collaboration: 2+ years:
+Git/GitHub | Rating: 7/10 | Experience: 2 years | Expertise: Code collaboration, branching strategies, and version control.
+JIRA | Rating: 6/10 | Experience: 1 year | Expertise: Agile methodologies and sprint tracking.
 
-dbt (Data Build Tool)
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Expertise in building robust data transformation pipelines, enabling seamless data integration.
+Big Data and Analytics: 2+ years:
+Apache Spark | Rating: 3/10 | Experience: 0.6 years | Expertise: Basic understanding of distributed data processing.
+PySpark | Rating: 3/10 | Experience: 0.6 years | Expertise: Basic understanding of distributed data processing.
+Kafka | Rating: 3/10 | Experience: 0.6 years | Expertise: Basic experience with real-time data streaming.
+Google Cloud Platform (GCP) | Rating: 3/10 | Experience: 0.6 years | Expertise: Basic experience with real-time data query.
 
-Snowflake
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Skilled in data warehousing, schema design, and optimizing queries for large datasets.
-    Achieved a 25% improvement in query execution time through optimization techniques.
 
-PostgreSQL & MySQL
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Practical experience in database management, data modeling, and executing complex queries.
-
-Cloud Platforms and DevOps Tools
-Amazon Web Services (AWS)
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Experience with S3, EC2, and Lambda for scalable cloud solutions.
-    Deployed data workflows and ensured reliable integration with cloud services.
-
-Docker
-    Rating out of 10: 6
-    Years of experience: 1 years
-    Familiar with containerization and deploying lightweight, portable applications using Docker Compose.
-
-Redis
-    Rating out of 10: 7
-    Years of experience: 1 years
-    Hands-on experience in using Redis for caching and real-time data processing.
-
-CI/CD Tools
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Working knowledge of continuous integration and deployment pipelines using GitHub Actions and Jenkins.
-
-Machine Learning and AI Frameworks
-Scikit-learn
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Hands-on experience in developing machine learning models, including regression, classification, and clustering.
-
-NVIDIA DeepStream
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Debugged and optimized DeepStream pipelines, improving performance and reliability.
-
-NVIDIA TAO Toolkit
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Developed and trained deep learning models, achieving a 20% improvement in accuracy.
-
-Data Visualization Tools
-Matplotlib & Seaborn
-    Rating out of 10: 8
-    Years of experience: 2 years
-    Created insightful data visualizations for analysis and decision-making in projects like AutoEDA.
-
-Tableau
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Designed interactive dashboards for business intelligence and data storytelling.
-
-Power BI
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Experience in building reports and visual analytics for stakeholders.
-
-Version Control and Collaboration Tools
-Git & GitHub
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Proficient in version control systems, collaborating on projects with branching strategies and pull requests.
-
-JIRA
-    Rating out of 10: 6
-    Years of experience: 1 year
-    Experience in agile methodologies, sprint planning, and tracking project progress.
-
-Big Data and Analytics Tools
-Apache Spark
-    Rating out of 10: 3
-    Years of experience: 0.6 year
-    Basic understanding of distributed data processing and implementing workflows for big data analysis.
-
-Kafka
-    Rating out of 10: 3
-    Years of experience: 0.6 year
-    Knowledge of real-time data streaming and integration with other ETL tools.
-
-Testing and Debugging
-Manual Testing
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Experienced in identifying and resolving data integrity issues, ensuring high system reliability.
-
-Debugging Tools
-    Rating out of 10: 7
-    Years of experience: 2 years
-    Skilled in debugging Python, C, and ETL pipelines to ensure smooth system operations.
-
-Future Aspirations:
-He seeks to further enhance his expertise in cloud-based data engineering, big data technologies, and real-time analytics platforms. He plans to gain advanced skills in tools like Apache Kafka, Spark, and cloud-native ETL solutions, aligning with his vision of building scalable and efficient data systems.
+Testing and Debugging: 2+ years:
+Manual Testing | Rating: 7/10 | Experience: 2 years | Expertise: Ensuring data integrity and verifying functionality.
+Debugging | Rating: 7/10 | Experience: 2 years | Expertise: Troubleshooting Python, C, and ETL pipelines.

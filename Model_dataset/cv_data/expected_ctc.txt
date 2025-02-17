@@ -1,62 +1,30 @@
-My expected cost to company (CTC) is ₹ 850000 per annum, which translates to an annual package of 8.5 LPA.
-    Monthly Salary: Approximately ₹ 60000 INR
-    Hourly Rate: Expected to be between ₹ 2500 to ₹ 3500
-    Daily Earnings: Expected to range from ₹ 2000 to ₹ 2500
-    Deductions:
-        Provident Fund (PF): ₹ 2500 to ₹ 3000
-        Professional Tax: Around ₹ 500
-    Expected In-Hand Salary: Approximately ₹ 60000 per month
+Expected Compensation (CTC- ₹ 8.5 LPA / $ 10240 Annually)
+Salary Breakdown-
+    Annual Package- ₹ 850000 (~$ 10240 at ₹ 83/USD)
+    Monthly Salary- ₹ 60000 (~$ 723)
+    Hourly Rate- ₹ 2500 – ₹ 3500
+    Daily Earnings- ₹ 2000 – ₹ 2500
+    Deductions-
+        Provident Fund (PF)- ₹ 2500 – ₹ 3000
+        Professional Tax- ~₹ 500
+    Expected In-Hand Salary- ₹ 60000 per month
 
-USD Equivalent (Based on ₹ 83 per USD Exchange Rate)
-    Annual Earnings: approximately $ 10240
-    Monthly Salary: approximately $ 723
+Rationale Behind Expected CTC
+    Based on industry standards, experience, and technical expertise.
+    Proven ability to deliver scalable, efficient solutions in data engineering and AI/ML.
+    Strong problem-solving skills, adaptability, and a results-driven approach.
+    Expertise in big data, cloud computing, and automation for business intelligence.
 
-Rationale Behind Expected Compensation
+Market Alignment and Career Progression
+    Salary expectation aligns with industry benchmarks for professionals with similar-
+        Experience and expertise
+        Job responsibilities in Python, ETL, Airflow, Spark, and distributed data systems
+    Also values career growth, learning opportunities, and exposure to new challenges.
 
-This compensation expectation is based on my industry experience, technical expertise, and the value I bring to an organization through my skills, dedication, and problem-solving abilities.
-    Over time, I have gained substantial experience and honed my capabilities, making me well-equipped to take on more challenging roles and responsibilities.
-    My professional journey has been defined by continuous learning, adaptability, and a results-driven approach, allowing me to make meaningful contributions to my current and past organizations.
-
-Having worked extensively in my domain, I have acquired:
-    A deep understanding of industry trends, best practices, and cutting-edge technologies
-    The ability to perform efficiently and contribute to organizational growth
-
-Alignment with Industry Standards & Career Progression
-
-My expected CTC is aligned with industry standards for professionals with similar:
-    Experience
-    Skill sets
-    Job responsibilities
-
-It reflects:
-    My qualifications and expertise
-    My commitment to excellence
-    My ability to drive innovation and efficiency within a team
-
-While compensation is an important factor in career progression, I also value:
-    Opportunities for learning
-    Career advancement
-    Exposure to new challenges that contribute to my overall professional growth
-
-Flexibility & Negotiation
-While my expected salary is set based on a fair assessment of my skills, experience, and market trends, I am open to negotiation depending on:
-    Overall compensation structure
-    Benefits & incentives
-    Career development opportunities
-
-Key factors influencing my decision:
-    Performance-based bonuses
-    Stock options
-    Flexible work arrangements
-    Learning opportunities
-    Health benefits
-    Other perks
-
-I believe in a holistic approach to career decisions, where financial growth is complemented by professional development and work-life balance.
-Remote vs. In-Office Compensation Considerations
-    If the role is remote, I am flexible to accept a slightly lower salary.
-    For hybrid or in-office roles, I expect higher compensation to account for:
-        Additional responsibilities
-        Office-related expenses
-
-Additionally, I am open to discussing relocation assistance in the range of ₹ 20,000 to ₹ 40,000, should that be required.
+Flexibility and Negotiation
+    Open to negotiation based on-
+        Overall compensation package (bonuses, stock options, health benefits, perks).
+        Remote vs. in-office roles-
+            Remote roles- Flexible on salary.
+            Hybrid/In-office roles- Expect higher pay due to added expenses.
+    Relocation Assistance- Open to discussing support in the range of ₹ 20000 – ₹ 40000 if required.
