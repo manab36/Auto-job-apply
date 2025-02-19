@@ -1,8 +1,8 @@
 Programming Skills: 2+ years:
 Python | Rating: 8/10 | Experience: 2 years | Expertise: Advanced in data engineering, automation, and machine learning | Technologies: Proficient in Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn | Projects: Developed AutoEDA for automated data analysis.
-C Programming Language | Rating: 7/10 | Experience: 2 years | Expertise: Strong in low-level programming and algorithm implementation | Projects: Implemented VF2 algorithm for subgraph isomorphism.
 Java | Rating: 6/10 | Experience: 1 year | Expertise: Familiar with object-oriented programming and core Java concepts.
 Shell Scripting | Rating: 7/10 | Experience: 2 years | Expertise: Writing automation scripts for system tasks and process optimization.
+C Programming Language | Rating: 7/10 | Experience: 2 years | Expertise: Strong in low-level programming and algorithm implementation | Projects: Implemented VF2 algorithm for subgraph isomorphism.
 
 Data Engineering and ETL Tools: 2+ years:
 SQL | Rating: 8/10 | Experience: 2 years | Expertise: Writing advanced queries, optimizing performance with window functions | Certification: HackerRank certified.
@@ -13,7 +13,7 @@ PostgreSQL | Rating: 7/10 | Experience: 2 years | Expertise: Database management
 MySQL | Rating: 7/10 | Experience: 2 years | Expertise: Database management, writing and optimizing complex queries.
 
 Cloud and DevOps: 2+ years:
-AWS | Rating: 7/10 | Experience: 2 years | Expertise: Worked with S3, EC2, and Lambda for cloud-based solutions.
+AWS | Rating: 7/10 | Experience: 2 years | Expertise: Worked with AWS S3, AWS EC2, and AWS Lambda for cloud-based solutions.
 Docker | Rating: 6/10 | Experience: 1 year | Expertise: Containerization and deployment of applications.
 Redis | Rating: 7/10 | Experience: 1 year | Expertise: Caching and in-memory data storage.
 CI/CD | Rating: 6/10 | Experience: 1 year | Expertise: Implemented continuous integration and deployment pipelines.

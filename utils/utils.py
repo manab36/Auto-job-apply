@@ -354,5 +354,3 @@ def get_job_details_in_html(days_from= 0):
     styled_df.to_html(html_file, index=False, float_format="%.2f")
 
 
-
-    
