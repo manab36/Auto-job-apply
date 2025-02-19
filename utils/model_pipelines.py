@@ -1,10 +1,10 @@
 from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification, T5ForConditionalGeneration, T5Tokenizer
 from sentence_transformers import SentenceTransformer, util
-from utils.config import logging, q_type_models, qa_models, similarity_check_models, skill_extract_models, JD_SIMILARITY_CHECK_WEIGHTS, CV_DATA, QA_MODEL_MAX_TOKEN_SIZE
+from utils.config import logging, q_type_models, qa_models, similarity_check_models, skill_extract_models,\
+    JD_SIMILARITY_CHECK_WEIGHTS, CV_DATA, QA_MODEL_MAX_TOKEN_SIZE, JD_VS_CV_SKILLS_SIMILARITY_THRESHOLD
 from sklearn.metrics.pairwise import cosine_similarity
 import torch
 import re
-import json
 import gc
 import pandas as pd
 logger = logging.getLogger(__name__)
@@ -13,94 +13,100 @@ get_jd_vs_cv_similarity_score: not processing all input
 """
 
 
-def __old_extract_skills_from_text(text):
-    """Extracts skills from long text using NER with chunking support."""
-    text= re.sub(r"([a-zA-Z]+)", lambda m: m.group(1).capitalize(), text)
-    from transformers import pipeline, AutoTokenizer, logging as transformers_logging
-    transformers_logging.set_verbosity_error()
-    skill_extract_model= skill_extract_models[-1]
-    tokenizer = AutoTokenizer.from_pretrained(skill_extract_model)
-    try:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        ner_pipeline = pipeline("ner", model=skill_extract_model, aggregation_strategy="max", device=device)
-    except torch.cuda.OutOfMemoryError:
-        logger.warning("CUDA Out of Memory! Switching to CPU.")
-        device = "cpu"
-        ner_pipeline = pipeline("ner", model=skill_extract_model, aggregation_strategy="max", device=device)
-
-    def chunk_text(text, max_tokens=256, overlap=50):
-        """Splits long text into chunks with overlap to prevent loss of context."""
-        tokens = tokenizer.encode(text, add_special_tokens=False)
-        chunks = []
-        for i in range(0, len(tokens), max_tokens - overlap):
-            chunk = tokens[i : i + max_tokens]
-            chunks.append(tokenizer.decode(chunk))
-        return chunks
-    # Process text in chunks
-    chunks = chunk_text(text)
-    merged_entities = set()
-    for chunk in chunks:
-        ner_results = ner_pipeline(chunk)
-        current_word = ""
-        for entity in ner_results:
-            word = entity["word"]
-            if word.startswith("##"):
-                current_word += word[2:]
-            else:
-                if current_word:
-                    merged_entities.add(current_word.lower())  # Normalize to lowercase
-                current_word = word
-        if current_word:
-            merged_entities.add(current_word.lower())
-    del ner_pipeline, tokenizer
-    torch.cuda.empty_cache()
-    gc.collect()
-    return list(merged_entities)
-
 
 def extract_skills_from_text(text):
     """Extracts skills from long text using NER with chunking support."""
     from flair.data import Sentence
     from flair.models import SequenceTagger
+    model = SequenceTagger.load(skill_extract_models[-1])
     text= re.sub(r"([a-zA-Z]+)", lambda m: m.group(1).capitalize(), text)
+    chunk_size=512
     all_entities= []
 
-    def split_text_into_chunks(text, chunk_size=512):
+    def change_device(device):
+        model.eval()
+        model.to(device)
+
         tokens = text.split()  # Split text into words
         chunks = [tokens[i:i + chunk_size] for i in range(0, len(tokens), chunk_size)]
-        return [" ".join(chunk) for chunk in chunks]
-    
-    try:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        tagger = SequenceTagger.load(skill_extract_models[-1])
-        tagger.eval()
-        tagger.to(device)
-    except torch.cuda.OutOfMemoryError:
-        logger.warning("CUDA Out of Memory! Switching to CPU.")
-        device = "cpu"
-        tagger = SequenceTagger.load(skill_extract_models[-1])
-        tagger.eval()
-        tagger.to(device)
-    except Exception as e:
-        logger.exception(f"Error occurred: {e}")
+        chunks= [" ".join(chunk) for chunk in chunks]
 
-    try:
-        chunks = split_text_into_chunks(text)
         for chunk in chunks:
             sentence = Sentence(chunk)
-            tagger.predict(sentence)
+            model.predict(sentence)
             all_entities.extend(sentence.get_spans('ner'))
-        all_entities= list(set([entity.text for entity in all_entities if entity.get_label('ner').value in ("ORG", "MISC")]))
-    except Exception as e:
-        logger.exception(f"Error occurred: {e}")
+        return list(set([entity.text for entity in all_entities if entity.get_label('ner').value in ("ORG", "MISC")]))
+
+    try:
+        torch.cuda.empty_cache()
+        gc.collect()
+        all_entities= change_device("cuda" if torch.cuda.is_available() else "cpu")
+    except torch.cuda.OutOfMemoryError:
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            all_entities= change_device("cpu")
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
     finally:
-        del tagger
+        # Cleanup: Release memory after execution
+        del model
         torch.cuda.empty_cache()
         gc.collect()
     return all_entities
 
 
-def get_question_type_predictions(texts, batch_size=64):
+def get_similar_elements_list(list1, list2):
+    if not list1 or not list2:
+        return []
+    
+    model = SentenceTransformer(similarity_check_models[-1])
+    if len(list2)> len(list1):
+        list1, list2= list2, list1
+    similarity_matrix= []
+    embeddings1= []
+    embeddings2= []
+
+    def change_device(device):    
+        model.to(device)
+        model.eval
+        embeddings1 = model.encode(list1, convert_to_tensor=True)
+        embeddings2 = model.encode(list2, convert_to_tensor=True)
+        return util.cos_sim(embeddings1, embeddings2)
+    try:
+        torch.cuda.empty_cache()
+        gc.collect()
+        similarity_matrix= change_device("cuda" if torch.cuda.is_available() else "cpu")
+    except torch.cuda.OutOfMemoryError:
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            gc.collect()
+            similarity_matrix= change_device("cpu")
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
+    except Exception as e:
+        logger.error(f"Unknown error occured, error: {e}")
+    finally:
+        # Cleanup: Release memory after execution
+        del model, embeddings1, embeddings2
+        
+    if len(similarity_matrix)<1:
+        return []
+    
+    matches = []
+    for i, word in enumerate(list1):
+        best_match_idx = similarity_matrix[i].argmax().item()
+        best_match = list2[best_match_idx]
+        best_score = similarity_matrix[i][best_match_idx].item()  # Convert tensor to float
+        matches.append(best_match) if best_score >= JD_VS_CV_SKILLS_SIMILARITY_THRESHOLD else None
+
+    return list(set(matches))
+
+
+def get_question_type_prediction_batch(text_list, batch_size=64):
     # Load model & tokenizer inside function (so it's released later)
     QUESTION_CLASSIFIER_MODEL = DistilBertForSequenceClassification.from_pretrained(q_type_models[-1])
     QUESTION_CLASSIFIER_TOKENIZER = DistilBertTokenizerFast.from_pretrained(q_type_models[-1])
@@ -111,9 +117,9 @@ def get_question_type_predictions(texts, batch_size=64):
         results = []
         QUESTION_CLASSIFIER_MODEL.to(device)
         QUESTION_CLASSIFIER_MODEL.eval()
-        for i in range(0, len(texts), batch_size):
-            batch_texts = texts[i:i + batch_size]
-            inputs = QUESTION_CLASSIFIER_TOKENIZER(batch_texts, padding=True, truncation=True, return_tensors="pt").to(device)
+        for i in range(0, len(text_list), batch_size):
+            batch_text_list = text_list[i:i + batch_size]
+            inputs = QUESTION_CLASSIFIER_TOKENIZER(batch_text_list, padding=True, truncation=True, return_tensors="pt").to(device)
             with torch.no_grad():
                 outputs = QUESTION_CLASSIFIER_MODEL(**inputs)
             logits = outputs.logits
@@ -145,88 +151,85 @@ def get_question_type_predictions(texts, batch_size=64):
         torch.cuda.empty_cache()
         gc.collect()
     # Convert results to a DataFrame
-    df = pd.DataFrame({"text": texts, "predicted_type": results})
+    df = pd.DataFrame({"text": text_list, "predicted_type": results})
     return df
 
 
-def __old_get_jd_vs_cv_similarity_score(job_description):
-    # split sentace to line for '\n' and '.' --> remove special characters excluding ',' and '.' --> exclude the empty lines from the list
-    clean_lines = [line for line in [re.sub(r'(?<=\d)\s*-\s*(?=\d)', ' to ', re.sub(r'[^a-zA-Z0-9.,-]+', ' ', s.strip())).strip() for s in re.split(r'\n|\.', job_description) if s.strip()] if line]
-    df= get_question_type_predictions(clean_lines)
-    if df.empty:
-        logger.error("Unable to fetch categorise description")
-        return
-    df['content'] = df['predicted_type'].map(CV_DATA)
-    SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_models[-1])
-    similarity_scores = []
-    total_score= 0
+def get_qa_model_out_raw_batch(text_list, batch_size=4):
+    QUESTION_ANSWER_MODEL = T5ForConditionalGeneration.from_pretrained(qa_models[-1])
+    QUESTION_ANSWER_TOKENIZER = T5Tokenizer.from_pretrained(qa_models[-1], legacy=False)
+    inputs = None
+    decoded_outputs = []
+    df_predicted_types= None
+
+    try:
+        df_predicted_types= get_question_type_prediction_batch(text_list)
+        df_predicted_types["skill_list"]= df_predicted_types.apply(lambda row: extract_skills_from_text(row["text"]) if row["predicted_type"]== "skills" else [], axis=1)
+        df_predicted_types["context"]= df_predicted_types.apply(lambda row:'\n'.join([line for line in CV_DATA["skills"].split("\n") if any(re.search(rf'\b{skill}\b', line, re.IGNORECASE) for skill in row["skill_list"])]) if row["skill_list"] else CV_DATA.get(row["predicted_type"], ""), axis= 1)
+    except Exception as e:
+        logger.exception(f"Unexpected error: {e}")
+        return pd.DataFrame()
+    
+    def change_device(device):
+        QUESTION_ANSWER_MODEL.to(device)
+        QUESTION_ANSWER_MODEL.eval()
+        for i in range(0, len(text_list), batch_size):
+            df_batch = df_predicted_types[i:i + batch_size]
+            batch_text_list= df_batch["text"]
+            batch_contexts = df_batch["context"]
+            batch_input_texts = [f"You are a candidate filling job application form answer the question based on the given information.\nQuestion: {q}\ncontext: {c}" for q, c in zip(batch_text_list, batch_contexts)]
+
+            inputs = QUESTION_ANSWER_TOKENIZER(
+                    batch_input_texts, 
+                    return_tensors="pt", 
+                    padding=True, 
+                    truncation=True, 
+                    max_length=QA_MODEL_MAX_TOKEN_SIZE* batch_size
+                ).to(device)
+            batch_output_ids = QUESTION_ANSWER_MODEL.generate(
+                    input_ids=inputs["input_ids"],
+                    attention_mask=inputs["attention_mask"],  # ✅ Ensures padding is handled correctly
+                    max_length=512, 
+                    num_beams=4,  
+                )
+
+            if len(batch_output_ids.shape) == 2:  # Ensuring batch dimension is present
+                batch_decoded_outputs = QUESTION_ANSWER_TOKENIZER.batch_decode(batch_output_ids, skip_special_tokens=True)
+            else:
+                batch_decoded_outputs = [QUESTION_ANSWER_TOKENIZER.decode(batch_output_ids[0], skip_special_tokens=True)]
+
+
+            decoded_outputs.extend(batch_decoded_outputs)
+            del inputs, batch_output_ids, batch_input_texts
     try:
         torch.cuda.empty_cache()
         gc.collect()
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        SIMILARITY_CHECK_MODEL.to(device)
-        SIMILARITY_CHECK_MODEL.eval()
-        # Compute similarity scores
-        similarity_scores = []
-        for idx, row in df.iterrows():
-            text = row['text']
-            content = row['content']
-            # Compute embeddings
-            text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device=device, show_progress_bar=False)
-            content_embedding = SIMILARITY_CHECK_MODEL.encode([content], device=device, show_progress_bar=False)
-            # Compute cosine similarity
-            similarity = cosine_similarity(text_embedding, content_embedding)[0][0]
-            similarity_scores.append(similarity)
+        change_device("cuda" if torch.cuda.is_available() else "cpu")
     except torch.cuda.OutOfMemoryError:
         logger.warning("CUDA Out of Memory! Switching to CPU.")
         try:
-            device = "cpu"
-            SIMILARITY_CHECK_MODEL.to(device)
-            SIMILARITY_CHECK_MODEL.eval()
-            # Compute similarity scores
-            similarity_scores = []
-            for idx, row in df.iterrows():
-                text = row['text']
-                content = row['content']
-                # Compute embeddings
-                text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device=device, show_progress_bar=False)
-                content_embedding = SIMILARITY_CHECK_MODEL.encode([content], device=device, show_progress_bar=False)
-                # Compute cosine similarity
-                similarity = cosine_similarity(text_embedding, content_embedding)[0][0]
-                similarity_scores.append(similarity)
+            change_device("cpu")
         except MemoryError:
             logger.critical("CPU MemoryError: System ran out of RAM.")
         except Exception as e:
             logger.critical(f"Unexpected error while using CPU: {e}")
     except Exception as e:
-        logger.exception(f"While trying to fetch similarity score, error: {e}")
+        # logger.exception(f"Error occurred: {e}")
+        print(f"Error occurred: {e}")
     finally:
-        # Cleanup: Release memory after execution
-        del SIMILARITY_CHECK_MODEL
+        del QUESTION_ANSWER_MODEL, QUESTION_ANSWER_TOKENIZER
         torch.cuda.empty_cache()
         gc.collect()
-
-    if len(similarity_scores) != len(df):
-        logger.error("Unexpected error while geeting the similarity score")
-        return round(total_score, 2)
-    
-    # Add similarity scores to the DataFrame
-    df['similarity_score'] = similarity_scores
-    df= df.groupby('predicted_type')['similarity_score'].mean().reset_index().rename(columns={'similarity_score': 'avg_similarity_score'})
-    for index, row in df.iterrows():
-        category = row['predicted_type']
-        similarity_score = row['avg_similarity_score']
-        weight = JD_SIMILARITY_CHECK_WEIGHTS.get(category, 0)
-        total_score += similarity_score * weight
-    del df
-    return round(total_score, 2)
+        
+    df_predicted_types["predcited_ans"]= decoded_outputs
+    return df_predicted_types[["text", "predicted_type", "predcited_ans"]]
 
 
 def get_jd_vs_cv_similarity_score(job_description):
     total_score= 0
 
     clean_lines = [line for line in [re.sub(r'(?<=\d)\s*-\s*(?=\d)', ' to ', re.sub(r'[^a-zA-Z0-9.,-]+', ' ', s.strip())).strip() for s in re.split(r'\n|\.', job_description) if s.strip()] if line]
-    df= get_question_type_predictions(clean_lines)
+    df= get_question_type_prediction_batch(clean_lines)
     df= df[df["predicted_type"] != "skills"]
     df['content'] = df['predicted_type'].map(CV_DATA)
     df = df.reset_index(drop=True)
@@ -357,7 +360,7 @@ def get_qa_model_out_raw(question):
         context= '\n'.join([line for line in CV_DATA["skills"].split("\n") if any(re.search(rf'\b{skill}\b', line, re.IGNORECASE) for skill in skill_list)]) if skill_list else CV_DATA.get(predicted_question_type, "")
         input_text = f"You are a candidate filling job application form answer the question based on the given information.\nQuestion: {question}\ncontext: {context}"
 
-        inputs = QUESTION_ANSWER_TOKENIZER(input_text, return_tensors="pt").to(device)
+        # inputs = QUESTION_ANSWER_TOKENIZER(input_text, return_tensors="pt").to(device)
         inputs = QUESTION_ANSWER_TOKENIZER(input_text, return_tensors="pt", padding=True, truncation=True, max_length= QA_MODEL_MAX_TOKEN_SIZE).to(device)
 
         output_ids = QUESTION_ANSWER_MODEL.generate(inputs["input_ids"], max_length= 512)
@@ -387,6 +390,44 @@ def get_most_similar_option(text, available_options):
     # Load model & tokenizer inside function (so they are released after execution)
     SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_models[-1])
     most_similar_option= None
+    text_embedding= []
+    options_embeddings= []
+
+    def change_device(device):
+        SIMILARITY_CHECK_MODEL.to(device)
+        SIMILARITY_CHECK_MODEL.eval()
+        # Get predicted option
+        text_embedding = SIMILARITY_CHECK_MODEL.encode([text], device= device, show_progress_bar=False)
+        options_embeddings = SIMILARITY_CHECK_MODEL.encode(available_options, device= device, show_progress_bar=False)
+        similarity_matrix= util.cos_sim(text_embedding, options_embeddings)
+        return available_options[similarity_matrix[0].argmax().item()]
+
+    try:
+        torch.cuda.empty_cache()
+        gc.collect()
+        most_similar_option = change_device("cuda" if torch.cuda.is_available() else "cpu")
+    except torch.cuda.OutOfMemoryError:
+        logger.warning("CUDA Out of Memory! Switching to CPU.")
+        try:
+            most_similar_option = change_device("cpu")
+        except MemoryError:
+            logger.critical("CPU MemoryError: System ran out of RAM.")
+        except Exception as e:
+            logger.critical(f"Unexpected error while using CPU: {e}")
+    except Exception as e:
+        logger.error(f"Unknown error occured, error: {e}")
+    finally:
+        # Cleanup: Release memory after execution
+        del SIMILARITY_CHECK_MODEL, text_embedding, options_embeddings, change_device
+        torch.cuda.empty_cache()
+        gc.collect()
+    return most_similar_option
+
+
+def _old_get_most_similar_option(text, available_options):
+    # Load model & tokenizer inside function (so they are released after execution)
+    SIMILARITY_CHECK_MODEL = SentenceTransformer(similarity_check_models[-1])
+    most_similar_option= None
 
     def change_device(device):
         SIMILARITY_CHECK_MODEL.to(device)
@@ -410,6 +451,8 @@ def get_most_similar_option(text, available_options):
             logger.critical("CPU MemoryError: System ran out of RAM.")
         except Exception as e:
             logger.critical(f"Unexpected error while using CPU: {e}")
+    except Exception as e:
+        logger.error(f"Unknown error occured, error: {e}")
     finally:
         # Cleanup: Release memory after execution
         del SIMILARITY_CHECK_MODEL
